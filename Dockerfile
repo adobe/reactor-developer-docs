@@ -6,7 +6,11 @@ ADD . /srv/docs
 
 RUN bundle install && \
     JEKYLL_ENV=production bundle exec jekyll build && \
-    tar -czf /tmp/docs.tar.gz -C _site --exclude=*.un~ --exclude=.DS_Store --exclude=api_specification.json --exclude=LICENSE .
+    tar -czf /tmp/docs.tar.gz -C _site \
+      --exclude=*.un~ \
+      --exclude=.DS_Store \
+      --exclude=api_specification.json \
+      --exclude=LICENSE --exclude=README .
 
 
 FROM nginx:1.13.9
