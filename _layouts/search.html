@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html class="spectrum--medium">
+  <head>
+    {% include head.html %}
+  </head>
+  <body class="spectrum spectrum--light">
+    <div class="sdldocs-outer">
+      {% include header.html %}
+      <div class="sdldocs-scrollable sdldocs-components">
+        <div class="cssdocs-component" style="max-width:900px;">
+          {{ content }}
+        </div>
+        <div class="spectrum-Underlay" id="spectrum-underlay"></div>
+      </div>
+    </div>
+    {% include pagebottom.html %}
+  </body>
+</html>

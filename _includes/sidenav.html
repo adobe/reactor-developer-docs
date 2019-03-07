@@ -1,0 +1,6 @@
+{% assign collection_name = url_parts[1] %}
+{% assign collection = site.hierarchy | where_exp:"item", "item['name'] == collection_name" | first %}
+
+<nav class="spectrum spectrum-SideNav spectrum--light">
+  {% include _sidenav-gen.html %}
+</nav>

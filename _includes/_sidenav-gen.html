@@ -1,0 +1,30 @@
+{% assign documents = collection['documents'] %}
+{% assign children = collection['children'] %}
+{% assign collection_name = collection['name'] %}
+
+<ul class="spectrum-TreeView">
+  {% for d in documents %}
+    <li class="spectrum-TreeView-item{% if d.url == page.url %} is-selected{% endif %}">
+      <a href="{{ d.url }}" class="spectrum-TreeView-itemLink">
+        {{ d.title }}
+      </a>
+    </li>
+  {% endfor %}
+
+  {% if children[0] %}
+    {% for child in children %}
+      {% assign collection = child %}
+      {% assign collection_name = child['name'] %}
+      
+      <li class="spectrum-TreeView-item{% if page.url contains child['path'] %} is-open{% endif %}">
+        <a class="spectrum-TreeView-itemLink" href="#">
+          <svg class="spectrum-Icon spectrum-UIIcon-ChevronRightMedium spectrum-TreeView-indicator" focusable="false" aria-hidden="true">
+            <use xlink:href="#spectrum-css-icon-ChevronRightMedium" />
+          </svg>
+          {{ collection['display_name'] }}
+        </a>
+        {% include _sidenav-gen.html %}
+      </li>
+    {% endfor %}
+  {% endif %}
+</ul>

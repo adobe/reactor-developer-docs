@@ -1,0 +1,5 @@
+/.bundle
+/_site
+
+*.un~
+*.swp

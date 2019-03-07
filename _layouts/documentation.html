@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="spectrum--medium">
+  <head>
+    {% include head.html %}
+  </head>
+  <body class="spectrum spectrum--light">
+    <div class="sdldocs-outer">
+      {% include header.html %}
+      <section class="sdldocs-splitview spectrum-SplitView spectrum-SplitView--horizontal">
+        <div class="sdldocs-scrollable spectrum-SplitView-pane sdldocs-nav">
+          {% include sidenav.html %}
+        </div>
+        <div class="sdldocs-scrollable spectrum-SplitView-pane sdldocs-components">
+          <div class="spectrum spectrum--light">
+            {{ content }}
+          </div>
+          <div class="spectrum-Underlay" id="spectrum-underlay"></div>
+        </div>
+      </section>
+    </div>
+    {% include pagebottom.html %}
+  </body>
+</html>

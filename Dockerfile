@@ -1,0 +1,22 @@
+FROM ruby:2.6.1 as builder
+
+WORKDIR /srv/docs
+
+ADD . /srv/docs
+
+RUN bundle install && \
+    JEKYLL_ENV=production bundle exec jekyll build && \
+    tar -czf /tmp/docs.tar.gz -C _site --exclude=*.un~ --exclude=.DS_Store --exclude=api_specification.json --exclude=LICENSE .
+
+
+FROM nginx:1.13.9
+
+WORKDIR /srv/docs
+
+ADD docker/docs.conf /etc/nginx/conf.d/docs.conf
+
+COPY --from=builder /tmp/docs.tar.gz /tmp/docs.tar.gz
+
+RUN tar xzf /tmp/docs.tar.gz -C /srv/docs && \
+    chown -R nginx:www-data /srv/docs && \
+    rm /etc/nginx/conf.d/default.conf

@@ -1,0 +1,20 @@
+FROM ruby:2.6.1
+
+ENV GEM_HOME=/bundle
+ENV BUNDLE_PATH=/bundle
+ENV BUNDLE_APP_CONFIG=/bundle
+ENV BUNDLE_BIN=/bundle
+ENV BUNDLE_JOBS=4
+
+WORKDIR /srv/docs
+
+ADD Gemfile* ./
+
+RUN bundle install && rm Gemfile*
+
+VOLUME /bundle
+VOLUME /srv/docs
+
+CMD bundle install && bundle exec jekyll serve --host=0.0.0.0
+
+EXPOSE 4000

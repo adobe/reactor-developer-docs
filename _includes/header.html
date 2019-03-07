@@ -1,0 +1,85 @@
+{% assign url_parts = page.url | split: '/' %}
+<header class="sdldocs-header spectrum--dark">  
+  <h2 class="spectrum-Heading--pageTitle">
+    <a href="/" class=''>
+      <img class="sdldocs-header-logo-image" src="/images/launch.svg" alt="Adobe Launch Logo">
+      <span class="sdldocs-header-title">{{ site.title }}</span>
+    </a>
+  </h2>
+  
+  <nav id="main-nav" style="margin-left: 45px;">
+    <a href="/extensions" class="spectrum-Body2 guide-Header-link{% if url_parts[1] == 'extensions' %} is-selected{% endif %}">
+      Extensions
+    </a>
+    <a href="/api" class="spectrum-Body2 guide-Header-link{% if url_parts[1] == 'api' %} is-selected{% endif %}">
+      API
+      <sup class="spectrum-Body--small"><i>(alpha)</i><sup>
+    </a>
+    <a href="/resources" class="spectrum-Body2 guide-Header-link{% if url_parts[1] == 'resources' %} is-selected{% endif %}">
+      Resources
+    </a>
+  </nav>
+
+  <div class="sdl-switcher">
+    <div class="external-links">
+      <a href="http://join.launchdevelopers.chat/" target="_blank">
+        Join Slack
+        <svg class="spectrum-Icon spectrum-Icon--sizeXS" focusable="false" aria-hidden="true" aria-label="OpenIn">
+          <use xlink:href="#spectrum-icon-24-OpenIn"></use>
+        </svg>
+      </a>
+      <a href="https://github.com/Adobe-Marketing-Cloud?utf8=✓&q=launch" target="_blank">
+        GitHub
+        <svg class="spectrum-Icon spectrum-Icon--sizeXS" focusable="false" aria-hidden="true" aria-label="OpenIn">
+          <use xlink:href="#spectrum-icon-24-OpenIn"></use>
+        </svg>
+      </a>
+    </div>
+
+    <form action="/search/" class="spectrum-Search" style="margin-right: 25px">
+      <input type="search" id="search-box" placeholder="Search" name="query" value="" class="spectrum-Textfield spectrum-Search-input">
+      <svg class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon" focusable="false" aria-hidden="true">
+        <use xlink:href="#spectrum-css-icon-Magnifier" />
+      </svg>
+      <button type="reset" class="spectrum-ClearButton">
+        <svg class="spectrum-Icon spectrum-UIIcon-CrossSmall" focusable="false" aria-hidden="true">
+          <use xlink:href="#spectrum-css-icon-CrossSmall" />
+        </svg>
+      </button>
+    </form>
+
+    <label class="spectrum-FieldLabel spectrum-FieldLabel--left">Lang</label>
+    <div class="spectrum-Dropdown" style="margin-right:20px">
+      <select class="spectrum-FieldButton spectrum-Dropdown-trigger" onchange="changeLang.apply(this, this[this.selectedIndex].value.split(','))" id="lang">
+        <option value="curl">cURL</option>
+      </select>
+      <svg class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon">
+        <use xlink:href="#spectrum-css-icon-ChevronDownMedium"></use>
+      </svg>
+    </div>
+  </div>
+
+  <div style="position: relative">
+    <button class="spectrum-ActionButton spectrum-ActionButton--quiet" onclick="toggleMenu(this)" data-target="options-menu">
+      <svg class="spectrum-Icon spectrum-Icon--sizeS" focusable="false" aria-hidden="true" aria-label="Settings">
+        <use xlink:href="#spectrum-icon-18-Settings"></use>
+      </svg>
+    </button>
+
+    <div id="options-menu" class="spectrum-Popover">
+        <ul class="spectrum-Menu" role="listbox" style="width: 100%">
+          <li role="presentation">
+            <span class="spectrum-Menu-sectionHeading" id="menu-heading-oak" aria-hidden="true">Color</span>
+            <ul class="spectrum-Menu" role="group" aria-labelledby="menu-heading-oak">
+              <li class="spectrum-Menu-item" role="option" onclick="changeCSS('light')" tabindex="1">
+                <span class="spectrum-Menu-itemLabel">Light</span>
+              </li>
+              <li class="spectrum-Menu-item" role="option" onclick="changeCSS('dark')" tabindex="2">
+                <span class="spectrum-Menu-itemLabel">Dark</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+  </div>
+</header>

@@ -1,0 +1,68 @@
+title: Adobe Experience Platform Launch
+email: dtm@adobe.com
+description: >
+  Documentation for the Adobe Launch platform.
+baseurl: ""
+url: "https://developer.adobelaunch.com"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+sections:
+  - api
+  - extensions
+  - resources
+
+exclude:
+  - Dockerfile
+  - Gemfile*
+  - README.md
+  - overview/presentations.md
+  - overview/architecture.md
+  - videos
+  - documents/api-architectural-council-20160818-a.pptx
+  - documents/api-architectural-council-20160818-b.pptx
+  - documents/extension-engine-architecture-20160818.key
+  - documents/extension-engine-architecture-20160818.pdf
+  - documents/overview-architecture-council-20160818.pptx
+  - documents/ppc.pptx
+  - documents/ui-architecture-20160818.pptx
+  - documents/images/reactor-arch-02.png
+  - venv-buildrunner
+  - curator.results
+
+defaults:
+  - scope:
+      path: "api"
+      type: "pages"
+    values:
+      layout: "documentation"
+  - scope:
+      path: "api/1.0-Unstable"
+      type: "pages"
+    values:
+      layout: "documentation"
+      labels:
+        - "unstable"
+  - scope:
+      path: "epages"
+      type: "pages"
+    values:
+      layout: "documentation"
+  - scope:
+      path: "extensions"
+      type: "pages"
+    values:
+      layout: "documentation"
+  - scope:
+      path: "resources"
+      type: "pages"
+    values:
+      layout: "documentation"
+
+environment: external
+
+launch_library_url_dev: //assets.adobedtm.com/launch-ENb1b2a98396e04dd4a82cd790a4730546-development.min.js
+launch_library_url_stage: //assets.adobedtm.com/launch-ENb0fca57af3154292b7f0528bfad6b7af-staging.min.js
+launch_library_url_prod: //assets.adobedtm.com/launch-ENb8cf58511e7a4d6794fd92efd98d4044.min.js

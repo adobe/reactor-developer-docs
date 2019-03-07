@@ -1,0 +1,30 @@
+body.landing {
+  background-color: #222222;
+}
+.hero {
+  width: 100%;
+  min-height: 400px;
+  text-align: center;
+}
+
+.hero-black {
+  background-color: #222222;
+  color: #ffffff !important;
+}
+
+.hero-black .spectrum-Heading1--display.spectrum-Heading1--quiet,
+.hero-black .spectrum-Heading4 {
+  color: #ffffff !important;
+}
+
+.hero-black .spectrum-Button--primary {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgb(227, 227, 227);
+  color: rgb(227, 227, 227);
+}
+
+.hero-black .spectrum-Button--primary:hover {
+  background-color: rgb(227, 227, 227);
+  border-color: rgb(227, 227, 227);
+  color: rgb(37, 37, 37);
+}

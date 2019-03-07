@@ -1,0 +1,40 @@
+---
+---
+<!DOCTYPE html>
+<html class="spectrum--medium">
+  <head>
+    {% include head.html %}
+    <link rel="stylesheet" type="text/css" href="/css/hero.css">
+  </head>
+  <body class="spectrum spectrum--dark landing">
+    {% include header.html %}
+    <div class="hero hero-black" style="padding: 50px 0px">
+      <img height="300em" src="../images/launch.svg" alt="Launch Logo" style="margin-top: 100px">
+      <h1 class="spectrum-Heading1--display spectrum-Heading1--quiet" style="margin-top: 100px;">
+        Deploy digital experiences faster
+      </h1>
+      <p class="spectrum-Heading4" style="margin-top: 40px;">
+        Launch is a platform to develop and deploy tag management extensions into the Adobe ecosystem.
+      </p>
+      <div style="margin-top: 80px;">
+      <button class="spectrum-Button spectrum-Button--primary" onclick="window.location.href = '/extensions'">
+        <svg class="spectrum-Icon spectrum-Icon--sizeM" focusable="false" aria-hidden="true" aria-label="Extension">
+          <use xlink:href="#spectrum-icon-24-Extension"></use>
+        </svg>
+        <span class="spectrum-Button-label">
+          Learn About Extensions
+        </span>
+      </button>
+      <button class="spectrum-Button spectrum-Button--primary" style="margin-left: 40px" onclick="window.location.href = '/api'">
+        <svg class="spectrum-Icon spectrum-Icon--sizeM" focusable="false" aria-hidden="true" aria-label="Code">
+          <use xlink:href="#spectrum-icon-24-Code"></use>
+        </svg>
+        <span class="spectrum-Button-label">
+          Learn About API Integration
+        </span>
+      </button>
+    </div>
+    <div class="spectrum-Underlay" id="spectrum-underlay"></div>
+    {% include pagebottom.html %}
+  </body>
+</html>
