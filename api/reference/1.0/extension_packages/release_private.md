@@ -22,7 +22,7 @@ A Private release is achieved by supplying an `action` with a value of `release_
 
   <h1 id="example-request">Example Request<a class="anchorjs-link " href="#example-request" aria-label="Anchor link for: example request" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: 1; padding-left: 0.375em;"></a></h1>
 <div class="highlight">
-  <pre><code>curl https://reactor-integration.adobe.io/extension_packages/:id <span class="se">\</span>
+  <pre><code>curl https://reactor.adobe.io/extension_packages/:id <span class="se">\</span>
   -H <span class="s2">"Accept: application/vnd.api+json;revision=1"</span> <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/vnd.api+json"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer [TOKEN]"</span> <span class="se">\</span>

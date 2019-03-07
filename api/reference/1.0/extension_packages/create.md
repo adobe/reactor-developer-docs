@@ -100,7 +100,7 @@ When an `ExtensionPackage` is created, `availability` is set to `development`. A
 
   <h1 id="example-request">Example Request<a class="anchorjs-link " href="#example-request" aria-label="Anchor link for: example request" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: 1; padding-left: 0.375em;"></a></h1>
 <div class="highlight">
-  <pre><code>curl https://reactor-integration.adobe.io/extension_packages <span class="se">\</span>
+  <pre><code>curl https://reactor.adobe.io/extension_packages <span class="se">\</span>
   -H <span class="s2">"Accept: application/vnd.api+json;revision=1"</span> <span class="se">\</span>
   -H <span class="s2">"Content-Type: multipart/form-data"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer [TOKEN]"</span> <span class="se">\</span>
@@ -142,7 +142,7 @@ When an `ExtensionPackage` is created, `availability` is set to `development`. A
       </span><span class="nt">"view_base_path"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://reactor-integration.adobe.io/extension_packages/EP10bb503178694d73bc0cd84387b82172"</span><span class="w">
+      </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://reactor.adobe.io/extension_packages/EP10bb503178694d73bc0cd84387b82172"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre>
