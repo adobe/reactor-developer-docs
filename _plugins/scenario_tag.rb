@@ -12,7 +12,7 @@ class Jekyll::ScenarioTag < Liquid::Tag
 
   def build_curl_request
     <<EOF
-curl https://reactor-integration.adobe.io#{@endpoint['path']} \\
+curl https://reactor.adobe.io#{@endpoint['path']} \\
   -H "Accept: application/vnd.api+json;revision=1" \\
   -H "Content-Type: application/vnd.api+json" \\
   -H "Authorization: Bearer [TOKEN]" \\
