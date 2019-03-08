@@ -14,38 +14,56 @@ To write an extension for Launch, we need to make sure your Adobe Experience Clo
 
 ### Your Experience Cloud Account
 
-The first step is to confirm you have access to an Experience Cloud Organization.  This will enable you to login to the Experience Cloud, to assign user permissions to your team, and to use Adobe Experience Cloud products. You can get an Experience Cloud Organization as a customer or a partner.
+The first step is to confirm you have access to an Experience Cloud Organization.  This will enable you to login to the Experience Cloud, to create a product profile, to assign user permissions to your team, and to use Adobe Experience Cloud products. You can get an Experience Cloud Organization as a customer or a partner.
 
 Customers already have an Experience Cloud Organization that's created when contracts are signed. You can use this for extension development.
 
 Partners can have an Experience Cloud Organization created by joining one of Adobe's Partner Programs.
 
-* **Exchange Partner Program** - This program is for partners who have technology that's complimentary to Adobe and can be integrated with Adobe technologies to add value to our mutual customers. This program maintains a [marketplace](https://www.adobeexchange.com/experiencecloud.html) where partners can create listings that promote their integrations. You can see the registration guide [here](https://partners.adobe.com/exchangeprogram/experiencecloud/reg-guide.html) and you can begin your registration [here](https://partners.adobe.com/exchangeprogram/experiencecloud/prereg.html).  **You must be a member of this program in order to create a listing that will show in the marketplace.**
+* **Exchange Partner Program** - This program is for partners who have technology that's complimentary to Adobe and can be integrated with Adobe technologies to add value to our mutual customers. This program maintains a [marketplace](https://www.adobeexchange.com/experiencecloud.html) where partners can create listings that promote their integrations. You can see the registration guide [here](https://partners.adobe.com/exchangeprogram/experiencecloud/reg-guide.html) and you can begin your registration [here](https://partners.adobe.com/exchangeprogram/experiencecloud/prereg.html).  **You must be a member of this program in order to create public Launch extensions and listings that will show in the marketplace.**
 * **Solution Partner Program (SPP)** – This program is for consulting firms that help Adobe customers make the most of their investments and partners that resell Adobe solutions. You can register for the Solution Partner Program and check out our information on how to join if you have any questions. See the registration guide [here](https://spark.adobe.com/page/7PKZzIJJjkcDd/) or begin your registration [here](https://solutionpartners.adobe.com/home.html).
 
 **Note** - Solution Partners must also [register](https://partners.adobe.com/exchangeprogram/experiencecloud/prereg.html) for the Exchange Partner Program as the Exchange agreement contains the terms and conditions for Launch extension development.
 
-Before you complete your Exchange registration, please email the Exchange admin at <ExchangeHelpEC@adobe.com> and explain that you are registering so that you can promote your Launch extension. If you don't do this, they will likely deny your application and suggest you are a better fit for the SPP. Please note that currently your corporate email can only be used in one partner program at a time, so you will need to use a different corporate email as the registered contact for each of the programs.
+Before you complete your Exchange registration, please email the Exchange admin at <ExchangeHelpEC@adobe.com> and explain that you are registering so that you can promote your Launch extension. If you don't do this, they will likely deny your application and suggest you are a better fit for the SPP. **Please note** that currently your corporate email can only be used in one partner program at a time, so you will need to use a different corporate email as the registered contact for each of the programs. It's "sub-optimal", we know. Sorry about that.
 
-If your company is already an Exchange Partner, but you don't have an Experience Cloud Sandbox account, you can request access by signing in to the [Exchange Portal](https://partners.adobe.com/exchangeprogram/experiencecloud.html) and [requesting a Sandbox](https://partners.adobe.com/exchangeprogram/experiencecloud/build/sandbox.html).
-
-If you already have an Experience Cloud Account, but do not have access to Launch, please see the instructions for setting up groups and users [here](https://docs.adobelaunch.com/administration/users).
+Once your company is in the Exchange Partner program, you can request access to Adobe Solutions by signing in to the [Exchange Partner Site](https://partners.adobe.com/exchangeprogram/experiencecloud) and following the steps below. If you already have an Experience Cloud Account and access to solutions, but you don't have access to Launch, please see the instructions for setting up groups and users [here](https://docs.adobelaunch.com/administration/users).
 
 ### Create a Listing in the Exchange Partner Portal (required)
 
-Extensions created for public release are required to have a listing in the [Exchange Marketplace](https://experiencecloud.adobeexchange.com/). These listings enable extension developers to post support information, links to additional support or documentation, and to market your extensions to prospective users who may not be aware of your company or the functionality of your extension. In this marketplace, your Extension will have a public listing that can be viewed without the user being authenticated to Launch.
+Extensions created for public release are required to have a listing in the [Exchange Marketplace](https://experiencecloud.adobeexchange.com/). These listings enable extension developers to post support information, links to additional support or documentation, and to market your extensions to prospective users who may not be aware of your company or the functionality of your extension. In this marketplace, your extension will have a public listing that can be viewed without the user being authenticated to Launch.
 
-To create a listing, please sign in to the [Partner Portal](https://partners.adobe.com/exchangeprogram/experiencecloud#). Once signed in, click on the Application Listing button next to your name. Then click on create listing and follow through the screens. Before you start, it will help to read the [App Submission Guideline](https://partners.adobe.com/exchangeprogram/experiencecloud/build/ec-exchange.html) to learn how to submit the most persuasive listing. One question asked often is about the Featured Image included in the Application Listing. The Featured Image is shown when you or someone else shares your Exchange listing in social media or messengers, so it should be an image that can stand alone and represents your brand and product well.
+**To create a listing:**
 
-We also suggest being very clear about what your extension does and why someone might want to use it. **This is your marketing space**, please feel free to promote your extension here with clear descriptions, links to landing pages on your site, links to help docs or support email addresses, etc. While you have limited space in your extension views, this Exchange listing is your chance to really promote your extension, and your company. The [App Submission Guideline](https://partners.adobe.com/exchangeprogram/experiencecloud/build/ec-exchange.html) will help you craft a successful listing in the Exchange Marketplace.
+**Note:** in the Exchange system, you're creating an "application" listing which is what they call various integrations, including Launch extensions.  
 
-On the first page of editing your listing, please be sure to include the word "Launch" in the 'Custom Tags' field. This will make your listing appear in searches for Launch.
+![](/images/getting-started/app-mgr-link.png)
 
-![](/images/getting-started/custom-tags.jpg)
+1. Please sign in to the [Exchange Partner site](https://partners.adobe.com/exchangeprogram/experiencecloud). Once signed in, click on the App Manager link next to your name.
+2. Select the Create New Application tab, and then select "Create New App" for a customized solution, or select an applicable template.
+3. Provide your listing information. For detailed information on App Manager check out the full [article](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360024197931). We suggest being very clear about what your extension does and why someone might want to use it. **This is your marketing space**, please feel free to promote your extension here with clear descriptions, links to landing pages on your site, links to help docs or support email addresses, etc. While you have limited space in your extension views, this Exchange listing is your chance to really promote your extension, and your company. Here are a few quick tips to get started:
+    * **App Icon** – Make sure the icon for the Exchange listing has the appropriate dimensions, 512 x 512 for png or 1:1 aspect ratio for jpg. Note: this is a different file format than you'll use in your extension code. The extension itself will contain an svg file as the [icon](/extensions/reference/extension-manifest/).
+    * **Featured Image** - **Get their attention!** Use an image that can stand alone and will show your brand and highlight your application (your Launch extension). The Featured Image is the one shown when someone shares a link to your Exchange listing or posts about it on the socials, so it needs to be a model representation of your brand.
+    * **App Publisher's Logo** - This is your corporate logo, make sure the icon has the appropriate dimensions of 1280 x 720, or 2560 x 1440 (16:9) in png or jpg format.
+    * **Configuration Instructions** – Tell customers how to configure your extension in Launch. Make sure they understand any required settings and next steps when your [configuration view](/extensions/reference/extension-configuration/) appears immediately after installing your extension in a property. 
+    * **Tags** - On the first page of editing your listing, please be sure to include the word "Launch" in the 'Custom Tags' field. This will make your listing appear in searches for Launch in the Exchange marketplace:
+    ![](/images/getting-started/custom-tags.jpg)
+    * **Sandboxes** - Your access to Adobe Solutions is through what we call a Sandbox account. You get access to fully functioning versions of Launch, Adobe Analytics, Adobe Target, etc. These Sandbox accounts are requested as you create your application listing. In the **Connections** section select the specific connections that are applicable for the application you created (your Launch extension), and when you hit **Save**, the sandbox request will be generated if needed.  
+4. Submit your listing! The Adobe Exchange team will review your application and provide feedback if updates are required. If you mark the "publish immediately" checkbox when you submit your listing, it will be published immediately upon approval. If you want to publish your application at a later time, leave the checkbox unchecker and when your extension listing is approved, a blue "Publish" button will appear next to it on your app (extension) listings page.
 
-Once submitted, the Adobe Exchange team will review the application and will either approve the application, or respond with comments about changes. This process is detailed in the [App Submission Instructions](https://app-cdn.adobe.com/content/dam/mcp_assets/public/documents/Adobe-Exchange-Program-Experience-Cloud-Submit-App-Guide.pdf).
+#### Create an effective listing
+
+Please take a look at our [App Submission Guideline](https://partners.adobe.com/exchangeprogram/experiencecloud/build/ec-exchange.html) for detailed information on how to create the most engaging listing. No, really - you should check out that guide. Honest.
+
+#### After submitting your Exchange listing
+
+Once submitted, the Adobe Exchange team will review the application and will either approve the application, or respond with comments about changes. This process is detailed in the [App Submission Guidelines](https://partners.adobe.com/exchangeprogram/experiencecloud/build/ec-exchange.html).
 
 If you don't have a login to the Exchange site, make sure that your email is registered for the Exchange program by following the instructions in the [Program Registration Guide](https://partners.adobe.com/content/mcp/us/en/home/reg-guide.html). Even if your company is registered, each user still has to associate their email with the partner account for the company. For questions on this process, email <ExchangeHelpEC@adobe.com>.
+
+#### Update your Exchange listing after initial approval
+
+When you update your extension, or just need to update your Exchange listing, login to the [Partner Portal](https://partners.adobe.com/exchangeprogram/experiencecloud), and click on the App Manager button next to your name. Then select your application and follow the flow above that was initially used to create the listing. Once re-submitted, the Adobe Exchange team will review the changes and will either approve the changes, or respond with comments about the changes.
 
 ### Your Admin Console Set Up
 
@@ -182,14 +200,14 @@ Testing extensions involves using the Launch API to upload your extension packag
 The basic steps to achieve this are:
 
 1. Create an Adobe I/O Integration (also called a technical account)
-1. Upload your extension package
-1. Login to Launch
-1. Create a Development property
-1. Install your extension package to a development property
-1. Create resources that use your extension capabilities
-1. Publish your changes
-1. Install Launch on your test site
-1. Test
+2. Upload your extension package
+3. Login to Launch
+4. Create a Development property
+5. Install your extension package to a development property
+6. Create resources that use your extension capabilities
+7. Publish your changes
+8. Install Launch on your test site
+9. Test
 
 When you discover issues that need to be fixed, you will:
 

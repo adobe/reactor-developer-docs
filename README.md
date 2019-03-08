@@ -1,6 +1,6 @@
 # Reactor Developer Docs
 
-Developer documentation for Adobe Cloud Platform Launch - https://developer.adobelaunch.com
+Developer documentation for Adobe Experience Platform Launch - https://developer.adobelaunch.com
 
 ## Issues
 
@@ -10,12 +10,12 @@ Found something amiss with the documentation? Let us know via an
 ## Contributing
 
 The documentation site is built using [Jekyll](https://jekyllrb.com), a static
-website generator. While Many documentation changes can be simple and using a
-markdown editor is sufficient to review changes. Sometimes it's easier to see
-how things look after having been rendered. This can be achieved in one of two
+website generator. While many documentation changes can be simple and using a
+markdown editor is sufficient to review changes, sometimes it's easier to see
+how things look after being rendered. This can be achieved in one of two
 ways, devloping locally, or developing using a Docker container.
 
-Fork and clone the reactor-developer-docs repository. After making and
+Fork and clone this reactor-developer-docs repository. After making and
 previewing changes, create a commit, and open a Pull Request.
 
 
