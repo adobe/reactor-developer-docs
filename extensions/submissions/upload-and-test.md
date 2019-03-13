@@ -11,16 +11,16 @@ Testing extensions involves using the Launch API and/or command line tools to up
 
 The basic steps to achieve this are:
 
-1. [Validate your Extension](/extensions/submissions/upload-and-test/#1-validate-your-extension)
-2. [Create an Adobe IO Integration](/extensions/submissions/upload-and-test/#2-create-an-adobe-io-integration)
-3. [Upload Your Extension Package](/extensions/submissions/upload-and-test/#3-upload-your-extension-package)
-4. [Create a Development Property](/extensions/submissions/upload-and-test/#4-create-a-development-property)
-5. [Install Your Extension](/extensions/submissions/upload-and-test/#5-install-your-extension)
-6. [Create Resources to Test Your Extension](/extensions/submissions/upload-and-test/#6-create-resources-to-test-your-extension)
-7. [Publish your Changes](/extensions/submissions/upload-and-test/#7-publish-your-changes)
-8. [Install Launch on a Test Site](/extensions/submissions/upload-and-test/#8-install-launch-on-a-test-site)
-9. [Test](/extensions/submissions/upload-and-test/#9-test)
-10. [Document](/extensions/submissions/upload-and-test/#10-document)
+1. [Validate your Extension](#1-validate-your-extension)
+2. [Create an Adobe IO Integration](#2-create-an-adobe-io-integration)
+3. [Upload Your Extension Package](#3-upload-your-extension-package)
+4. [Create a Development Property](#4-create-a-development-property)
+5. [Install Your Extension](#5-install-your-extension)
+6. [Create Resources to Test Your Extension](#6-create-resources-to-test-your-extension)
+7. [Publish your Changes](#7-publish-your-changes)
+8. [Install Launch on a Test Site](#8-install-launch-on-a-test-site)
+9. [Test](#9-test)
+10. [Document](#10-document)
 
 As you are testing (Step 9 above), when you discover issues that need to be fixed, you will:
 
@@ -232,5 +232,4 @@ When you discover changes that need to be made to your extension package, the it
 
 # 10) Document
 
-Your [Exchange listing](#create-a-listing-in-the-exchange-partner-portal-required) is a great place for marketing and support information for your extension, but our Launch [Help Docs](https://docs.adobelaunch.com) are used every day by our customers. We encourage you to submit a pull request to [add your extension documentation](https://github.com/Adobe-Marketing-Cloud/reactor-user-docs/blob/master/extension-reference/3rd-party-extensions.md) into the Launch user docs. We also gladly accept [tutorials](https://docs.adobelaunch.com/launch-tutorials/contributing) where you can better illustrate the value of your extension for our mutual customers. Open source docs for the win! 🚀
-
+Your [Exchange listing](/extensions/submissions/create-listing) is a great place for marketing and support information for your extension, but our Launch [Help Docs](https://docs.adobelaunch.com) are used every day by our customers. We encourage you to submit a pull request to [add your extension documentation](https://github.com/Adobe-Marketing-Cloud/reactor-user-docs/blob/master/extension-reference/3rd-party-extensions.md) into the Launch user docs. We also gladly accept [tutorials](https://docs.adobelaunch.com/launch-tutorials/contributing) where you can better illustrate the value of your extension for our mutual customers. Open source docs for the win! 🚀
