@@ -13,7 +13,7 @@ The documentation site is built using [Jekyll](https://jekyllrb.com), a static
 website generator. While many documentation changes can be simple and using a
 markdown editor is sufficient to review changes, sometimes it's easier to see
 how things look after being rendered. This can be achieved in one of two
-ways, devloping locally, or developing using a Docker container.
+ways, developing locally, or developing using a Docker container.
 
 Fork and clone this reactor-developer-docs repository. After making and
 previewing changes, create a commit, and open a Pull Request.
@@ -75,6 +75,14 @@ docker run -d \
   --name reactor-developer-docs-dev \
   adobe/reactor-developer-docs-dev:latest
 ```
+
+As you make changes to the files and save them, Jekyll will automatically regenerate these pages so you can view the updates in your browser.  Note that this can take 20-30 seconds.  If you'd like to see the Jekyll output as this regeneration happens, you can use the following command in your console.
+
+```bash
+docker logs -f reactor-developer-docs-dev
+```
+
+Note that regenerating the new
 
 #### Preview
 
