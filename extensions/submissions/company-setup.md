@@ -5,10 +5,6 @@ order: 2
 
 # Company Setup
 
-{:.no_toc}
-
-{:toc}
-
 ## For Customers
 
 Customers already have an Experience Cloud Organization created when contracts are signed. You can use this for extension development.
