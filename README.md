@@ -82,8 +82,6 @@ As you make changes to the files and save them, Jekyll will automatically regene
 docker logs -f reactor-developer-docs-dev
 ```
 
-Note that regenerating the new
-
 #### Preview
 
 Open a browser to http://localhost:8000.
