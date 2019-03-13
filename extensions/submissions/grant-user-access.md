@@ -1,9 +1,9 @@
 ---
-title: Granting User Access
+title: Grant User Access
 order: 3
 ---
 
-# Granting User Access
+# Grant User Access
 
 Before you get started with your extension_package, you need to set up your team members with user accounts and permissions.  This is accomplished in the Adobe [Administration Console](https://adminconsole.adobe.com/).
 

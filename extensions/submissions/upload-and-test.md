@@ -11,14 +11,25 @@ Testing extensions involves using the Launch API and/or command line tools to up
 
 The basic steps to achieve this are:
 
-{:toc}
+1. [Validate your Extension](/extensions/submissions/upload-and-test/#1-validate-your-extension)
+2. [Create an Adobe IO Integration](/extensions/submissions/upload-and-test/#2-create-an-adobe-io-integration)
+3. [Upload Your Extension Package](/extensions/submissions/upload-and-test/#3-upload-your-extension-package)
+4. [Create a Development Property](/extensions/submissions/upload-and-test/#4-create-a-development-property)
+5. [Install Your Extension](/extensions/submissions/upload-and-test/#5-install-your-extension)
+6. [Create Resources to Test Your Extension](/extensions/submissions/upload-and-test/#6-create-resources-to-test-your-extension)
+7. [Publish your Changes](/extensions/submissions/upload-and-test/#7-publish-your-changes)
+8. [Install Launch on a Test Site](/extensions/submissions/upload-and-test/#8-install-launch-on-a-test-site)
+9. [Test](/extensions/submissions/upload-and-test/#9-test)
+10. [Document](/extensions/submissions/upload-and-test/#10-document)
 
-When you discover issues that need to be fixed, you will:
+As you are testing (Step 9 above), when you discover issues that need to be fixed, you will:
 
-1. Update your extension package - your installed extension will reference this new package automatically
-2. Update resources as needed
-3. Publish again
-4. Test
+1. Update your extension code
+2. Create a new extension package
+3. Upload your new extension package - your installed extension will reference this new package automatically
+4. Update resources as needed
+5. Publish again
+6. Test
 
 As we walk through the steps below, we'll assume you're using Mac OS with node and npm installed and available.
 
@@ -93,7 +104,7 @@ Click the blue **Save** link at the bottom to save your new property.
 
 This brings you back to the Properties screen. Click on the name of your property that you just created. This is the Overview screen in a property. Not much work happens here, but there are links to each area of the system, with the global navigation links at the top.
 
-# 5) Install The Extension
+# 5) Install Your Extension
 
 To install your extension in this property, click on the **Extensions** link in the main navigation links at the top.
 
