@@ -5,8 +5,6 @@ order: 6
 
 # Upload and End-to-end Testing
 
-{:.no_toc}
-
 Testing extensions involves using the Launch API and/or command line tools to upload your extension packages, then using the Launch UI to install your extension package to a property and exercise its capabilities inside a Launch library and build.
 
 The basic steps to achieve this are:
