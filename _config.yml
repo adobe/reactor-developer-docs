@@ -18,19 +18,7 @@ exclude:
   - Dockerfile
   - Gemfile*
   - README.md
-  - overview/presentations.md
-  - overview/architecture.md
   - videos
-  - documents/api-architectural-council-20160818-a.pptx
-  - documents/api-architectural-council-20160818-b.pptx
-  - documents/extension-engine-architecture-20160818.key
-  - documents/extension-engine-architecture-20160818.pdf
-  - documents/overview-architecture-council-20160818.pptx
-  - documents/ppc.pptx
-  - documents/ui-architecture-20160818.pptx
-  - documents/images/reactor-arch-02.png
-  - venv-buildrunner
-  - curator.results
 
 defaults:
   - scope:
