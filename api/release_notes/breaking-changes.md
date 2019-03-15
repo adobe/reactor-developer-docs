@@ -10,9 +10,9 @@ The intent is to give all API users the notice of these changes and the knowledg
 
 This document contains detailed descriptions of each of the breaking changes.
 
-## Changes With A Cutover Period
+## Changes With A Deprecation Period
 
-There are a few changes where the new API endpoints/payloads will exist in the Launch production environment side-by-side with the old.  These are in production already or will be very soon (keep an eye on the [release notes](/api/release-notes/2019-release-notes)) and you can make the changes now.
+There are a few changes where the new API endpoints/payloads will exist in the Launch production environment side-by-side with the old.  These are in production already or will be very soon (keep an eye on the [release notes](/api/release-notes/2019-release-notes)).  You should make these changes as soon as possible and prior to May 1 when the old method will go away.
 
 {% alert warning, Change #1: New Domains for the API %}
 
@@ -80,11 +80,9 @@ We are changing the `/library` endpoint to be consistent with the way you retrie
 
 ## Changes That Require a Hard Cutover
 
-For a few of these changes, it is not easy for us to deploy the new method side-by-side with the old, so you'll have to make a hard cutover.
+For a few of these changes, it is not feasible for us to deploy the new method side-by-side with the old, so you'll have to make a hard cutover.
 
-For these changes, we are providing the Integration environment where the new changes will be deployed so that you can test your changes before they go live.  You'll need to test these changes in the Integration environment prior to May 1.
-
-Then on May 1, these changes will go live in Production and you'll need to update your API usage after that before they will function again in Production.
+These changes will be released to Production on May 1 and you'll need to update your API usage after that before they will function again.
 
 {% alert error, Change #5: LIKE changes to CONTAINS %}
 
