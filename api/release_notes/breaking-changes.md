@@ -84,7 +84,7 @@ For a few of these changes, it is not feasible for us to deploy the new method s
 
 These changes will be released to Production on May 1 and you'll need to update your API usage after that before they will function again.
 
-{% alert error, Change #5: LIKE changes to CONTAINS %}
+{% alert error, Change #5: LIKE Changes to CONTAINS %}
 
 Currently there are a few places where you filter an endpoint to trim down the result set that you'll get.  You can use the `LIKE` keyword in those filters, but it actually behaves like a "contains" filter.
 
@@ -96,7 +96,7 @@ So if you're using `LIKE` you need to change it to `CONTAINS` to keep the same b
 
 {% endalert %}
 
-{% alert error, Change #6: Adapter changes to Host %}
+{% alert error, Change #6: Adapter Changes to Host %}
 
 From the beginning, whenever we've Adapters have come up in a conversation, we immediately have to describe what it is, because the meaning is not obvious from the name.  We've put this off long enough, and we're changing the name.
 
