@@ -97,7 +97,7 @@ If the user's input is invalid, please show some indication of this within your 
 
 #### `getSettings() => Object`
 
-The `getSettings` method will be called after the user hits the "Save" button in Launch and the view has been validated. The function should return an object containing settings based on user input. This settings object will later be emitted in the Launch runtime library. The content of this object is under your discretion. The object must be serializable and deserializable to and from JSON. Values such as functions or [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) instances don't meet these criteria and are therefore not allowed.
+The `getSettings` method will be called after the user hits the "Save" button in Launch and the view has been validated. The function should return an object containing settings based on user input. This settings object will later be emitted in the Launch runtime library. **As such, it is extremely important that you do not store sensitive data within this object.** The content of this object is under your discretion. The object must be serializable and deserializable to and from JSON. Values such as functions or [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) instances don't meet these criteria and are therefore not allowed.
 
 ## Leveraging Shared Views
 
