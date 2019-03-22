@@ -58,15 +58,48 @@ From now one, you'll need to hit a paginated endpoint underneath the "parent" re
 
 **GET Library and include Resources**
 
-[TODO] Currently if you want to retrieve the resources in a Library, you...
+Currently if you want to retrieve the resources in a Library, you can do it two ways:
+`/libraries/\:id?include=resources`
+`/libraries/:id/resources`
 
-[TODO] The new way to retrieve the resources within a Library is to ...
+The new way to retrieve the resources within a Library is to call each relationship endpoint explicitly.
+`libraries/\:id/relationships/data_elements`
+`libraries/\:id/relationships/extensions`
+`libraries/\:id/relationships/rules`
+These endpoints are paginated and filterable like all other list endpoints.
 
 **GET Rule and include Rule Components**
 
-[TODO] Currenly if you want to retrieve the Rule Components in a Rule, you...
+Currenly if you want to retrieve the Rule Components in a Rule, you can do it in two ways:
+`rules/:id/rule_components`
+`rules/:id?include=rule_components`
 
-[TODO] The new way to retrieve the Rule Components that are used by a Rule is to ...
+The new way to retrieve the Rule Components that are used by a Rule is to ...
+`rules/:id/rule_components`
+
+The new way to associate Rule Components to a rule is:
+
+To replace the rule's existing rule_components with a new set of rule_components:
+`PATCH rules/:id/relationships/rule_components` with a body:
+```
+{
+  "data": [
+    { "type": "rule_components", "id": "2" },
+    { "type": "rule_components", "id": "3" }
+  ]
+}
+```
+
+To add a rule_component to the rule's existing rule_components:
+`POST rules/:id/relationships/rule_components` with a body:
+```
+{
+  "data": [
+    { "type": "rule_components", "id": "4" },
+    { "type": "rule_components", "id": "5" }
+  ]
+}
+```
 
 {% endalert %}
 
