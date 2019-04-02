@@ -36,15 +36,58 @@ This means that the mechanism for creating Rule Components and the way that they
 
 **POST**
 
-[TODO] Currently in order to create a rule,  you ...
+Currently, in order to create a rule component, you do a POST to `/rules/:rule_id/rule_components` with the following payload body:
+```
+{
+  "data": {
+    "attributes": {
+      "delegate_descriptor_id": "kessel-test::events::click",
+      "name": "My Example Click Event",
+      "settings": "{\"elementSelector\":\".accordion\",\"bubbleFireIfChildFired\":true}"
+    },
+    "relationships": {
+      "extension": {
+        "data": {
+          "id": "EX9d00daf64549414caf28ed48e62da98c",
+          "type": "extensions"
+        }
+      }
+    },
+    "type": "rule_components"
+  }
+}
+```
 
-[TODO] The new way to create a rule is to ...
-
-**PATCH**
-
-[TODO] Currently in order to update a rule, you ...
-
-[TODO] The new way to update a rule is to ...
+The new way to create a rule component is doing a POST to `properties/:property_id/rule_components` with a slightly different payload body.
+The change to the payload body consists in adding the rules relationship, which, at this point, can only have one rule:
+```
+{
+  "data": {
+    "attributes": {
+      "delegate_descriptor_id": "kessel-test::events::click",
+      "name": "My Example Click Event",
+      "settings": "{\"elementSelector\":\".accordion\",\"bubbleFireIfChildFired\":true}"
+    },
+    "relationships": {
+      "extension": {
+        "data": {
+          "id": "EX9d00daf64549414caf28ed48e62da98c",
+          "type": "extensions"
+        }
+      },
+      "rules": {
+        "data": [
+          {
+            "id": "RL76c41cada90344989e25d091fa677f29",
+            "type": "rules
+          }
+        ]
+      }
+    },
+    "type": "rule_components"
+  }
+}
+```
 
 {% endalert %}
 
