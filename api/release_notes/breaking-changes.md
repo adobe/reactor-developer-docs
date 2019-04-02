@@ -113,7 +113,7 @@ These endpoints are paginated and filterable like all other list endpoints.
 
 **GET Rule and include Rule Components**
 
-Currenly if you want to retrieve the Rule Components in a Rule, you can do it in two ways:
+Currently if you want to retrieve the Rule Components in a Rule, you can do it in two ways:
 `rules/:id/rule_components`
 `rules/:id?include=rule_components`
 
@@ -176,18 +176,45 @@ So if you're using `LIKE` you need to change it to `CONTAINS` to keep the same b
 
 From the beginning, whenever we've Adapters have come up in a conversation, we immediately have to describe what it is, because the meaning is not obvious from the name.  We've put this off long enough, and we're changing the name.
 
-`Adapter` is changing to `Host`.  Along with this change, there is actually a `host` attribute on the `Adapter`, and having a `Host.host` attribute is just confusing, so this attribute is changing to be `Host.url`.
+`Adapter` is changing to `Host`.  Along with this change, there is actually a `host` attribute on the `Adapter`, and having a `Host.host` attribute is just confusing, so this attribute is changing to be `Host.server`.
 
 #### POST
 
-[TODO]
+To create a `Host`, you need to do a `POST /properties/:property_id/hosts` with the a payload body similar to:
+```
+{
+  "data": {
+    "attributes": {
+      "name": "Example SFTP Host",
+      "type_of": "sftp",
+      "username": "John Doe",
+      "encrypted_private_key": "-----BEGIN PGP MESSAGE-----\n\nhQIMAwB8kNQ7jtk8AQ/+IPE+jteweLyNgdkzkBWN4c+wpRfTP9ionSywdWzZsRZ2\ngpIHLidqCgM+iRw0CgbAKhdAmA1wVyWP4HCa0eJuNCVwj+NqJlWW8qWxCWeZi2KC\nhqsoaB5+xIbS3Jwt8S4Na+DgvyjSj88sALvG9Y/xqNexRvcuvv0KKFoVYPOeW/w9\n+6x+vUmZFrTWMaNtKH6X9kifo5l+05d3XngPLfml4cKzWmO1f3FEvTX0O4nJurQ7\nNc27dt2XAO5Y8bqCClQ6AHOFVrkKnTifHF79A3AhCB5E9wMY4FJ/EReZ6Uk0ixOn\n76XeGbkl1jidajM5G/gylwEwOXN8CVy5DQyvxGulhsaaqtri7GZxQC5HUTETIHwO\nxThAttH22uaBjhMmYiCvPzSL4Z9UNFZeGPfb17k5E1kauprR2ItUJX86+Cid/FnR\nW7QN/8J4Jnf6Ggp90VujV0uIvdyLYq3T0xe9WZmONJaQ5bDYDv5ZfkcapOvXw4zr\nxrL1vrpZ5Qfu8oLQ19JOT2o7e3p8Kh7lDPIL7RH2bYesinLJ7wdopmkpj4/4gpHK\njzlWalZd75PEsttsUJ+ODVSOXG7iVhx9EvkZagUo0oeZ3oY1Jy5oik/gvVp28wDO\n8T1uYK/jeCSiuslxCYxth8a+5Wgiy8Jw1vHCRudsNgU1x2zYuOJetJS14Z/CTETS\nTgGPh0J6fQEvzZTM6AEJpRs+cVZV1hnTspyo2S5wv/SdrbqMkVHhs8rlq/0PWpSB\nLhLNlh8kLPR0KOG0V79GEO20At0HL/yGny/GKrTyAw==\n=oRpa\n-----END PGP MESSAGE-----\n",
+      "server": "//example.com",
+      "path": "assets",
+      "port": 22
+    },
+    "type": "hosts"
+  }
+}
+```
 
 #### PATCH
 
-[TODO]
+To update a `Host`, you need to do a `PATCH /properties/:property_id/hosts` with the a payload body similar to:
+```
+{
+  "data": {
+    "attributes": {
+      "name": "My new SFTP Host"
+    },
+    "id": "HT294b93994b7c462285602283a6437e43",
+    "type": "hosts"
+  }
+}
+```
 
 #### GET
 
-[TODO]
+To fetch a `Host`, you need to do a `GET /hosts/:id`
 
 {% endalert %}
