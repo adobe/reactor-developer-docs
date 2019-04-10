@@ -4,11 +4,11 @@ title: Create
 
 # Create an Extension
 
-Add an ExtensionPackage to Extension to a Property. Installation is an
+Add an Extension to a Property. Installation is an
 asynchronous action. After performing a request to add an Extension to a
 Property, an Extension response will be returned with an
 `installation_status` of `pending`. When the installation task has
-completed, the Extension will be updated with based on the success or
+completed, the Extension will be updated based on the success or
 failure of the task.
 
 Extensions are processed asynchronously and have an `installation_status`
