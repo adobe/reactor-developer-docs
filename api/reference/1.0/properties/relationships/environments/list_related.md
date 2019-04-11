@@ -1,8 +1,8 @@
 ---
-title: List
+title: List related
 ---
 
-# List Environments for a Property
+# List related Environments
 
 Retrieve the Environments owned by the specified Property.
 

@@ -1,5 +1,5 @@
 ---
-title: Delete an Environment
+title: Delete
 ---
 
 # Delete an Environment
