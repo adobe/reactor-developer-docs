@@ -1,5 +1,5 @@
 ---
-title: List Environments for a Property
+title: List
 ---
 
 # List Environments for a Property
