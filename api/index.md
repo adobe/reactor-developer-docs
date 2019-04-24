@@ -5,7 +5,7 @@ layout: documentation
 
 {% alert error, BREAKING CHANGES %}
 
-**The Reactor API is preparing for a 1.0 release on May 1, 2019.**
+**The Reactor API is preparing for a 1.0 release on May 8, 2019.**
 
 Starting with this 1.0 release, the Reactor API will maintain backwards compatibility so that you can build on top of it in production settings without worrying about breaking changes.
 
