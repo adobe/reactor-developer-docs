@@ -39,7 +39,7 @@ By returning a promise, your extension is signaling to Adobe Analytics that it s
 
 ## get-tracker
 
-If you would like to access the tracker any time after it has been fully initialized, you may do so using the `get-tracker` shared module as follows:
+If you would like to access the tracker after it has been fully initialized, you may do so using the `get-tracker` shared module as follows:
 
 ```js
 var getTracker = turbine.getSharedModule('adobe-analytics', 'get-tracker');
