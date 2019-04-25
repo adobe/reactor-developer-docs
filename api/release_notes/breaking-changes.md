@@ -4,7 +4,7 @@ title: Breaking Changes
 
 # Breaking Changes for Reactor API 1.0
 
-The Reactor API that powers Launch is preparing for it's initial 1.0 release on May 1.  This release will come along with a commitment to backward compatibility.  But we are not there yet, and there are a few breaking changes that we need to make in preparation for that release.
+The Reactor API that powers Launch is preparing for it's initial 1.0 release on May 8, 2019.  This release will come along with a commitment to backward compatibility.  But we are not there yet, and there are a few breaking changes that we need to make in preparation for that release.
 
 The intent is to give all API users the notice of these changes and the knowledge/tools they'll need in order to upgrade their API usage to accomodate these changes prior to their release on May 1.
 
