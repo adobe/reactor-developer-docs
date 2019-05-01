@@ -9,7 +9,7 @@ layout: documentation
 
 Starting with this 1.0 release, the Reactor API will maintain backwards compatibility so that you can build on top of it in production settings without worrying about breaking changes.
 
-However, there are a few breaking changes that we need to make in preparation for that release.  See [Breaking Changes](/api/release_notes/breaking-changes) for details on what changes are being made and what you'll need to do to accommodate those changes before May 1.
+However, there are a few breaking changes that we need to make in preparation for that release.  See [Breaking Changes](/api/release_notes/breaking-changes) for details on what changes are being made and what you'll need to do to accommodate those changes before May 8.
 
 {% endalert %}
 
