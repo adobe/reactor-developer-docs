@@ -246,3 +246,7 @@ In this case, because the value of `productName` is more than a single data elem
   productName: 'Ceiling Medallion Pro - 2000'
 }
 ```
+
+## Avoid Navigation
+
+Communication between the extension view and the containing Launch user interface is contingent upon no navigation occurring within the extension view. As such, please avoid adding anything to your extension view that would allow the user to navigate away from the extension view's HTML page. For example, if you provide a link within your extension view, ensure it opens a new browser window (typically by adding `target="_blank"` to the anchor tag). If you choose to use a `form` element inside your extension view, ensure that the form is never submitted. Submitting the form can accidentally occur if you have a `button` element within the form and fail to add `type="button"` to it. Submitting a form within your extension view would cause the HTML document to refresh, resulting in a broken user experience.
