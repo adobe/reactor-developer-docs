@@ -105,6 +105,7 @@ When an `ExtensionPackage` is created, `availability` is set to `development`. A
   -H <span class="s2">"Content-Type: multipart/form-data"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer [TOKEN]"</span> <span class="se">\</span>
   -H <span class="s2">"X-Api-Key: [KEY]"</span> <span class="se">\</span>
+  -H <span class="s2">"X-Gw-Ims-Org-Id: [ORG_ID]"</span> <span class="se">\</span>
   -F <span class="s2">"package"="@[PATH]"</span> <span class="se"></span>
 </code></pre>
 </div>
