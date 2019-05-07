@@ -28,6 +28,7 @@ curl -X PATCH \
   -H 'authorization: Bearer [TOKEN]' \
   -H 'cache-control: no-cache' \
   -H 'x-api-key: Activation-DTM' \
+  -H 'x-gw-ims-org-id: [ORG_ID]' \
   -d \
 '
 {

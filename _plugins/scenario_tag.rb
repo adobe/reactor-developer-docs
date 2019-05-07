@@ -17,6 +17,7 @@ curl https://reactor.adobe.io#{@endpoint['path']} \\
   -H "Content-Type: application/vnd.api+json" \\
   -H "Authorization: Bearer [TOKEN]" \\
   -H "X-Api-Key: [KEY]" \\
+  -H "X-Gw-Ims-Org-Id: [ORG_ID]" \\
   #{build_curl_request_method}
   #{build_curl_request_options}
 EOF
