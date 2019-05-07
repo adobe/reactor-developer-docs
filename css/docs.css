@@ -715,3 +715,8 @@ blockquote.last {
 .docutils code {
   padding: 2px 5px 2px 5px;
 }
+
+.spectrum.spectrum--dark .spectrum-Alert pre,
+.spectrum.spectrum--dark .spectrum-Alert code {
+  background-color: rgb(50, 50, 50);
+}
