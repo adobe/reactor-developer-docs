@@ -16,10 +16,10 @@ title: Overview
 
 When a `Build` is requested by the Launch user, Launch will check the `Library` to determine which `Environment` should build for.  The `Environment` has a relationship with the `Host` and that is how Launch knows which `Host` to use to deliver the `Build.
 
-An `Host` belongs to exactly one `Property`.  A `Property` may have many `Hosts`.
+A `Host` belongs to exactly one `Property`.  A `Property` may have many `Hosts`.
 
-An `Host` can be used by more than one `Environment` within a `Property`.  It is common to have a single `Host` on a `Property`, and have all `Environments` on that `Property` use the same `Host`.
+A `Host` can be used by more than one `Environment` within a `Property`.  It is common to have a single `Host` on a `Property`, and have all `Environments` on that `Property` use the same `Host`.
 
-Each Launch `Property` must have at least one `Host` before you can publish.  An adapter may only belong to a single property.
+Each Launch `Property` must have at least one `Host` before you can publish.  A host may only belong to a single property.
 
-You can read more about `Hosts` in the [Hosts section](https://docs.adobelaunch.com/launch-reference/publishing/adapters) of the Launch User docs.
+You can read more about `Hosts` in the [Hosts section](https://docs.adobelaunch.com/launch-reference/publishing/hosts) of the Launch User docs.

@@ -8,6 +8,6 @@ title: Create
 
 ## Attributes
 
-{% form adapter.create %}
+{% form host.create %}
 
-{% scenario adapters.create adapters.create_an_adapter %}
+{% scenario hosts.create hosts.create_a_host %}

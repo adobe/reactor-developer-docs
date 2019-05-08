@@ -12,6 +12,6 @@ Only Hosts with `type_of: sftp` may be updated.
 
 ## Attributes
 
-{% form adapter.update %}
+{% form host.update %}
 
-{% scenario adapters.update %}
+{% scenario hosts.update %}

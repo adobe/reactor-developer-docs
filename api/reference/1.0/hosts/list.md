@@ -8,4 +8,4 @@ title: List
 
 Retrieve the Hosts used by the specified Property.
 
-{% scenario adapters.index %}
+{% scenario hosts.index %}

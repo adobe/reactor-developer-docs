@@ -6,6 +6,6 @@ title: Fetch
 
 {% labels %}
 
-Retrieve the data for an existing Adapter, based on its ID.
+Retrieve the data for an existing Host, based on its ID.
 
-{% scenario adapters.show %}
+{% scenario hosts.show %}

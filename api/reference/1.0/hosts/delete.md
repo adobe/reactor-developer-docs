@@ -6,5 +6,5 @@ title: Delete
 
 {% labels %}
 
-{% scenario adapters.delete %}
+{% scenario hosts.delete %}
 

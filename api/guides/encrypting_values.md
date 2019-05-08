@@ -6,7 +6,7 @@ title: Encrypting Values
 
 Some portions of the Launch platform require supplying sensitive values.
 For example, providing a private key to be used in the delivery of libraries to
-Environments via Adapters. The sensitive nature of those credentials necessitates
+Environments via Hosts. The sensitive nature of those credentials necessitates
 secure transfer and storage.
 
 The Launch platform achieves this by utilizing GPG encryption and decryption.
@@ -93,7 +93,7 @@ corresponds to the `Adobe Launch Data Encryption <launch@adobe.com>` public key.
 This output is the value that should be supplied in a request to the Launch
 platform. The Launch platform would store this encrypted output it and
 temporarily decrypt it as necessary. For example, the Launch platform would
-decrypt Adapter credentials long enough to initiate a connection to the server
+decrypt Host credentials long enough to initiate a connection to the server
 and immediately remove all traces of the decrypted value.
 
 {% alert info, Reminder %}
