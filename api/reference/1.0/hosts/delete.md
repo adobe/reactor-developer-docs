@@ -2,7 +2,7 @@
 title: Delete
 ---
 
-# Delete an Adapter
+# Delete a Host
 
 {% labels %}
 

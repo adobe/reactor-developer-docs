@@ -2,7 +2,7 @@
 title: Create
 ---
 
-# Create an Adapter
+# Create a Host
 
 {% labels %}
 

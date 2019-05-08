@@ -6,7 +6,7 @@ order: 2
 ### Glossary of Terms
 
  * __Launch__ = This is the public brand name Adobe has assigned to the product.
- * __Reactor__ = This is the original code name that Launch used.  It is now used to describe the underlying services that power Launch.  Now, you'll see it most commonly applied to the API that Launch is built upon, but you may also run into it when digging through our Git repos.
+ * __Reactor__ = This is used to describe the underlying services that power Launch.  You'll see it most commonly applied to the API that Launch is built upon, but you may also run into it when digging through our Git repos.
  * __Turbine__ = This is the name given to the JavaScript rule engine component within the Reactor Framework. It has been open sourced here: [https://github.com/Adobe-Marketing-Cloud/reactor-turbine](https://github.com/Adobe-Marketing-Cloud/reactor-turbine)   It is responsible for executing the client-side rule logic that framework developers can expand through extensions.
  * __Extensions__ = The name given to the pluggable modules that developers can extend and add to the platform in order to provide new or template functionality to the Launch product.
  * __Core Extension__ = Because we dog-food our own platform, most of the generic interactions like page loads, clicks, etc. that users/marketers would need from a client-side rule creator are built as their own extension.  Adobe will own and maintain this extension as well as its future browser compatibility.  We recommend developers not try to re-invent this functionality in their own extensions.

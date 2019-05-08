@@ -2,7 +2,7 @@
 title: Fetch
 ---
 
-# Fetch an Adapter
+# Fetch a Host
 
 {% labels %}
 
