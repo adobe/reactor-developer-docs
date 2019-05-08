@@ -13,10 +13,6 @@ The Launch platform achieves this by utilizing GPG encryption and decryption.
 Using GPG, sensitive values may be encrypted in such a way that they are only
 decryptable by the Launch platform.
 
-{% alert info, Reminder %}
-The API is in an alpha state. As such, the Launch public GPG key, and
-the steps to obtain it outlined below, are subject to change.
-{% endalert %}
 
 ## Obtain the public GPG key
 

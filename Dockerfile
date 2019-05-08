@@ -4,7 +4,7 @@ WORKDIR /srv/docs
 
 ADD . /srv/docs
 
-RUN bundle install && \
+RUN bundle install --jobs 4 && \
     JEKYLL_ENV=production bundle exec jekyll build && \
     tar -czf /tmp/docs.tar.gz -C _site \
       --exclude=*.un~ \
