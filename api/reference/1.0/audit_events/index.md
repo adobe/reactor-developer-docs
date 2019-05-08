@@ -22,7 +22,7 @@ You can replace `RESOURCE_TYPE` with any of the following:
 1. `library`
 1. `build`
 1. `environment`
-1. `adapter`
+1. `host`
 
 You can replace `EVENT` with any of the following:
 

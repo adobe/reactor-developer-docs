@@ -7,12 +7,12 @@ title: Overview
 Within Launch, a `Property` is simply a container to hold most of the other resources available within the API.  
 
 In the resource hierarchy, `Property` is the owner of:
-1. `Adapters`
 1. `Builds`
 1. `Callbacks`
 1. `DataElements`
 1. `Environments`
 1. `Extensions`
+1. `Hosts`
 1. `Libraries`
 1. `Rules`
 1. `RuleComponents`
