@@ -6,4 +6,6 @@ title: List
 
 Retrieve the Extensions used by the specified Property.
 
+{% filters extension %}
+
 {% scenario extensions.index %}

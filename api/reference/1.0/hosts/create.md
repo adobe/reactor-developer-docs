@@ -6,8 +6,6 @@ title: Create
 
 {% labels %}
 
-## Attributes
-
 {% form host.create %}
 
 {% scenario hosts.create hosts.create_a_host %}

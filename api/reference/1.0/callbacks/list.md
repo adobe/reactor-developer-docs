@@ -6,4 +6,6 @@ title: List
 
 Retrieve the Callbacks registered on the specified Property.
 
+{% filters callback %}
+
 {% scenario callbacks.index %}

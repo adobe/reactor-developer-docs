@@ -41,8 +41,6 @@ Extensions with an `installation_status` of `failed` are not available
 for use.
 
 
-## Attributes
-
 {% form extension.create %}
 
 {% scenario extensions.create %}

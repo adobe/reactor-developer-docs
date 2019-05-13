@@ -1,5 +1,6 @@
 require 'singleton'
 require_relative 'alert_block'
+require_relative 'filters_tag'
 require_relative 'form_tag'
 require_relative 'scenario_tag'
 require_relative 'errors_tag'
@@ -77,12 +78,16 @@ class ApiSpecification
     @spec['endpoints'].find { |e| e['name'] == ep.strip }
   end
 
-  def form(form_name)
-    @spec['forms'][form_name]
-  end
-
   def errors
     @spec['errors']
+  end
+
+  def filters
+    @spec['filterable_attributes']
+  end
+
+  def form(form_name)
+    @spec['forms'][form_name]
   end
 
   def scenario(scenario_name, endpoint)
@@ -128,6 +133,7 @@ class ApiSpecification
 end
 
 Liquid::Template.register_tag('alert', Jekyll::AlertBlock)
+Liquid::Template.register_tag('filters', Jekyll::FiltersTag)
 Liquid::Template.register_tag('form', Jekyll::FormTag)
 Liquid::Template.register_tag('scenario', Jekyll::ScenarioTag)
 Liquid::Template.register_tag('errors', Jekyll::ErrorsTag)

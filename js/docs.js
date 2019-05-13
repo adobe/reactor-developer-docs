@@ -150,6 +150,10 @@ window.addEventListener('DOMContentLoaded', function() {
   );
 });
 
+function toggleAccordion(item) {
+  toggleOpen(item.parentNode.parentNode);
+}
+
 function toggleMenu(elem) {
   let target = document.getElementById(elem.getAttribute('data-target'));
   toggleOpen(target);

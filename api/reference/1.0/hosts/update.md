@@ -10,8 +10,6 @@ title: Update
 Only Hosts with `type_of: sftp` may be updated.
 {% endalert %}
 
-## Attributes
-
 {% form host.update %}
 
 {% scenario hosts.update %}
