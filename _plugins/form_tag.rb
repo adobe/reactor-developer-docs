@@ -77,7 +77,7 @@ EOT
 
   def render_fields(fields)
     rendered_fields = ''
-    sorted_fields = fields.sort { |x,y| y[1]['required'] <=> x[1]['required'] }
+    sorted_fields = fields.sort_by { |o| [o[1]['required'] == 'true' ? 0 : 1, o[0]] }
     sorted_fields.each do |name, definition|
       requirement = definition['required'] == 'true' ? 'required' : 'optional'
       description = field_description(name) || definition.dig('description')
