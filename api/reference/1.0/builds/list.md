@@ -6,4 +6,6 @@ title: List
 
 Retrieve the Builds that belong to the specified Library.
 
+{% filters build %}
+
 {% scenario builds.index %}

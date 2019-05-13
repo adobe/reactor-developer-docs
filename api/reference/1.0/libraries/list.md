@@ -6,4 +6,6 @@ title: List
 
 Retrieve the Libraries owned by the specified Property.
 
+{% filters library %}
+
 {% scenario libraries.index %}

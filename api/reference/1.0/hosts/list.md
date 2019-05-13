@@ -8,4 +8,6 @@ title: List
 
 Retrieve the Hosts used by the specified Property.
 
+{% filters host %}
+
 {% scenario hosts.index %}

@@ -37,18 +37,55 @@ EOF
 
   def render(context)
     result = <<EOF
-<section class="scenario">
-  #{render_definition}
-  #{render_request}
-  #{render_response}
-</section>
+<div class="spectrum-Accordion" role="region">
+  <div class="spectrum-Accordion-item is-open" role="presentation">
+
+    <h3 class="spectrum-Accordion-itemHeading no-anchor">
+      <button class="spectrum-Accordion-itemHeader" type="button" onClick="toggleAccordion(this)" aria-expanded="true">Endpoint Definition</button>
+      <svg class="spectrum-Icon spectrum-UIIcon-ChevronRightMedium spectrum-Accordion-itemIndicator" focusable="false" aria-hidden="true">
+        <use xlink:href="#spectrum-css-icon-ChevronRightMedium" />
+      </svg>
+    </h3>
+
+    <div class="spectrum-Accordion-itemContent" role="region">
+      #{render_definition}
+    </div>
+  </div>
+
+  <div class="spectrum-Accordion-item is-open" role="presentation">
+
+    <h3 class="spectrum-Accordion-itemHeading no-anchor">
+      <button class="spectrum-Accordion-itemHeader" type="button" onClick="toggleAccordion(this)" aria-expanded="true">Example Request</button>
+      <svg class="spectrum-Icon spectrum-UIIcon-ChevronRightMedium spectrum-Accordion-itemIndicator" focusable="false" aria-hidden="true">
+        <use xlink:href="#spectrum-css-icon-ChevronRightMedium" />
+      </svg>
+    </h3>
+
+    <div class="spectrum-Accordion-itemContent" role="region">
+      #{render_request}
+    </div>
+  </div>
+
+  <div class="spectrum-Accordion-item is-open" role="presentation">
+
+    <h3 class="spectrum-Accordion-itemHeading no-anchor">
+      <button class="spectrum-Accordion-itemHeader" type="button" onClick="toggleAccordion(this)" aria-expanded="true">Example Response</button>
+      <svg class="spectrum-Icon spectrum-UIIcon-ChevronRightMedium spectrum-Accordion-itemIndicator" focusable="false" aria-hidden="true">
+        <use xlink:href="#spectrum-css-icon-ChevronRightMedium" />
+      </svg>
+    </h3>
+
+    <div class="spectrum-Accordion-itemContent" role="region">
+      #{render_response}
+    </div>
+  </div>
+</div>
 EOF
     result
   end
 
   def render_definition
     <<EOF
-<h1>Definition</h1>
 <div class="highlight">
   #{render_rouge("#{@scenario['method']}  #{@scenario['endpoint']}", 'bash')}
 </div>
@@ -57,7 +94,6 @@ EOF
 
   def render_request
     <<EOF
-<h1>Example Request</h1>
 <div class="highlight">
   #{render_rouge(build_curl_request, 'bash')}
 </div>
@@ -66,7 +102,6 @@ EOF
 
   def render_response
     template =<<EOT
-<h1>Example Response</h1>
 <div class="highlight">
   <em>#{@scenario['response_code']} #{@scenario['response_message']}</em>
   {{response}}

@@ -12,7 +12,4 @@ Revising an Extension is achieved by supplying an `action` with a value of
 `revise` in the `meta` of the request `data`.
 
 
-## Attributes
-
 {% scenario extensions.update extensions.revise_an_extension %}
-
