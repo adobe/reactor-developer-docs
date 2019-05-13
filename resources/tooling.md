@@ -32,3 +32,7 @@ This project provides a command-line utility for packaging a Launch extension in
 [Extension Uploader](https://www.npmjs.com/package/@adobe/reactor-uploader)
 
 This project provides a command-line utility for uploading a Launch extension to the Launch extension marketplace. It can be used for uploading brand new extension packages or new versions of existing extension packages.
+
+[Extension Releaser](https://www.npmjs.com/package/@adobe/reactor-releaser)
+
+This project provides a command-line utility for changing a Launch extension availability from `development` to `private` in the Launch extension marketplace.
