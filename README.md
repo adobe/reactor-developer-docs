@@ -9,6 +9,8 @@ Found something amiss with the documentation? Let us know via an
 
 ## Contributing
 
+Contributions are welcomed! Read the [Contributing Guide](CONTRIBUTING.md) for more information.
+
 The documentation site is built using [Jekyll](https://jekyllrb.com), a static
 website generator. While many documentation changes can be simple and using a
 markdown editor is sufficient to review changes, sometimes it's easier to see
@@ -85,3 +87,7 @@ docker logs -f reactor-developer-docs-dev
 #### Preview
 
 Open a browser to http://localhost:8000.
+
+## Licensing
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
