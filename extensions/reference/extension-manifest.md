@@ -300,6 +300,54 @@ When the settings object is emitted in the Launch runtime library, it will be tr
 
 In this case, the value of `foo.bar` has been transformed to a URL. The exact URL will be determined at the time the library is built. The file will always be given a `.js` extension and delivered using a JavaScript-oriented MIME type. We may add support for other MIME types in the future.
 
+### Remove Transform
+
+By default, all the properties of the settings object are emitted in the Launch runtime library. If certain properties contain sesitive information (eg. secret token), you can use the remove transform to not emit that information inside the Launch runtime library.
+
+Let's assume we would like to provide a new action type. The action type's view might provide an input wherein the user can enter a secret key that will allow connection to a specific API. Let's assume a user entered the following text into the input:
+
+`ABCDEFG`
+
+When the user saves the rule, the settings object saved by the view may look like this:
+
+```javascript
+{
+  foo: {
+    bar: "ABCDEFG"
+  }
+}
+```
+
+We would like to not include the property `bar` inside in the Launch runtime library. To solve our example problem, we would define the transform on the action type definition in `extension.json` as follows:
+
+```
+{
+  ...
+  "transforms": [
+    {
+      "type": "remove",
+      "propertyPath": "foo.bar"
+    }
+  ]
+  ...
+}
+```
+
+`type` defines the type of transform that should be applied to the settings object.
+
+`propertyPath` is a period-delimited string that tells Launch where to find the property that needs to be modified within the settings object.
+
+When the settings object is emitted in the Launch runtime library, it will be transformed to the following:
+
+```javascript
+{
+  foo: {
+  }
+}
+```
+
+In this case, the value of `foo.bar` has been removed from the settings object.
+
 ## Naming Rules
 
 The value of any `name` field within `extension.json` must comply with the following rules:
