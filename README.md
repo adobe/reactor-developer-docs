@@ -5,7 +5,7 @@ Developer documentation for Adobe Experience Platform Launch - https://developer
 ## Issues
 
 Found something amiss with the documentation? Let us know via an
-[issue](https://github.com/Adobe-Marketing-Cloud/reactor-developer-docs/issues).
+[issue](https://github.com/adobe/reactor-developer-docs/issues).
 
 ## Contributing
 

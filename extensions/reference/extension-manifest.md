@@ -7,7 +7,7 @@ order: 14
 
 In your extension's base directory you must create a file called `extension.json`. This contains critical details about your extension that allows Launch to properly consume it. Some of the contents are formed after the manner of [npm's `package.json`](https://docs.npmjs.com/files/package.json).
 
-An example `extension.json` can be found [in our Hello World extension](https://github.com/Adobe-Marketing-Cloud/reactor-helloworld-extension/blob/master/extension.json).
+An example `extension.json` can be found [in our Hello World extension](https://github.com/adobe/reactor-helloworld-extension/blob/master/extension.json).
 
 An `extension.json` must consist of the following:
 
