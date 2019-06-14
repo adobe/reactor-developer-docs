@@ -1,3 +1,14 @@
+/*
+Copyright 2019 Adobe
+All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in
+accordance with the terms of the Adobe license agreement accompanying
+it. If you have received this file from a source other than Adobe,
+then your use, modification, or distribution of it requires the prior
+written permission of Adobe.
+*/
+
 h1 {
   font-size: 28px;
   font-weight: 300;
@@ -344,7 +355,9 @@ pre.html {
   display: none;
 }
 .sdldocs-components {
-  flex: 1;
+  flex-grow: .95;
+  flex-shrink: inherit;
+  flex-basis: 0;
 }
 
 .row {
@@ -486,7 +499,7 @@ pre.html {
 }
 
 #main-nav a {
-  padding-bottom: 9px;
+  padding-bottom: 12px;
   text-decoration: none;
   margin-right: 20px;
 }
@@ -499,6 +512,9 @@ pre.html {
   color: #ff8ce6;
 }
 
+pre {
+  word-wrap: break-word;
+}
 
 code,
 pre {
@@ -513,11 +529,6 @@ code {
 
 pre code {
   padding: 0
-}
-
-code,
-pre {
-  /* margin-top: 10px; */
 }
 
 code, code.prettyprint, pre.prettyprint {
@@ -714,4 +725,9 @@ blockquote.last {
 
 .docutils code {
   padding: 2px 5px 2px 5px;
+}
+
+.spectrum.spectrum--dark .spectrum-Alert pre,
+.spectrum.spectrum--dark .spectrum-Alert code {
+  background-color: rgb(50, 50, 50);
 }

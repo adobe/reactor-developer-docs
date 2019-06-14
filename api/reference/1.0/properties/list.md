@@ -6,4 +6,6 @@ title: List
 
 Retrieve the Properties owned by the specified Company.
 
+{% filters property %}
+
 {% scenario properties.index %}

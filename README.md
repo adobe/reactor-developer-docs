@@ -5,9 +5,11 @@ Developer documentation for Adobe Experience Platform Launch - https://developer
 ## Issues
 
 Found something amiss with the documentation? Let us know via an
-[issue](https://github.com/Adobe-Marketing-Cloud/reactor-developer-docs/issues).
+[issue](https://github.com/adobe/reactor-developer-docs/issues).
 
 ## Contributing
+
+Contributions are welcomed! Read the [Contributing Guide](CONTRIBUTING.md) for more information.
 
 The documentation site is built using [Jekyll](https://jekyllrb.com), a static
 website generator. While many documentation changes can be simple and using a
@@ -85,3 +87,7 @@ docker logs -f reactor-developer-docs-dev
 #### Preview
 
 Open a browser to http://localhost:8000.
+
+## Licensing
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for more information.

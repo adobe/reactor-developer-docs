@@ -91,13 +91,25 @@ Your view should use this information to render and manage its form. It is likel
 
 #### `validate() => boolean`
 
-The `validate` method will be called after the user hits the "Save" button in Launch. It should return a boolean indicating whether the user's input is valid. It's up to you as the extension developer to determine what constitutes valid input since your library module will be acting upon that input.
+The `validate` method will be called after the user hits the "Save" button in Launch.
+
+It should return one of the following:
+* a boolean indicating whether the user's input is valid
+* a promise to later be resolved with a boolean indicating whether the user's input is valid
+
+It's up to you as the extension developer to determine what constitutes valid input since your library module will be acting upon that input.
 
 If the user's input is invalid, please show some indication of this within your view so users will know what needs to be corrected.
 
 #### `getSettings() => Object`
 
-The `getSettings` method will be called after the user hits the "Save" button in Launch and the view has been validated. The function should return an object containing settings based on user input. This settings object will later be emitted in the Launch runtime library. **As such, it is extremely important that you do not store sensitive data within this object.** The content of this object is under your discretion. The object must be serializable and deserializable to and from JSON. Values such as functions or [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) instances don't meet these criteria and are therefore not allowed.
+The `getSettings` method will be called after the user hits the "Save" button in Launch and the view has been validated.
+
+The function should return one of the following:
+* an object containing settings based on user input
+* a promise to later be resolved with an object containing settings based on user input
+
+This settings object will later be emitted in the Launch runtime library. The content of this object is under your discretion. The object must be serializable and deserializable to and from JSON. Values such as functions or [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) instances don't meet these criteria and are therefore not allowed.
 
 ## Leveraging Shared Views
 
@@ -234,3 +246,7 @@ In this case, because the value of `productName` is more than a single data elem
   productName: 'Ceiling Medallion Pro - 2000'
 }
 ```
+
+## Avoid Navigation
+
+Communication between the extension view and the containing Launch user interface is contingent upon no navigation occurring within the extension view. As such, please avoid adding anything to your extension view that would allow the user to navigate away from the extension view's HTML page. For example, if you provide a link within your extension view, ensure it opens a new browser window (typically by adding `target="_blank"` to the anchor tag). If you choose to use a `form` element inside your extension view, ensure that the form is never submitted. Submitting the form can accidentally occur if you have a `button` element within the form and fail to add `type="button"` to it. Submitting a form within your extension view would cause the HTML document to refresh, resulting in a broken user experience.

@@ -1,3 +1,14 @@
+/*
+Copyright 2019 Adobe
+All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in
+accordance with the terms of the Adobe license agreement accompanying
+it. If you have received this file from a source other than Adobe,
+then your use, modification, or distribution of it requires the prior
+written permission of Adobe.
+*/
+
 /* eslint-disable no-unused-vars */
 /* global document, window, Element, URLSearchParams */
 
@@ -25,38 +36,6 @@ function changeCSS(colorStop) {
     document.querySelector('link[data-pygments]').setAttribute('href', '/css/pygments-dark.css');
   }
 }
-
-function openDialog(dialog, withOverlay) {
-  if (withOverlay !== false) {
-    document.getElementById('spectrum-underlay').classList.add('is-open');
-  }
-
-  dialog.classList.add('is-open');
-}
-
-function closeDialog(dialog) {
-  document.getElementById('spectrum-underlay').classList.remove('is-open');
-  dialog.classList.remove('is-open');
-  setTimeout(function() {
-    dialog.classList.remove('cssdocs-Dialog');
-  }, 10);
-}
-
-// Show and hide code samples
-function toggleMarkupVisibility(event) {
-  event.preventDefault();
-  var exampleMarkup = event.target.closest('.cssdocs-example-markup');
-  var style = window.getComputedStyle(exampleMarkup);
-  var isOpen = exampleMarkup.classList.contains('is-open');
-  event.target.innerHTML = isOpen ? 'Show Markup' : 'Hide Markup';
-  exampleMarkup.classList.toggle('is-open');
-}
-
-document.addEventListener('click', function(event) {
-  if (event.target.classList.contains('js-markup-toggle')) {
-    toggleMarkupVisibility(event);
-  }
-});
 
 window.addEventListener('click', function(event) {
   var isDisabled = event.target.closest('.spectrum-TreeView-item') !== null &&
@@ -169,30 +148,33 @@ window.addEventListener('DOMContentLoaded', function() {
   if (selectedNavItem) {
     selectedNavItem.scrollIntoView();
   }
+
+  var CONTENT_CONTAINER = '.sdldocs-components';
+  anchors.add(
+    '' +
+    CONTENT_CONTAINER + ' h1:not(.no-anchor), ' +
+    CONTENT_CONTAINER + ' h2:not(.no-anchor), ' +
+    CONTENT_CONTAINER + ' h3:not(.no-anchor), ' +
+    CONTENT_CONTAINER + ' h4:not(.no-anchor), ' +
+    CONTENT_CONTAINER + ' h5:not(.no-anchor), ' +
+    CONTENT_CONTAINER + ' h6:not(.no-anchor)'
+  );
 });
 
-function changeLoader(loader, value, submask1, submask2) {
-  submask1 = submask1 || loader.querySelector('.spectrum-CircleLoader-fillSubMask1');
-  submask2 = submask2 || loader.querySelector('.spectrum-CircleLoader-fillSubMask2');
-  var angle;
-  if(value > 0 && value <= 50) {
-    angle = -180 + (value/50 * 180);
-    submask1.style.transform = 'rotate('+angle+'deg)';
-    submask2.style.transform = 'rotate(-180deg)';
-  }
-  else if (value > 50) {
-    angle = -180 + (value-50)/50 * 180;
-    submask1.style.transform = 'rotate(0deg)';
-    submask2.style.transform = 'rotate('+angle+'deg)';
-  }
+function toggleAccordion(item) {
+  toggleOpen(item.parentNode.parentNode);
 }
 
 function toggleMenu(elem) {
   let target = document.getElementById(elem.getAttribute('data-target'));
-  if (target.classList.contains('is-open')) {
-    target.classList.remove('is-open');
+  toggleOpen(target);
+}
+
+function toggleOpen(elem) {
+  if (elem.classList.contains('is-open')) {
+    elem.classList.remove('is-open');
   }
   else {
-    target.classList.add('is-open');
+    elem.classList.add('is-open');
   }
 }

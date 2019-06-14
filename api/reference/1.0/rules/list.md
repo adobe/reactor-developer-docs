@@ -6,4 +6,6 @@ title: List
 
 Retrieve the Rules used by the specified Property.
 
+{% filters rule %}
+
 {% scenario rules.index %}

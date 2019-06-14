@@ -6,12 +6,12 @@ title: Overview
 
 `Extensions`, `Rules`, and `DataElements` are building blocks.  When you want to make your application do something, these building blocks are added to a `Library`. A `Library` is built into a `Build`.  The exact contents of the `Build` depend upon the `Environment` settings and the resources included in the `Library`.  Specifically, the `Environment` determines:
 
-1. Destination - This is the location where you want your build to be deployed.  It is controlled by selecting an `Adapter` for the environment to use
+1. Destination - This is the location where you want your build to be deployed.  It is controlled by selecting a `Host` for the environment to use
 1. Archive - You can get a deployable set of files or have it zipped up in an archive format.  This is controlled by the archive setting on the `Environment`.
 
 The combination of destination and archive format will change how you reference the `Build` that Launch produces (that reference is often called an embed code).  If you make any changes to destination or file format, you'll need to make a matching update to your application to use the new reference.
 
-You'll need to create an `Adapter` before you can create an `Environment`.
+You'll need to create a `Host` before you can create an `Environment`.
 
 `Environments` come in three types or `stages` and you can create the specified number of each:
 

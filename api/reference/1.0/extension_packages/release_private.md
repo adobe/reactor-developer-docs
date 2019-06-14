@@ -27,6 +27,7 @@ A Private release is achieved by supplying an `action` with a value of `release_
   -H <span class="s2">"Content-Type: application/vnd.api+json"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer [TOKEN]"</span> <span class="se">\</span>
   -H <span class="s2">"X-Api-Key: [KEY]"</span> <span class="se">\</span>
+  -H <span class="s2">"X-Gw-Ims-Org-Id: [ORG_ID]"</span> <span class="se">\</span>
   -X PATCH <span class="se">\</span>
   -d <span class="se">\</span>
 <span class="s1">'
