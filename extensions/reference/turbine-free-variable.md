@@ -105,7 +105,7 @@ Logging utility used to log messages to the console. Messages will only show in 
 
 * `logger.debug(message: string)`
 
-  Logs an debug message to the console. (Visible only when `verbose` logging is enabled.)
+  Logs a debug message to the console. (Visible only when `verbose` logging is enabled.)
 
 ### `turbine.propertySettings: Object`
 
