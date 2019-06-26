@@ -33,7 +33,7 @@ If you make any of these changes, anyone who has installed your extension in the
 
 * Rules no longer render properly because one of the rule components is looking for a component that doesn't exist
 * All builds fail because the Library includes an upstream resource that no longer exists on the Extension
-* All builds fail because the Library includes a resource with settings that cannot be validated against the new schema
+* All builds fail because the Library includes a resource with settings that fail validation against the new schema
 
 Particularly in this second case, users can be left without a remedy and no way to fix their property so they can publish again.
 
