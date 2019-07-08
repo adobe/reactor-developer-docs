@@ -26,12 +26,14 @@ The following types of changes to your extension are not allowed:
 1. You may not remove a component.
 1. You may not remove a field from a component.
 1. You may not change optional fields to required fields.
+1. You may not add new required fields.
 1. You may not change the API of existing shared modules.
 
 If you make any of these changes, anyone who has installed your extension in their property will immediately begin to have problems such as:
 
 * Rules no longer render properly because one of the rule components is looking for a component that doesn't exist
 * All builds fail because the Library includes an upstream resource that no longer exists on the Extension
+* All builds fail because the Library includes a resource with settings that fail validation against the new schema
 
 Particularly in this second case, users can be left without a remedy and no way to fix their property so they can publish again.
 
