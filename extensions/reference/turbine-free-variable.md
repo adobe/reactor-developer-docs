@@ -103,6 +103,10 @@ Logging utility used to log messages to the console. Messages will only show in 
 
   Logs an error message to the console.
 
+* `logger.debug(message: string)`
+
+  Logs a debug message to the console. (Visible only when `verbose` logging is enabled within your browser console.)
+
 ### `turbine.propertySettings: Object`
 
 ```javascript
