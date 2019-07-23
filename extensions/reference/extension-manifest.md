@@ -108,6 +108,10 @@ An `extension.json` must consist of the following:
 
     We recommend using a tool like [JSON Schema validator](http://www.jsonschemavalidator.net/) to manually test your schema.
 
+  * `transforms` (optional)
+
+    An array of objects where each object represents a transformation that should be performed on every corresponding settings object when it is emitted into the runtime library. See the [Transforming Settings Objects](#transforming-settings-objects) section for more information on why this may be needed and how it is used.
+
 * `events` (optional)
 
   An array of [event](../event-types) type definitions. See the [type definition](#type-definition) section for the structure of each object in the array.
