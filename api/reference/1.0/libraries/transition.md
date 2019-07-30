@@ -32,7 +32,7 @@ Available actions: `reject`
 #### `rejected`
 
 The Library was rejected. Rejected libraries may be transitioned back to
-`development` for additional changes and submitted for an other review.
+`development` for additional changes and submitted for another review.
 
 Available actions: `develop`
 

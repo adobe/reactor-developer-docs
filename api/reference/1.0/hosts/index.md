@@ -14,7 +14,7 @@ title: Overview
 1. `akamai`
 1. `sftp`
 
-When a `Build` is requested by the Launch user, Launch will check the `Library` to determine which `Environment` should build for.  The `Environment` has a relationship with the `Host` and that is how Launch knows which `Host` to use to deliver the `Build.
+When a `Build` is requested by the Launch user, Launch will check the `Library` to determine which `Environment` it should be built for.  The `Environment` has a relationship with the `Host` and that is how Launch knows which `Host` to use to deliver the `Build.
 
 A `Host` belongs to exactly one `Property`.  A `Property` may have many `Hosts`.
 

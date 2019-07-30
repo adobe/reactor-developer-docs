@@ -26,7 +26,7 @@ Depending on the `state`, `Environments` of different types can then be assigned
 | rejected | The `Library` has been rejected | No | `develop` | Development |
 | published | The `Library` has been published to Production | No | n/a | Production |
 
-You may only add resources to a `Library` which is `development`.  `Submitted` and `Approved` `Libraries` may be transitioned to `rejected`.  Rejected `Libraries` may be transitioned back to `development` for additional changes and submitted for an other review.
+You may only add resources to a `Library` which is `development`.  `Submitted` and `Approved` `Libraries` may be transitioned to `rejected`.  Rejected `Libraries` may be transitioned back to `development` for additional changes and submitted for another review.
 
 Putting this altogether, a sample publishing flow might look something like this:
 1. Create a new `Library` (new `Libraries` are created in the `development `state`)
