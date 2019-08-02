@@ -10,7 +10,7 @@ To get you up and running and building extensions, we will be using the open-sou
 
 - [Node.js](https://nodejs.org/en/download/)
 
-Node.js comes bundles with npm. The version of npm you must have installed is 5.2.0 or greater. You can determine the version of npm you have installed by running the following command from the command line:
+Node.js comes bundled with npm. The version of npm you must have installed is 5.2.0 or greater. You can determine the version of npm you have installed by running the following command from the command line:
 
 ```
 npm -v
