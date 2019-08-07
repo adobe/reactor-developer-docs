@@ -25,6 +25,7 @@ If you are passing a `meta` block on a PATCH request, any `attributes` that you 
 
 * Libraries - cannot be modified and transitioned to a new state at the same time
 * Extensions, Rules, and Data Elements - cannot be modified and revised at the same time
+* Hosts - cannot be modified and initiate a test at the same time
 
 ### 2) Other
 
