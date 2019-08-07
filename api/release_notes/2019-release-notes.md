@@ -57,7 +57,7 @@ rules/:rule_id?include=rule_components
 
 ### 3) Rule Components belong to Properties now
 
-Rule Components used to exist as a child of a Rule.  That made it impossible to reuse the same components across multiple rules.  In order to enable us to add this capability in the future, Rule Components need to move out from under a Rule and live at the Property level.
+Rule Components used to exist as children of a Rule.  That made it impossible to reuse the same components across multiple rules.  In order to enable us to add this capability in the future, Rule Components need to move out from under a Rule and live at the Property level.
 
 Please see [Rule Components](/api/reference/1.0/rule_components/) for detailed examples.
 
