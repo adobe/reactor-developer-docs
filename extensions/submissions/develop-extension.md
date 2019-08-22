@@ -5,7 +5,7 @@ order: 4
 
 # Develop an Extension
 
-An extension should be thought of as a (small) product with its own requirements. Determining how a Launch user will want to use your extension can help you sort the functionality into what Events, Conditions, Actions, and Data Elements your extension should provide.
+An extension should be thought of as a (small) product with its own requirements. Determining how a Launch user will want to use your extension can help you sort the functionality into what event types, condition types, action types, and data element types your extension should provide.
 
 With that knowledge you can plan out what components should be provided in your Extension.
 
@@ -29,7 +29,8 @@ There are also a number of NPM tools to help you with your extension package dev
 - [Launch Extension Scaffold Tool](https://www.npmjs.com/package/@adobe/reactor-scaffold) helps you easily create a starter project on your local machine
 - [Launch Extension Sandbox](https://www.npmjs.com/package/@adobe/reactor-sandbox) helps you validate your extension views and modules on your local machine
 - [Launch Extension Packager](https://www.npmjs.com/package/@adobe/reactor-packager) is a command-line utility for packaging a Launch extension into a zip file
-- [Reactor Uploader](https://www.npmjs.com/package/@adobe/reactor-uploader) - interactive command line tool to help you input your technical account credentials and upload your extension package to Launch
+- [Launch Extension Uploader](https://www.npmjs.com/package/@adobe/reactor-uploader) is an interactive command line tool to help you input your technical account credentials and upload your extension package to Launch
+- [Launch Extension Releaser](https://www.npmjs.com/package/@adobe/reactor-releaser) is an interactive command line tool to help you release your extension to private availability
 
 ## Example Extensions
 
