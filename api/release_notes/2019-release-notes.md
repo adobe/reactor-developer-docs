@@ -4,6 +4,33 @@ title: 2019 Release Notes
 
 # 2019 Reactor Release Notes
 
+## 2019-07-30
+
+### 1) Removed some unsupported capabilities
+
+* We removed the undocumented/unsupported old method of adding rule components.
+* We removed the `LIKE` modifier on filters, this was replaced with a `CONTAINS` modifier before we went to GA and the `LIKE` was kept around for compatibility to give people time to move over.  The time is up.
+
+## 2019-05-29
+
+### 1) Reactor Releaser
+
+`reactor-releaser` is available on [npm](https://www.npmjs.com/package/@adobe/reactor-releaser).  This tool will help you transition your extension packages from `development` to `private`.  No more Postman scripts if you don't want to use them.
+
+## 2019-05-21
+
+### 1) Attributes is optional when you supply a meta block
+
+If you are passing a `meta` block on a PATCH request, any `attributes` that you pass on the same request are not required and will be ignored.  This change will prevent modifying a resource and transitioning it to a new state at the same time.  This will allow you to get a resource back from the API, and transition its state without having to explicitly remove the `attributes` block before you PATCH it back.  This change affects the following resources.
+
+* Libraries - cannot be modified and transitioned to a new state at the same time
+* Extensions, Rules, and Data Elements - cannot be modified and revised at the same time
+* Hosts - cannot be modified and initiate a test at the same time
+
+### 2) Other
+
+* We removed some extra spaces from the error code descriptions
+
 ## 2019-05-08
 
 The Reactor API is officially versioned at 1.0.  Within the 1.x series of releases, we will not make any breaking changes.  We will continue to make additive changes.  Those changes will be documented here in the release notes and the Reference section will be kept up to date as changes are made.
