@@ -22,7 +22,7 @@ To update your configuration, login to the [IO Console](https://console.adobe.io
 
 ### 2) Library Paths on Environments
 
-We recently made a change to the hosting paths for libraries to use a much shorter ID to represent Company, Property, Extension, and Environment in the embed codes.  These changes will be most visible on newly created environments.  All the embed codes that are already in use will continue to be valid.  If you want to use the new shortened embed codes for existing environments, that will also work.
+We recently made a change to the hosting paths for libraries to use a much shorter ID to represent Company, Property and Environment in the embed codes.  These changes will be most visible on newly created environments.  All the embed codes that are already in use will continue to be valid.  If you want to use the new shortened embed codes for existing environments, that will also work.
 
 ## 2019-07-30
 
