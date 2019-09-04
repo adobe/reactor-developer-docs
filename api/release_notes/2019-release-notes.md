@@ -4,6 +4,24 @@ title: 2019 Release Notes
 
 # 2019 Reactor Release Notes
 
+## 2019-09-04
+
+### 1) Technical Accounts can use Product Profiles
+
+When we first released the Launch API, Adobe I/O integrations were not fully integrated into Adobe's Admin Console where regular user accounts are controlled.  As a result, these integrations had a different set of available permissions.
+
+Adobe I/O integrations can now use the same permission groups (called Product Profiles) - created and managed in Adobe's [Admin Console](https://adminconsole.adobe.com/) - that regular users use.
+
+When you login to the Adobe I/O console to create a new integration (or update an existing integration), instead of the older role selector, you'll now see a list of product profiles from the Admin Console.  You'll need to select the product profile you want the integration to belong to.
+
+Existing integrations will continue to function using their assigned roles for the next 4 months.  Beginning in January 2020, integrations that do not have an assigned product profile will cease to function until they are updated.  So you should update before then.
+
+To update your configuration, login to the [IO Console](https://console.adobe.io), select the Company the integration belongs to, click on the integration you want to update, click the Services tab, under Configured Services hover on "Experience Platform Launch API", and then click the Config icon.  Choose the product profile with the appropriate permissions and click Apply.
+
+### 2) Library Paths on Environments
+
+We recently made a change to the hosting paths for libraries to use a much shorter ID to represent Company, Property, Extension, and Environment in the embed codes.  You'll see these tokens showing up on the associated resources in API responses.  The Environment resource has additional information to tell which embed code should be used to reference libraries built to that environment.
+
 ## 2019-07-30
 
 ### 1) Removed some unsupported capabilities
