@@ -16,47 +16,9 @@ You must release your extension as a private extension before you can release it
 
 ## Release - Private
 
-You release your extension package as private by `PATCH`ing your `extension_package` resource and supplying a payload with an instruction to make the `extension_package` private.
+The easiest way to release your extension to private availability is to use the [Launch Extension Releaser](https://www.npmjs.com/package/@adobe/reactor-releaser). More instructions are found within its documentation.
 
-Currently, this is accomplished by making the API request directly.  You can use a tool like Postman or you can use something like this in your command line:
-
-```bash
-curl -X PATCH \
-  https://reactor.adobe.io/extension_packages/[PACKAGE-ID] \
-  -H 'accept: application/vnd.api+json;revision=1' \
-  -H 'content-type: application/vnd.api+json' \
-  -H 'authorization: Bearer [TOKEN]' \
-  -H 'cache-control: no-cache' \
-  -H 'x-api-key: Activation-DTM' \
-  -H 'x-gw-ims-org-id: [ORG_ID]' \
-  -d \
-'
-{
-    "data": {
-        "id": "[PACKAGE-ID]",
-        "type": "extension_packages",
-        "meta": {
-            "action": "release_private"
-        }
-    }
-}
-'
-```
-
-`[PACKAGE-ID]` should be replaced by the ID of your extension package.
-
-`[TOKEN]`should be replaced with a bearer token generated inside the I/O Console.  In order to generate that, you should:
-
-1. Go back to the [Adobe IO Console](https://console.adobe.io/).
-2. Select your Org and click on your integration (technical account).
-3. Click on "JWT" at the top.
-4. Back at your command prompt or terminal window, type `cat stage_reactor_qe_test_private.key` (or whatever you named your private key)
-5. Copy the key value and paste it into the "Paste private key" field on the JWT page in your browser (you can include the `Begin` and `End` lines of the private key). Click "Generate JWT"
-6. Click "Copy" under the "Sample CURL command" section and paste it into your command prompt or terminal window
-7. You should now see "token_type": "bearer", and your "access_token" value in your terminal.
-8. The value of the bearer access token is what you will use in your API calls to upload and patch your extension packages. We suggest you save the bearer token value, Adobe access tokens are valid for 24 hrs.
-
-For more details, see [Release Private](/api/reference/1.0/extension_packages/release_private/) in the API docs.
+If you'd like to release your extension to private availability using the API directly, see [Release Private](/api/reference/1.0/extension_packages/release_private/) in the API docs for more detail.
 
 ## Release - Public
 
