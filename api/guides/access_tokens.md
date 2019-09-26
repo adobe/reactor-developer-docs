@@ -21,27 +21,21 @@ Access to the Launch APIs requires the creation of an Integration via Adobe I/O.
 
 ### Create a new integration
 
-Open a browser and navigate to [https://console.adobe.io/](https://console.adobe.io/)
-
-Ensure the correct organization selected in the drop-down under `Integrations`.
+Open a browser and navigate to [https://console.adobe.io/](https://console.adobe.io/).  From the home screen, click on "Integrations" in the top nav.
 
 Click the **"New Integration"** button.
 
-![](/images/access-token/IO-1.jpg)
+![](/images/access-token/IO-1.png)
 
 Select **"Access an API"** and click **"Continue"**
 
-![](/images/access-token/IO-2.jpg)
+![](/images/access-token/IO-2.png)
 
-From the list of Adobe APIs, find the section titled **"Adobe Experience Platform"**. Under that section, select **"Experience Platform Launch API"**.
+If your user account has access to multiple organizations, ensure the correct organization is selected in the drop-down under `Integrations`.
 
-Leave the default option at the bottom as **"Access an API"** and click **"Continue"**
+From the list of Adobe APIs, find the section titled **"Adobe Experience Platform"**. Under that section, select **"Experience Platform Launch API"** and click **"Continue"**
 
-![](/images/access-token/IO-3.jpg)
-
-Leave the **"New Integration"** option selected and click **"Continue"**
-
-![](/images/access-token/IO-4.jpg)
+![](/images/access-token/IO-3.png)
 
 On this next screen, define the configuration settings for the integration.
 
@@ -85,46 +79,27 @@ Next, upload the certificate (**crt**) file via the Adobe I/O configuration wind
 Multiple certificates may be added.
 {% endalert %}
 
-![](/images/access-token/IO-5.jpg)
+![](/images/access-token/IO-5.png)
 
-Next, select the **"Role"** or set of permissions for applications using this integration.
+Next, we need to assign rights to this Integration.  These integrations share the same permissions that can be assigned to users through the Admin Console.  Any product profiles that exist for Launch will show up in the list at the bottom of the page.  Select the product profile that is appropriate for this integration.
 
-* **Admin** - can do everything
-* **IT Admin** - can publish and manage properties, extensions, and environments
-* **Developer** - can only modify existing entities
-* **Approver** - can only modify and approve changes
-* **Publisher** - can modify entities, approve changes, and publish changes to production environments
-* **Extension Developer** - Can make changes and create new private and public extensions
+If you need help creating a new product profile, an Org Admin or a Product Admin for Launch can do this is in the Admin Console where users are managed.  You can read more about this in the user docs [here](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html#n3-create-your-product-profile).
 
-**DETAILED PERMISSION TABLE**
+Click **"Create Integration"**.  You should now see the success screen.
 
-|                     | Admin | IT Admin | Developer | Approver | Publisher | Extension Developer |
-|---------------------|-------|----------|-----------|----------|-----------|---------------------|
-| Develop             |   X   |          |     X     |     X    |     X     |          X          |
-| Approve             |   X   |          |           |     X    |     X     |                     |
-| Publish             |   X   |     X    |           |          |     X     |                     |
-| Manage Properties   |   X   |     X    |           |          |           |                     |
-| Manage Extensions   |   X   |     X    |           |          |           |                     |
-| Manage Environments |   X   |     X    |           |          |           |                     |
-| Develop Extensions  |   X   |          |           |          |           |          X          |
-
-
-Click **"Create Integration"**
-
-![](/images/access-token/IO-6.jpg)
+![](/images/access-token/IO-6.png)
 
 {% alert info, Note %}
 If an error is encountered, it's generally related to certificate generation issues.
 {% endalert %}
 
-
 ## Testing the Integration
 
-Navigate to the Integration in the [Adobe I/O Console](https://console.adobe.io/).
+Click **Continue to integration details**.
 
 Click on the tab labeled “JWT”
 
-![](/images/access-token/IO-7.jpg)
+![](/images/access-token/IO-7.png)
 
 Use a text editor to open the private key file generated in the steps above.
 
@@ -138,7 +113,7 @@ Two boxes should now be visible.
 
 Copy the sample cURL request into your terminal and execute it to verify the API call succeeds.
 
-![](/images/access-token/IO-8.jpg)
+![](/images/access-token/IO-8.png)
 
 
 ## Using Access Tokens in Launch
@@ -153,7 +128,6 @@ For example, `Authorization: Bearer [TOKEN]`
 {% alert info, Note %}
 An access token will typically expire after 24 hours.
 {% endalert %} 
-
 
 ## Additional Resources
 
