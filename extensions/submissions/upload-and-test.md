@@ -69,11 +69,11 @@ npx @adobe/reactor-uploader
 
 **Note**: `npx` allows you to download and run an npm package without actually installing it on your machine.  This is the simplest way to run the Uploader.
 
-The Uploader will ask you to input several pieces of information:
+The Uploader will ask you to input several pieces of information.  The technical account ID, API key and other bits of information can be retrieved from the Adobe I/O console.  Navigate to the [Integrations page](https://console.adobe.io/integrations) in the I/O console.  Select the correct Org from the dropdown, find the right integration and click the "View" button.
 
-- Which environment do you want to upload to? Production.
-- How would you like to authenticate? Provide Adobe I/O integration details.
-- What is the path to your private key? /path/to/reactor_private.key. This is the place you saved your private key above.
+![](/images/access-token/IO-9.png)
+
+- What is the path to your private key? /path/to/private.key. This is the place you saved your private key in step 2 above.
 - What is your Org ID? Copy/paste this from the I/O Console overview page that you left open earlier.
 - What is your technical account ID? Copy/paste from I/O Console.
 - What is your API key? Copy/paste from I/O Console.
