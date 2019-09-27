@@ -12,7 +12,7 @@ Communication with the Launch API occurs through the [Adobe I/O gateway](https:/
 
 {% alert info, Prerequisites %}
 - A terminal appliation on Mac/Linux/UNIX or a Command Line Window on Windows.
-- An Adobe Experience Cloud admin to have granted your Adobe user access to the Adobe I/O Console.
+- An Adobe Experience Cloud admin to have granted your Adobe user access to the Adobe I/O Console.  Only those with the Org Administrator or the Developer role can use the I/O console.
 {% endalert %}
 
 ## Adobe I/O Integration
@@ -115,7 +115,6 @@ Copy the sample cURL request into your terminal and execute it to verify the API
 
 ![](/images/access-token/IO-8.png)
 
-
 ## Using Access Tokens in Launch
 
 The sample cURL request from the previous step demonstrates exchanging the JWT for an access token, returned as
@@ -126,8 +125,8 @@ The Launch API requires an `Authorization` header, with the access token supplie
 For example, `Authorization: Bearer [TOKEN]`
 
 {% alert info, Note %}
-An access token will typically expire after 24 hours.
-{% endalert %} 
+Note that these tokens expire after 24 hours.  If you are using this integration for an application, it is a good idea to obtain your bearer token programmatically from within your application.
+{% endalert %}
 
 ## Additional Resources
 
