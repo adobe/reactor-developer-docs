@@ -4,9 +4,7 @@ title: Overview
 
 # Notes
 
-`Notes` are textual annotations you can add to resources.
-
-`Notes` may be added to resources of these types:
+`Notes` are textual annotations you can add to Launch resources of these types:
 - `DataElements`
 - `RuleComponents`
 - `Rules`
@@ -30,7 +28,7 @@ You might use `Notes` to:
 - record historical context
 - remind yourself why this resource is built the way it is
 
-But, since Launch ignores `Notes`, you are free to use them any way you want.
+But Launch ignores `Notes` so you are free to use them any way you want.
 
 ## Revisable Notables
 
