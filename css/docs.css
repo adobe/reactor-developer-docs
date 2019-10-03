@@ -248,6 +248,12 @@ code[class*="language-"], pre[class*="language-"] {
   padding: 0 1rem;
 }
 
+@media(max-width: 768px){
+.sdldocs-header {    
+    padding: 1rem 2rem;
+  }
+}
+
 .sdldocs-spectrumVersion {
   padding-left: 1rem;
 }
@@ -260,6 +266,12 @@ code[class*="language-"], pre[class*="language-"] {
 .sdl-switcher {
   flex: 1;
   text-align: right;
+}
+
+@media(max-width:768px){
+  .sdl-switcher{
+    display: none;
+  }
 }
 
 .sdl-switcher .spectrum-Dropdown + .spectrum-FieldLabel {
@@ -428,6 +440,11 @@ pre.html {
 .sdldocs-header-title {
   color: #F3F3F3;
 }
+@media(max-width:768px){
+  .sdldocs-header-title {
+    display: none
+  }    
+}
 
 .spectrum-Heading--pageTitle {
   font-size: 24px;
@@ -496,6 +513,14 @@ pre.html {
   display: block;
   z-index: 1000;
   width: 100px;
+}
+
+@media (max-width:768px){
+  #main-nav {
+  
+    margin-left: 50px;
+    min-width: 90%;
+  } 
 }
 
 #main-nav a {
