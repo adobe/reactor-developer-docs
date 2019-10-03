@@ -20,20 +20,19 @@ ways, developing locally, or developing using a Docker container.
 Fork and clone this reactor-developer-docs repository. After making and
 previewing changes, create a commit, and open a Pull Request.
 
+## Developing locally
 
-### Developing locally
-
-#### Prerequisites
+### Prerequisites
 
 - Ruby 2.6.x
 
-#### Setup
+### Setup
 
 ```bash
 bundle install
 ```
 
-#### Build and run
+### Build and run
 
 Next, start Jekyll.
 
@@ -41,21 +40,21 @@ Next, start Jekyll.
 bundle exec jekyll serve
 ```
 
-#### Preview
+### Preview
 
 Open a browser to http://localhost:4000.
 
 
-### Developing using a Docker container
+## Developing using a Docker container
 
 For development environment convenience, a docker image is available from Docker
 Hub.
 
-#### Prerequisites
+### Prerequisites
 
 - Docker
 
-#### Setup
+### Setup
 
 Pull the docker image. Be sure to do this step often to obtain updated versions.
 
@@ -63,7 +62,7 @@ Pull the docker image. Be sure to do this step often to obtain updated versions.
 docker pull adobe/reactor-developer-docs-dev
 ```
 
-#### Run the container
+### Run the container
 
 Note the path to the reactor-developer-docs directory. Either export the path as
 `$REACTOR_DEVELOPER_DOCS_DIR` or replace it in the following command.
@@ -84,7 +83,7 @@ As you make changes to the files and save them, Jekyll will automatically regene
 docker logs -f reactor-developer-docs-dev
 ```
 
-#### Preview
+### Preview
 
 Open a browser to http://localhost:8000.
 
