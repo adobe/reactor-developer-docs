@@ -54,5 +54,3 @@ environment: external
 launch_library_url_dev: //assets.adobedtm.com/launch-ENb1b2a98396e04dd4a82cd790a4730546-development.min.js
 launch_library_url_stage: //assets.adobedtm.com/launch-ENb0fca57af3154292b7f0528bfad6b7af-staging.min.js
 launch_library_url_prod: //assets.adobedtm.com/launch-ENb8cf58511e7a4d6794fd92efd98d4044.min.js
-
-theme: jekyll-theme-minimal
