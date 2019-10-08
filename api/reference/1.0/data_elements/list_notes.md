@@ -1,5 +1,5 @@
 ---
-title: DataElement Notes
+title: List Notes
 ---
 
 # List Notes for a DataElement

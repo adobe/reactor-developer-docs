@@ -1,5 +1,5 @@
 ---
-title: Rule Notes
+title: List Notes
 ---
 
 # List Notes for a Rule

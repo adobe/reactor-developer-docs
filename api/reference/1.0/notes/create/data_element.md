@@ -4,6 +4,6 @@ title: DataElement Note
 
 # Create a Note on a DataElement
 
-{% form data_element_notes.create %}
+{% form note.create %}
 
 {% scenario data_element_notes.create %}

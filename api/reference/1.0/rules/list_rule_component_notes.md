@@ -1,5 +1,5 @@
 ---
-title: RuleComponent Notes for Rule
+title: List RuleComponent Notes
 ---
 
 # List Notes for RuleComponents of a Rule

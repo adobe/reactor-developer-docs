@@ -1,5 +1,5 @@
 ---
-title: Property Notes
+title: List Notes
 ---
 
 # List Notes for a Property
