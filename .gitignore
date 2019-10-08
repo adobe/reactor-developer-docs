@@ -1,7 +1,6 @@
 /.bundle
 /_site
 /vendor
-.ruby-version
 
 *.un~
 *.swp

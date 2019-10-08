@@ -1,5 +1,5 @@
 ---
-title: Extension Notes
+title: List Notes
 ---
 
 # List Notes for an Extension

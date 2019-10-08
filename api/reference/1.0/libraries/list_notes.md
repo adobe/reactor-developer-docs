@@ -1,5 +1,5 @@
 ---
-title: Library Notes
+title: List Notes
 ---
 
 # List Notes for a Library

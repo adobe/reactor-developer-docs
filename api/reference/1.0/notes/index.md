@@ -6,11 +6,11 @@ title: Overview
 
 `Notes` are textual annotations you can add to Launch resources of these types:
 - `DataElements`
-- `RuleComponents`
-- `Rules`
 - `Extensions`
 - `Libraries`
 - `Properties`
+- `RuleComponents`
+- `Rules`
 
 Those six types are collectively known as the `Notable` resources.
 
