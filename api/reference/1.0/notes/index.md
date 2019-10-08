@@ -52,5 +52,5 @@ The only way to delete them is to delete their corresponding `Notable`.
 
 `Notes` cannot be attached to non-`Notable` resources. Specifically,
 you cannot add `Notes` to
-`Adapters`, `AuditEvents`, `Builds`, `Callbacks`, `Companies`,
+`AuditEvents`, `Builds`, `Callbacks`, `Companies`,
 `Environments`, `ExtensionPackages`, `Hosts`, or `Profiles`.
