@@ -17,8 +17,8 @@ Those six types are collectively known as the `Notable` resources.
 When a `Notable` resource is deleted, its associated `Notes` are also deleted.
 
 ## `Notes` are Comments
-Launch doesn't attach any meaning to `Notes`.
-Adding a `Note` won't change the behavior of your `Property`.
+The contents of `Notes` have no impact on the behavior of `Property` resources,
+so you are free to use them any way you want.
 
 You might use `Notes` to:
 - provide background information
@@ -28,7 +28,6 @@ You might use `Notes` to:
 - record historical context
 - remind yourself why this resource is built the way it is
 
-But Launch ignores `Notes` so you are free to use them any way you want.
 
 ## Revisable Notables
 
