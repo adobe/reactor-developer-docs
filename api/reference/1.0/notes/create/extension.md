@@ -1,8 +1,12 @@
 ---
 title: Extension Note
+labels:
+  - unstable
 ---
 
 # Create a Note on an Extension
+
+{% labels %}
 
 {% form note.create %}
 
