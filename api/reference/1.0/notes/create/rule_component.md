@@ -1,5 +1,5 @@
 ---
-title: RuleComponent Note
+title: Create on RuleComponent
 labels:
   - unstable
 ---
