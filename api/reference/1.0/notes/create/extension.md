@@ -1,5 +1,7 @@
 ---
 title: Extension Note
+labels:
+  - unstable
 ---
 
 # Create a Note on an Extension

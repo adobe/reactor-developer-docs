@@ -12,6 +12,8 @@ Notes are now available to be attached to Properties, Data Elements, Rules, Rule
 
 Learn more and get started using Notes in the [Notes API](/api/reference/1.0/notes/index.md) section of the docs.
 
+The Notes API is not yet finalized, and may change in ways that are not backwards-compatible.
+
 ## 2019-09-04
 
 ### 1) Technical Accounts can use Product Profiles

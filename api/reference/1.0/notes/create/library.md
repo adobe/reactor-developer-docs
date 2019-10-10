@@ -1,5 +1,7 @@
 ---
 title: Library Note
+labels:
+  - unstable
 ---
 
 # Create a Note on a Library
