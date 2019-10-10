@@ -1,5 +1,5 @@
 ---
-title: Property Note
+title: Create on Property
 labels:
   - unstable
 ---

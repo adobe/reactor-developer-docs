@@ -1,5 +1,5 @@
 ---
-title: Rule Note
+title: Create on Rule
 labels:
   - unstable
 ---
