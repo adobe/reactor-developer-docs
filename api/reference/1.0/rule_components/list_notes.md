@@ -6,6 +6,8 @@ labels:
 
 # List Notes for a RuleComponent
 
+{% labels %}
+
 Retrieve the Notes attached to the specified RuleComponent.
 
 {% filters note %}
