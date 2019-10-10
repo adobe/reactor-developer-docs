@@ -6,6 +6,8 @@ labels:
 
 # List Notes for a Property
 
+{% labels %}
+
 Retrieve the Notes attached to the specified Property.
 
 {% filters note %}
