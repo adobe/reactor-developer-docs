@@ -4,6 +4,14 @@ title: 2019 Release Notes
 
 # 2019 Reactor Release Notes
 
+## 2019-10-10
+
+### 1) Notes
+
+Notes are now available to be attached to Properties, Data Elements, Rules, Rule Components, Extensions, and Libraries.  Notes are short, text-only annotations that can be used for descriptions of what a resource does, how a resource should be used, and much more.
+
+Learn more and get started using Notes in the [Notes API](/api/reference/1.0/notes/index.md) section of the docs.
+
 ## 2019-09-04
 
 ### 1) Technical Accounts can use Product Profiles
