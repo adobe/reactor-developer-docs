@@ -1,5 +1,7 @@
 ---
 title: RuleComponent Note
+labels:
+  - unstable
 ---
 
 # Create a Note on a RuleComponent

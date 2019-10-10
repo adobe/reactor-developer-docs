@@ -1,5 +1,7 @@
 ---
 title: Property Note
+labels:
+  - unstable
 ---
 
 # Create a Note on a Property
