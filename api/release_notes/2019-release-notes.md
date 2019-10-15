@@ -4,13 +4,29 @@ title: 2019 Release Notes
 
 # 2019 Reactor Release Notes
 
+## 2019-10-15
+
+### 1) Republish Production Library
+
+Any users who use the Managed by Adobe Host can now retrieve builds for the last five production library publishes.
+
+For regular, non-archive builds you an republish the build. This will link your Production embed code to the build for the older library that you've selected. If you've discovered a problem with your production library and need to quickly restore it to a known good state, this gives you the ability to rollback to a known good library. This only links the embed code to an older build, it does not change the state of any resources on your Property.
+
+For archived builds, you can simply download a copy of the older library.
+
+We cannot republish any builds that used the SFTP Host type.
+
+We currently keep the five most recent builds for production libraries. Any older builds are cleaned up. You can only republish one of these five.
+
+Through the API, this is accomplished by PATCHing the build itself and supplying a meta action. For a specific example, please check the [Republish Build](/api/reference/1.0/builds/republish/) API doc.
+
 ## 2019-10-10
 
 ### 1) Notes
 
 Notes are now available to be attached to Properties, Data Elements, Rules, Rule Components, Extensions, and Libraries.  Notes are short, text-only annotations that can be used for descriptions of what a resource does, how a resource should be used, and much more.
 
-Learn more and get started using Notes in the [Notes API](/api/reference/1.0/notes/index.md) section of the docs.
+Learn more and get started using Notes in the [Notes API](/api/reference/1.0/notes/index/) section of the docs.
 
 The Notes API is not yet finalized, and may change in ways that are not backwards-compatible.
 
