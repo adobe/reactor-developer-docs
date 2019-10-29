@@ -4,8 +4,7 @@ title: Create
 
 # Create an Extension
 
-Add an Extension to a Property. Installation is **not** an
-asynchronous action. After performing a request to add an Extension to a
+Add an Extension to a Property. After performing a request to add an Extension to a
 Property, When the installation task has
 completed, the Extension response will be returned based on the success or
 failure of the task.
