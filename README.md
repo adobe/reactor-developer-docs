@@ -39,7 +39,7 @@ bundle install
 Next, start Jekyll.
 
 ```bash
-bundle exec jekyll serve
+bundle exec jekyll serve --port 4000
 ```
 
 #### Preview
