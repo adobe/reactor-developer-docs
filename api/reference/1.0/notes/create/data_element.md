@@ -8,6 +8,6 @@ labels:
 
 {% labels %}
 
-{% form note.create %}
+{% form note.post %}
 
 {% scenario data_element_notes.create %}

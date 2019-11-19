@@ -4,6 +4,6 @@ title: Create
 
 # Create a Build for a Library
 
-{% form build.create %}
+{% form build.post %}
 
 {% scenario builds.create %}

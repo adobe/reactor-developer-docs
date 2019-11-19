@@ -28,6 +28,6 @@ Extensions with an `installation_status` of `failed` are not available
 for use.
 
 
-{% form extension.create %}
+{% form extension.post %}
 
 {% scenario extensions.create %}

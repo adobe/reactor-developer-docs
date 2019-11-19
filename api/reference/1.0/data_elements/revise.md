@@ -13,6 +13,6 @@ Revising a DataElement is achieved by supplying an `action` with a value of
 `revise` in the `meta` of the request `data`.
 
 
-{% form data_element.update %}
+{% form data_element.patch %}
 
 {% scenario data_elements.update data_elements.revise_a_data_element %}
