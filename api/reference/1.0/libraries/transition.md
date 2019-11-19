@@ -41,6 +41,6 @@ Available actions: `develop`
 The Library has been published.
 
 
-{% form libraries.update %}
+{% form libraries.patch %}
 
 {% scenario libraries.update libraries.transition_a_library %}

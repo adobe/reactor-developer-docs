@@ -16,6 +16,6 @@ Revising a Rule is achieved by supplying an `action` with a value of `revise`
 in the `meta` of the request `data`.
 
 
-{% form rule.update %}
+{% form rule.patch %}
 
 {% scenario rules.update rules.revise_a_rule %}

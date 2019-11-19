@@ -4,6 +4,6 @@ title: Update
 
 # Update a Property
 
-{% form property.update %}
+{% form property.patch %}
 
 {% scenario properties.update %}

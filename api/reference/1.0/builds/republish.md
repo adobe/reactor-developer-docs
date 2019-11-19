@@ -4,6 +4,6 @@ title: Republish
 
 # Republish a build from a published Library
 
-{% form build.update %}
+{% form build.patch %}
 
 {% scenario builds.update %}

@@ -4,6 +4,6 @@ title: Create
 
 # Create an Environment
 
-{% form environment.create %}
+{% form environment.post %}
 
 {% scenario environments.create %}

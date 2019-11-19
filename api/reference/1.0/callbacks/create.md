@@ -4,6 +4,6 @@ title: Create
 
 # Create a Callback
 
-{% form callback.create %}
+{% form callback.post %}
 
 {% scenario callbacks.create %}
