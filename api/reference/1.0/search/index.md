@@ -1,5 +1,5 @@
 ---
-title: Search
+title: Overview
 labels:
   - unstable
 ---
@@ -10,7 +10,6 @@ labels:
 
 Search provides a way to find resources matching a desired criteria, expressed as a query.
 
-{% labels %}
 
 The following API resources types are searchable, utilizing the same data structure as the resource-based documents returned across the API.
 
