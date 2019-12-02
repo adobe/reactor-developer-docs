@@ -145,6 +145,19 @@ labels:
               </td>
             </tr>
             <tr class="spectrum-Table-row">
+              <td class="spectrum-Table-cell" style="padding-left:80px"><code>value_operator</code></td>
+              <td class="spectrum-Table-cell">String</td>
+              <td class="spectrum-Table-cell"></td>
+              <td class="spectrum-Table-cell">
+                <ul style="margin: 0px; padding-left: 20px">
+                  <li>Boolean logic used to interpret terms in the query <code>value</code>.</li>
+                  <li>Allowed values: <code>AND</code>, <code>OR</code>.</li>
+                  <li>Default value: <code>AND</code>.</li>
+                  <li>May only be used in-conjuntion with <code>value</code> queries.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="spectrum-Table-row">
               <td class="spectrum-Table-cell"><code>sort</code></td>
               <td class="spectrum-Table-cell">Array, Object</td>
               <td class="spectrum-Table-cell">Optional</td>

@@ -4,6 +4,16 @@ title: 2019 Release Notes
 
 # 2019 Reactor Release Notes
 
+## 2019-12-03
+
+<hr class="spectrum-Rule spectrum-Rule--medium">
+
+### Search
+
+Search now supports `value_operator` (`AND`/`OR`) for `value` queries. `value` queries now default to an `AND` operator.
+
+<br>
+
 ## 2019-11-20
 
 <hr class="spectrum-Rule spectrum-Rule--medium">
