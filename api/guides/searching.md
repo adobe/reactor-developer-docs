@@ -77,6 +77,7 @@ An example request with all available options:
       - `lt` - Integer - Less than the supplied value, non-inclusive.
       - `lte` - Integer - Less than or equal to the supplied value.
     - `value` - String - The value to use for the search query.
+    - `value_operator` - String - Boolean logic used to interpret terms in the query `value`. Allowed values: `AND`, `OR`. Default value: `AND`. May only be used in-conjuntion with `value` queries.
 - `sort` - Array, Object - Order in which to sort results.
   - document field path - String - Path: allowed characters: `a-z` and `.` . Values: `desc`, `asc`
 - `resource_types` - Array, String - The resource types to search.
@@ -173,7 +174,11 @@ Search is concerned with answering how relevant a document is to a supplied quer
 - `type` - Exact match, case-sensitive
 
 
-Search query values are split into terms for matching against indexed documents. Terms are `OR`'d. The more terms that match, the higher the `match_score`. Due to the nature of term matching, it's very possible nothing closely matches the desired value and to obtain a result set where the value matched on a very basic level, i.e. a few characters of text matched.
+Search query values are split into terms for matching against indexed documents. Terms are `AND`'ed by default.
+
+When using `AND` as the `value_operator`, a query value of `My Rule Holiday Sale` is interpereted as documents with a field containing `My AND Rule AND Holiday AND Sale`.
+
+When using `OR` as the `value_operator`, a query value of `My Rule Holiday Sale` is interpereted as documents with a field containing `My OR Rule OR Holiday OR Sale`. The more terms that match, the higher the `match_score`. Due to the nature of partial term matching, it's very possible nothing closely matches the desired value, and to obtain a result set where the value matched on a very basic level, i.e. a few characters of text matched.
 
 
 ## Common search examples
@@ -306,6 +311,29 @@ curl -X POST "https://reactor.adobe.io/search" \
     "query": {
       "id": {
         "value": "PR3cab070a9eb3423894e4a3038ef0e7b7"
+      }
+    }
+  }
+}
+'
+```
+
+#### Perform a search using "OR" term logic
+
+```bash
+curl -X POST "https://reactor.adobe.io/search" \
+  -H "Accept: application/vnd.api+json;revision=1" \
+  -H "Content-Type: application/vnd.api+json" \
+  -H "Authorization: Bearer [TOKEN]" \
+  -H "X-Api-Key: [KEY]" \
+  -H "X-Gw-Ims-Org-Id: [ORG_ID]" \
+  -d '
+{
+  "data" : {
+    "query": {
+      "attributes.display_name": {
+        "value": "My Rule Holiday Sale",
+        "value_operator: "OR"
       }
     }
   }
