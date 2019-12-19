@@ -12,4 +12,4 @@ A `Rule` belongs to exactly one `Property`.  A `Property` can have many `Rules`.
 
 A `Rule` can have many `RuleComponents`.  A `RuleComponent` belongs to exactly one `Rule`.
 
-You can read more about `Rules` in the [Rules section](https://docs.adobelaunch.com/launch-reference/managing-resources/rules) of the Launch user docs.
+You can read more about `Rules` in the [Rules section](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html) of the Launch user docs.

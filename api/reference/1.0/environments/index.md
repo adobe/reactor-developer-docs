@@ -25,4 +25,4 @@ These `Environment` types have similar behavior, but are used at different stage
 
 An `Environment` belongs to exactly one `Property`.  A `Property` can have one `Environment` of `stage = 'production'`, one `Environment` of `stage = 'staging'`, and many `Environments` of `stage = 'Development'` .  
 
-You can read more about environments in the [Environments section](https://docs.adobelaunch.com/launch-reference/publishing/environments) of the Launch user docs.
+You can read more about environments in the [Environments section](https://docs.adobe.com/content/help/en/launch/using/reference/publish/environments.html) of the Launch user docs.

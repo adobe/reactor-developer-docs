@@ -25,4 +25,4 @@ Resources that are not owned by Property are:
 
 A `Property` belongs to exactly one `Company`.  A `Company` can have many `Properties`.
 
-You can read more about Properties (including the logic of when you might want to create a new one instead of combining them) in the [Properties section](https://docs.adobelaunch.com/launch-reference/administration/companies-and-properties) of the Launch user docs.
+You can read more about Properties (including the logic of when you might want to create a new one instead of combining them) in the [Properties section](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html) of the Launch user docs.

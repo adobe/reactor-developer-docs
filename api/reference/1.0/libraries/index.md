@@ -45,4 +45,4 @@ Note: Building to the Production environment will automatically transition the L
 
 A `Library` belongs to exactly one `Property`.  A `Property` can have many `Libraries`.
 
-You can read more about `Libraries` and their `states` in the [Approval Workflow section](https://docs.adobelaunch.com/launch-reference/publishing/approval-workflow) of the Launch user docs.
+You can read more about `Libraries` and their `states` in the [Approval Workflow section](https://docs.adobe.com/content/help/en/launch/using/reference/publish/approval-workflow.html) of the Launch user docs.
