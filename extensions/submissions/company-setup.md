@@ -33,4 +33,4 @@ Currently your corporate email can only be used in one partner program at a time
 
 {% endalert %}
 
-Once your company is in the Exchange Partner program, you can request access to Adobe Solutions by signing in to the [Exchange Partner Site](https://partners.adobe.com/exchangeprogram/experiencecloud) and following the steps below. If you already have an Experience Cloud Account and access to solutions, but you don't have access to Launch, please see the instructions for setting up groups and users [here](https://docs.adobelaunch.com/administration/users).
+Once your company is in the Exchange Partner program, you can request access to Adobe Solutions by signing in to the [Exchange Partner Site](https://partners.adobe.com/exchangeprogram/experiencecloud) and following the steps below. If you already have an Experience Cloud Account and access to solutions, but you don't have access to Launch, please see the instructions for setting up groups and users [here](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html).

@@ -10,4 +10,4 @@ Usage of many `DataElements` together make up a data dictionary or data map.  Th
 
 A `DataElement` belongs to exactly one `Property`.  A `Property` can have many `DataElements`.
 
-You can read more about `DataElements` in the [Data Elements section](https://docs.adobelaunch.com/launch-reference/managing-resources/data-elements) of the Launch user docs.
+You can read more about `DataElements` in the [Data Elements section](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/data-elements.html) of the Launch user docs.
