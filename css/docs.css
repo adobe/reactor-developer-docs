@@ -512,6 +512,121 @@ pre.html {
   color: #ff8ce6;
 }
 
+
+  header.sdldocs-header {
+    position: relative;
+  }
+
+  /* Mobile nav dropdown menu */
+  #mobile-nav-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    display: block;
+    z-index: 1000;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+  }
+
+  #mobile-nav-menu .spectrum-Menu {
+    width: 100%;
+  }
+
+  #mobile-nav-menu .spectrum-Menu-item {
+    padding: 0;
+  }
+
+  #mobile-nav-menu a.spectrum-Menu-itemLabel {
+    color: inherit;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+  }
+
+  /* Mobile nav options accordions */
+  #mobile-nav-menu .spectrum-Accordion {
+    width: 100%;
+  }
+
+  #mobile-nav-menu .spectrum-Accordion-item {
+    border: 0;
+  }
+
+  #mobile-nav-menu .spectrum-Accordion-itemHeader {
+    width: 100%;
+    text-transform: none;
+    font-size: inherit;
+    letter-spacing: inherit;
+    font-weight: inherit;
+    color: rgb(227, 227, 227);
+    overflow: hidden;
+  }
+
+  #mobile-nav-menu .spectrum-Accordion-itemContent {
+    padding: 0;
+  }
+
+  #mobile-nav-menu .spectrum-Accordion-itemContent .spectrum-Menu-item {
+    padding: 0.5rem 2rem;
+    color: rgb(185, 185, 185);
+  }
+
+  /* Mobile nav search */
+  #mobile-nav-menu .spectrum-Menu-search {
+    padding: 0.5rem 1rem;
+  }
+
+  #mobile-nav-menu .spectrum-Search,
+  #search-box-mobile {
+    width: 100%;
+  }
+
+  #search-box-mobile:placeholder-shown~button {
+    display: none;
+  }
+
+  /* Responsive settings for main nav */
+  @media only screen and (min-width: 769px) {
+    #mobile-nav-hamburger,
+    #mobile-nav-menu {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .sdldocs-components {
+      flex-grow: 1;
+    }
+
+    #mobile-nav-hamburger {
+      display: block;
+      flex: 1;
+      text-align: right;
+    }
+
+    #main-nav,
+    #options-menu-wrapper,
+    .sdl-switcher {
+      display: none;
+    }
+
+    .sdldocs-header-title {
+      font-size: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .sdldocs-header-title {
+      font-size: 16px;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .sdldocs-header-title {
+      display: none;
+    }
+  }
+
 pre {
   word-wrap: break-word;
 }

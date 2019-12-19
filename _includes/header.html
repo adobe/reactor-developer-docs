@@ -1,12 +1,12 @@
 {% assign url_parts = page.url | split: '/' %}
-<header class="sdldocs-header spectrum--dark">  
+<header class="sdldocs-header spectrum--dark">
   <h2 class="spectrum-Heading--pageTitle">
     <a href="/" class=''>
       <img class="sdldocs-header-logo-image" src="/images/launch.svg" alt="Adobe Launch Logo">
       <span class="sdldocs-header-title">{{ site.title }}</span>
     </a>
   </h2>
-  
+
   <nav id="main-nav" style="margin-left: 45px;">
     <a href="/extensions" class="spectrum-Body2 guide-Header-link{% if url_parts[1] == 'extensions' %} is-selected{% endif %}">
       Extensions
@@ -58,7 +58,7 @@
     </div>
   </div>
 
-  <div style="position: relative">
+  <div style="position: relative" id="options-menu-wrapper">
     <button class="spectrum-ActionButton spectrum-ActionButton--quiet" onclick="toggleMenu(this)" data-target="options-menu">
       <svg class="spectrum-Icon spectrum-Icon--sizeS" focusable="false" aria-hidden="true" aria-label="Settings">
         <use xlink:href="#spectrum-icon-18-Settings"></use>
@@ -66,19 +66,100 @@
     </button>
 
     <div id="options-menu" class="spectrum-Popover">
-        <ul class="spectrum-Menu" role="listbox" style="width: 100%">
-          <li role="presentation">
-            <span class="spectrum-Menu-sectionHeading" id="menu-heading-oak" aria-hidden="true">Color</span>
-            <ul class="spectrum-Menu" role="group" aria-labelledby="menu-heading-oak">
-              <li class="spectrum-Menu-item" role="option" onclick="changeCSS('light')" tabindex="1">
-                <span class="spectrum-Menu-itemLabel">Light</span>
-              </li>
-              <li class="spectrum-Menu-item" role="option" onclick="changeCSS('dark')" tabindex="2">
-                <span class="spectrum-Menu-itemLabel">Dark</span>
-              </li>
-            </ul>
+      <ul class="spectrum-Menu" role="listbox" style="width: 100%">
+        <li role="presentation">
+          <span class="spectrum-Menu-sectionHeading" id="menu-heading-oak" aria-hidden="true">Color</span>
+          <ul class="spectrum-Menu" role="group" aria-labelledby="menu-heading-oak">
+            <li class="spectrum-Menu-item" role="option" onclick="changeCSS('light')" tabindex="1">
+              <span class="spectrum-Menu-itemLabel">Light</span>
+            </li>
+            <li class="spectrum-Menu-item" role="option" onclick="changeCSS('dark')" tabindex="2">
+              <span class="spectrum-Menu-itemLabel">Dark</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="mobile-nav-hamburger">
+    <button class="spectrum-ActionButton spectrum-ActionButton--quiet" onclick="toggleMenu(this)" data-target="mobile-nav-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="true" aria-label="Menu">
+        <defs>
+          <style>
+            #mobile-nav-hamburger .a {
+              fill: rgb(227, 227, 227);
+            }
+          </style>
+        </defs>
+        <title>Show Menu</title>
+        <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" />
+        <rect class="a" height="2" rx="0.5" width="14" x="2" y="8" />
+        <rect class="a" height="2" rx="0.5" width="14" x="2" y="3" />
+        <rect class="a" height="2" rx="0.5" width="14" x="2" y="13" />
+      </svg>
+    </button>
+  </div>
+
+  <nav class="spectrum-Popover" id="mobile-nav-menu">
+    <ul class="spectrum-Menu" role="menu">
+      <li class="spectrum-Menu-item {% if url_parts[1] == 'extensions' %} is-selected{% endif %}" role="menuitem" tabindex="0">
+        <a href="/extensions" class="spectrum-Menu-itemLabel">
+          Extensions
+        </a>
+      </li>
+      <li class="spectrum-Menu-item {% if url_parts[1] == 'api' %} is-selected{% endif %}" role="menuitem" tabindex="0">
+        <a href="/api" class="spectrum-Menu-itemLabel">
+          API
+        </a>
+      </li>
+      <li class="spectrum-Menu-item {% if url_parts[1] == 'resources' %} is-selected{% endif %}" role="menuitem" tabindex="0">
+        <a href="/resources" class="spectrum-Menu-itemLabel">
+          Resources
+        </a>
+      </li>
+      <li class="spectrum-Menu-divider" role="separator"></li>
+      <li role="presentation">
+        <span class="spectrum-Menu-sectionHeading" id="mobile-nav-menu-options-header" aria-hidden="true">Documentation Options</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="mobile-nav-menu-options-header">
+          <li class="spectrum-Menu-item" role="menuitem" tabindex="0" id="mobile-nav-menu-theme">
+            <div class="spectrum-Accordion" role="region">
+              <div class="spectrum-Accordion-item" role="presentation">
+                <span class="spectrum-Accordion-itemHeading">
+                  <button class="spectrum-Accordion-itemHeader" type="button" id="mobile-nav-menu-theme-header" aria-controls="mobile-nav-menu-theme-content" aria-expanded="false" onclick="toggleAccordion(this)">Theme</button>
+                  <svg class="spectrum-Icon spectrum-UIIcon-ChevronRightMedium spectrum-Accordion-itemIndicator" focusable="false" aria-hidden="true">
+                    <use xlink:href="#spectrum-css-icon-ChevronRightMedium" />
+                  </svg>
+                </span>
+                <div class="spectrum-Accordion-itemContent" role="region" id="mobile-nav-menu-theme-content" aria-labelledby="mobile-nav-menu-theme-header">
+                  <ul class="spectrum-Menu" role="group" aria-labelledby="menu-heading-oak">
+                    <li class="spectrum-Menu-item" role="option" onclick="changeCSS('light'); toggleAccordion(this.parentNode)" tabindex="1">
+                      <span class="spectrum-Menu-itemLabel">Light</span>
+                    </li>
+                    <li class="spectrum-Menu-item" role="option" onclick="changeCSS('dark'); toggleAccordion(this.parentNode)" tabindex="2">
+                      <span class="spectrum-Menu-itemLabel">Dark</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
-      </div>
-  </div>
+      </li>
+      <li class="spectrum-Menu-divider" role="separator"></li>
+      <li class="spectrum-Menu-search" role=" menuitem" tabindex="0">
+        <form action="/search/" class="spectrum-Search">
+          <input type="search" id="search-box-mobile" placeholder="Search" name="query" value="" class="spectrum-Textfield spectrum-Search-input">
+          <svg class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon" focusable="false" aria-hidden="true">
+            <use xlink:href="#spectrum-css-icon-Magnifier" />
+          </svg>
+          <button type="reset" class="spectrum-ClearButton">
+            <svg class="spectrum-Icon spectrum-UIIcon-CrossSmall" focusable="false" aria-hidden="true">
+              <use xlink:href="#spectrum-css-icon-CrossSmall" />
+            </svg>
+          </button>
+        </form>
+      </li>
+    </ul>
+  </nav>
 </header>
