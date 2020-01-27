@@ -4,6 +4,6 @@ title: Create
 
 # Create a Property
 
-{% form property.create %}
+{% form property.post %}
 
 {% scenario properties.create %}

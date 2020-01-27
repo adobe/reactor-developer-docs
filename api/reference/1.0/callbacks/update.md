@@ -4,6 +4,6 @@ title: Update
 
 # Update a Callback
 
-{% form callback.update %}
+{% form callback.patch %}
 
 {% scenario callbacks.update %}

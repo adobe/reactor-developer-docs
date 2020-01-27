@@ -13,4 +13,4 @@ A `Build` is the actual file (or files) that are loaded within your web and mobi
 
 A `Build` belongs to exactly one `Library`.  A `Library` can have many `Builds`.
 
-You can read more about `Builds` in the [Builds section](https://docs.adobelaunch.com/launch-reference/publishing/builds) of the Launch user docs.
+You can read more about `Builds` in the [Builds section](https://docs.adobe.com/content/help/en/launch/using/reference/publish/builds.html) of the Launch user docs.

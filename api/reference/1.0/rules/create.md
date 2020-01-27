@@ -4,6 +4,6 @@ title: Create
 
 # Create a Rule
 
-{% form rule.create %}
+{% form rule.post %}
 
 {% scenario rules.create %}

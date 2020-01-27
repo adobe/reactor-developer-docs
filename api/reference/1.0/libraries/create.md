@@ -4,6 +4,6 @@ title: Create
 
 # Create a Library
 
-{% form library.create %}
+{% form library.post %}
 
 {% scenario libraries.create %}

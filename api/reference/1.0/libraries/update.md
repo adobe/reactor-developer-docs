@@ -4,6 +4,6 @@ title: Update
 
 # Update a Library
 
-{% form library.update %}
+{% form library.patch %}
 
 {% scenario libraries.update %}

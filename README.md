@@ -20,6 +20,7 @@ ways, developing locally, or developing using a Docker container.
 Fork and clone this reactor-developer-docs repository. After making and
 previewing changes, create a commit, and open a Pull Request.
 
+## Developing
 
 ### Developing locally
 
@@ -38,7 +39,7 @@ bundle install
 Next, start Jekyll.
 
 ```bash
-bundle exec jekyll serve
+bundle exec jekyll serve --port 4000
 ```
 
 #### Preview
