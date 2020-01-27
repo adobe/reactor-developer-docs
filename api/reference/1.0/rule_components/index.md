@@ -24,4 +24,4 @@ A `RuleComponent` is provided by exactly one `Extension`.  `Extensions` can prov
 
 Finally, `RuleComponents` are created by `POST`ing to a `Rule`, so before you can create `RuleComponents`, you must first create the `Rule` that they should belong to.
 
-You can read more about rules and rule components in the [Rules section](https://docs.adobelaunch.com/launch-reference/managing-resources/rules) of the Launch user docs.
+You can read more about rules and rule components in the [Rules section](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html) of the Launch user docs.

@@ -22,4 +22,4 @@ A `Host` can be used by more than one `Environment` within a `Property`.  It is 
 
 Each Launch `Property` must have at least one `Host` before you can publish.  A host may only belong to a single property.
 
-You can read more about `Hosts` in the [Hosts section](https://docs.adobelaunch.com/launch-reference/publishing/hosts) of the Launch User docs.
+You can read more about `Hosts` in the [Hosts section](https://docs.adobe.com/content/help/en/launch/using/reference/publish/hosts/hosts-overview.html) of the Launch User docs.

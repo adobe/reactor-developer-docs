@@ -23,4 +23,4 @@ If you would like to develop extensions for Launch, [please join us](http://join
 
 ## Additonal Documentation
 
-[Launch User Docs](https://docs.adobelaunch.com)
+[Launch User Docs](https://docs.adobe.com/content/help/en/launch/using/overview.html)
