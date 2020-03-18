@@ -12,4 +12,8 @@ Therefore, it is possible to retrieve a deleted `Rule`.
 Deleted `Rules` can be identified by the presence of `data.meta.deleted_at`.
 {% endalert %}
 
+{% alert info, Note %}
+A Rule's `updated_at` timestamp will also reflect changes to it's child `RuleComponents`.
+{% endalert %}
+
 {% scenario rules.show %}
