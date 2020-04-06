@@ -219,6 +219,10 @@ If we set a `propertyPath` of `foo.baz` we would transform the `baz` array.
 
 Property Path's can use any combination of array and object notation to apply transforms at any level of the settings object.
 
+{% alert warning, Sandbox Support %}
+Using array notation in the `propertyPath` attribute (e.g. `foo.baz[]`) is *not yet supported in the extension sandbox* tool.
+{% endalert %}
+
 Below are the available transformations and how to use them.
 
 ### Function Transform
