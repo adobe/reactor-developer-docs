@@ -42,6 +42,12 @@ This is an example demonstrating the object values.
 }
 ```
 
+### `turbine.debugEnabled: boolean`
+
+Whether Launch debugging is currently enabled.
+
+If you are simply attempting to log messages, it's unlikely you will need to use this. Instead, always log messages using `turbine.logger` and Launch will ensure your messages are only printed to the console when Launch debugging is enabled.
+
 ### `turbine.getDataElementValue(name: string) => *`
 
 ```javascript
@@ -106,6 +112,12 @@ Logging utility used to log messages to the console. Messages will only show in 
 * `logger.debug(message: string)`
 
   Logs a debug message to the console. (Visible only when `verbose` logging is enabled within your browser console.)
+
+### `turbine.onDebugChanged(callback: Function)`
+
+By passing a callback function into `turbine.onDebugChanged`, Launch will call your callback whenever debugging is toggled. Launch will pass a boolean to the callback function which will be true if debugging was enabled or false if debugging was disabled.
+
+If you are simply attempting to log messages, it's unlikely you will need to use this. Instead, always log messages using `turbine.logger` and Launch will ensure your messages are only printed to the console when Launch debugging is enabled. 
 
 ### `turbine.propertySettings: Object`
 
