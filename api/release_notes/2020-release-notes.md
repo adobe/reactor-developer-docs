@@ -4,6 +4,16 @@ title: 2020 Release Notes
 
 # 2020 Reactor Release Notes
 
+## 2020-04-13
+
+<hr class="spectrum-Rule spectrum-Rule--medium">
+
+### Support for Array Transforms in Extensions
+
+See [transforming settings objects](https://developer.adobelaunch.com/extensions/reference/extension-manifest/#transforming-settings-objects) for more info.
+
+<br>
+
 ## 2020-03-23
 
 <hr class="spectrum-Rule spectrum-Rule--medium">
