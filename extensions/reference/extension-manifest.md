@@ -195,7 +195,35 @@ A type definition is an object used to describe an event, condition, action, or 
 
 ## Transforming Settings Objects
 
-For certain specific use cases, extensions need the settings objects saved from a view to be transformed by Launch before they are emitted into the Launch runtime library. You may request that one or more of these transformations take place by setting the `transforms` property when defining a type definition within your `extension.json`. The `transforms` property is an array of objects where each object represents a transformation that should take place. Below are the available transformations and how to use them.
+For certain specific use cases, extensions need the settings objects saved from a view to be transformed by Launch before they are emitted into the Launch runtime library. You may request that one or more of these transformations take place by setting the `transforms` property when defining a type definition within your `extension.json`. The `transforms` property is an array of objects where each object represents a transformation that should take place. 
+
+All transforms require a `type` and a `propertyPath`. The `type` must be one of `function`, `remove`, and `file` and describes which transform Launch should apply to the settings object. The `propertyPath` is a period-delimited string that tells Launch where to find the property that needs to be modified within the settings object. Here is an example settings object and some `propertyPath`s:
+
+```
+{
+  foo:
+    bar: "A string"
+    baz: [
+      "A",
+      "B",
+      "C"
+    ]
+}
+```
+
+If we set a `propertyPath` of `foo.bar` we would transform the `"A string"` value.
+
+If we set a `propertyPath` of `foo.baz[]` we would transform each value in the `baz` array.
+
+If we set a `propertyPath` of `foo.baz` we would transform the `baz` array.
+
+Property Path's can use any combination of array and object notation to apply transforms at any level of the settings object.
+
+{% alert warning, Sandbox Support %}
+Using array notation in the `propertyPath` attribute (e.g. `foo.baz[]`) is *not yet supported in the extension sandbox* tool.
+{% endalert %}
+
+Below are the available transformations and how to use them.
 
 ### Function Transform
 
