@@ -9,9 +9,8 @@ For example, providing a private key to be used in the delivery of libraries to
 Environments via Hosts. The sensitive nature of those credentials necessitates
 secure transfer and storage.
 
-The Launch platform achieves this by utilizing GPG encryption and decryption.
-Using GPG, sensitive values may be encrypted in such a way that they are only
-decryptable by the Launch platform.
+The Launch platform achieves this with GPG encryption and decryption.
+GPG encrypts sensitive values so only the Launch platform can read them.
 
 
 ## Obtain the public GPG key
@@ -40,7 +39,7 @@ gpg --import launch@adobe.com_pub.gpg
 
 ## Encrypt values
 
-Encrypting values is fairly straitforward.
+Encrypting values is fairly straightforward.
 
 ```bash
 echo -n 'Example value' | gpg --armor --encrypt -r "Adobe Launch Data Encryption <launch@adobe.com>"
