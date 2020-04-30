@@ -11,7 +11,7 @@ title: Access Tokens
 Communication with the Launch API occurs through the [Adobe I/O gateway](https://www.adobe.io/), and requires the use of JWT-based access tokens.
 
 {% alert info, Prerequisites %}
-- A terminal appliation on Mac/Linux/UNIX or a Command Line Window on Windows.
+- A terminal application on Mac/Linux/UNIX or a Command Line Window on Windows.
 - An Adobe Experience Cloud admin to have granted your Adobe user access to the Adobe I/O Console.  Only those with the Org Administrator or the Developer role can use the I/O console.
 {% endalert %}
 
@@ -69,7 +69,7 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key 
 These commands will create two files in the current directory _(usually the current user's home directory)_.
 
 {% alert info, Note %}
-The names of the files maybe changed as desired. Keep the private key safe and limit access!
+The names of the files may be changed as desired. Keep the private key safe and limit access!
 {% endalert %}
 
   
