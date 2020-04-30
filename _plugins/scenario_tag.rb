@@ -24,7 +24,11 @@ EOF
   end
 
   def build_curl_request_options
-    if @scenario['request']
+    return unless @scenario['request']
+
+    if request_with_file?(@scenario['request'])
+      "-F \"#{@scenario['request'].keys.first}=#{@scenario['request'].values.first}\""
+    else
       "-d \\\n'\n#{JSON.pretty_generate(@scenario['request'])}'"
     end
   end
@@ -125,5 +129,12 @@ EOT
     lexer = Rouge::Lexer.find_fancy(lang, code) || Rouge::Lexers::PlainText
     result = formatter.format(lexer.lex(code))
     "<pre><code>#{result}</code></pre>"
+  end
+
+  private
+
+  def request_with_file?(request)
+    values = request.values
+    values.size == 1 && values.first.respond_to?(:match?) && values.first.match?(/@\[.*\]/)
   end
 end
