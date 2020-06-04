@@ -334,7 +334,7 @@ In this case, the value of `foo.bar` has been transformed to a URL. The exact UR
 
 ### Remove Transform
 
-By default, all the properties of the settings object are emitted in the Launch runtime library. If certain properties contain sesitive information (eg. secret token), you can use the remove transform to not emit that information inside the Launch runtime library.
+By default, all the properties of the settings object are emitted in the Launch runtime library. If certain properties contain sensitive information (eg. secret token) or are only used for the extension view, you shoud use the remove transform to not emit that information inside the Launch runtime library.
 
 Let's assume we would like to provide a new action type. The action type's view might provide an input wherein the user can enter a secret key that will allow connection to a specific API. Let's assume a user entered the following text into the input:
 
