@@ -51,7 +51,7 @@ var queryString = require('@adobe/reactor-query-string');
 var parsed = queryString.parse(location.search);
 console.log(parsed.campaign);
 var obj = {
-  campaign: 'Black Friday'
+  campaign: 'Campaign A'
 };
 var stringified = queryString.stringify(obj);
 ```
