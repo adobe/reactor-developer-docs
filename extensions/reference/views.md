@@ -73,7 +73,7 @@ The `init` method will be called by Launch as soon as the view has been loaded i
 
   * `info.tokens.imsAccess: string`
 
-    For accessing Adobe APIs from inside the view you will need to usually use an IMS token. This token will made available only for extensions developed by Adobe. If you are an Adobe employee building an Adobe extension, please [email the Launch engineering team](mailto:reactor@adobe.com) and provide the name of the extension so we can add it to the allowed list.
+    For accessing Adobe APIs from inside the view you will need to usually use an IMS token. This token will made available only for extensions developed by Adobe. If you are an Adobe employee representing an extension authored by Adobe, please [email the Launch engineering team](mailto:reactor@adobe.com) and provide the name of the extension so we can add it to the allowed list.
 
 * `info.company: Object`
 
