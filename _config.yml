@@ -19,6 +19,7 @@ exclude:
   - Gemfile*
   - README.md
   - videos
+  - vendor
 
 defaults:
   - scope:
