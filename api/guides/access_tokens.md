@@ -12,11 +12,6 @@ In order to use the Launch API, each request must include the following authenti
 
 This guide covers how to use the Adobe Developer Console to gather the values for each of these headers so you can start making calls to the Launch API.
 
-{% alert info, Prerequisites %}
-- A terminal application on Mac/Linux/UNIX or a Command Line Window on Windows.
-- An Adobe Experience Cloud admin to have granted your Adobe user access to the Adobe I/O Console.  Only those with the Org Administrator or the Developer role can use the I/O console.
-{% endalert %}
-
 ## Gain developer access to Adobe Experience Platform
 
 Before you can generate authentication values for the Launch API, you must have developer access to Experience Platform. To gain developer access, follow the beginning steps in the [Experience Platform authentication tutorial](https://docs.adobe.com/content/help/en/experience-platform/tutorials/authentication.html). Once you arrive at the step "Generate access credentials in Adobe Developer Console", return to this tutorial to generate the credentials specific to Launch.
