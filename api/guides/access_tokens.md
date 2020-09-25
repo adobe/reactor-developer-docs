@@ -1,135 +1,161 @@
 ---
-title: Access Tokens
+title: Authenticate to the Launch API
 ---
 
-# Access Tokens
+# Authenticate to the Launch API
 
-## JWT
+In order to use the Launch API, each request must include the following authentication headers:
 
-[JSON Web Tokens](https://jwt.io) (JWT) are an open, industry standard RFC 7519 method for representing claims securely between two parties.
+* `Authorization: Bearer [TOKEN]`
+* `x-api-key: [KEY]`
+* `x-gw-ims-org-id: [ORG_ID]`
 
-Communication with the Launch API occurs through the [Adobe I/O gateway](https://www.adobe.io/), and requires the use of JWT-based access tokens.
+This guide covers how to use the Adobe Developer Console to gather the values for each of these headers so you can start making calls to the Launch API.
 
-{% alert info, Prerequisites %}
-- A terminal application on Mac/Linux/UNIX or a Command Line Window on Windows.
-- An Adobe Experience Cloud admin to have granted your Adobe user access to the Adobe I/O Console.  Only those with the Org Administrator or the Developer role can use the I/O console.
-{% endalert %}
+## Gain developer access to Adobe Experience Platform
 
-## Adobe I/O Integration
+Before you can generate authentication values for the Launch API, you must have developer access to Experience Platform. To gain developer access, follow the beginning steps in the [Experience Platform authentication tutorial](https://docs.adobe.com/content/help/en/experience-platform/tutorials/authentication.html). Once you arrive at the step "Generate access credentials in Adobe Developer Console", return to this tutorial to generate the credentials specific to Launch.
 
-Access to the Launch APIs requires the creation of an Integration via Adobe I/O.
+## Generate access credentials
 
-### Create a new integration
+Using Adobe Developer Console, you must generate the following three access credentials:
 
-Open a browser and navigate to [https://console.adobe.io/](https://console.adobe.io/).  From the home screen, click on "Integrations" in the top nav.
+* `[ORG_ID]`
+* `[KEY]`
+* `[TOKEN]`
 
-Click the **"New Integration"** button.
+Your IMS Organization's ID (`[ORG_ID]`) and API key (`[KEY]`) only need to be generated once and can be reused in future API calls. However, your access token (`[TOKEN]`) is temporary and must be regenerated every 24 hours.
 
-![](/images/access-token/IO-1.png)
+The steps for generating these values are covered in detail below.
 
-Select **"Access an API"** and click **"Continue"**
+### One-time setup
 
-![](/images/access-token/IO-2.png)
+Go to [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) and sign in with your Adobe ID. Next, follow the steps outlined in the tutorial on [creating an empty project](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) in the Developer Console documentation.
 
-If your user account has access to multiple organizations, ensure the correct organization is selected in the drop-down under `Integrations`.
+Once you have created a new project, click **Add API** on the **Project Overview** screen.
 
-From the list of Adobe APIs, find the section titled **"Adobe Experience Platform"**. Under that section, select **"Experience Platform Launch API"** and click **"Continue"**
+![](/images/access-token/add-api-button.png)
 
-![](/images/access-token/IO-3.png)
+The **Add an API** screen appears. Select **Experience Platform Launch API** from the list of available APIs before clicking **Next**.
 
-On this next screen, define the configuration settings for the integration.
+![](/images/access-token/add-launch-api.png)
 
-Give it a descriptive **Name** and a detailed **Description** for others to easily identify this application and its purpose
+On the next screen, you are prompted to create a JSON Web Token (JWT) credential be either generating a new keypair or uploading your own public key. For this tutorial, select the **Generate a key pair** option, then select **Generate keypair** in the bottom-right corner.
 
-#### Generate a certificate
+![](/images/access-token/create-jwt.png)
 
-Next, generate an SSL private key and a public certificate.
+The next screen confirms the keypair has successfully generated, and a compressed folder containing a public certificate and a private key is automatically downloaded to your machine. You will need this private key in a later step to generate an access token.
 
-##### macOS & Linux / UNIX
+Select **Next** to continue.
 
-Open a terminal application (Terminal.app, for example). Using OpenSSL, generate a new SSL certificate and key.
-```bash
-openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out adobe-io-public.crt
-```
+![](/images/access-token/keypair-generated.png)
 
-##### Windows
-
-Download an OpenSSL client to generate public certificates; For example, [OpenSSL Windows client.](https://bintray.com/vszakats/generic/download_file?file_path=openssl-1.1.1-win64-mingw.zip)
-
-Extract the folder and copy it to `C:/libs`
-
-Open a command line window and execute the following:
-
-```bash
-set OPENSSL_CONF=C:/libs/openssl-1.1.1-win64-mingw/openssl.cnf
-cd C:/libs/openssl-1.1.1-win64-mingw/
-openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out adobe-io-public.crt
-```
-
-These commands will create two files in the current directory _(usually the current user's home directory)_.
+The next screen prompts you to select the product profile(s) to associate with the API integration.
 
 {% alert info, Note %}
-The names of the files may be changed as desired. Keep the private key safe and limit access!
+Product profiles are managed by your organization through the Adobe Admin Console, and contain specific sets of permissions for granular features in Adobe Experience Platform Launch. Product profiles and their permissions can only be managed by users with administrator privileges within your organization. If you are unsure which product profile(s) to select for the API, contact your administrator.
 {% endalert %}
 
-  
-Next, upload the certificate (**crt**) file via the Adobe I/O configuration window by either drag-n-drop or select to upload.
+Select the desired product profile(s) from the list, then select **Save configured API** to complete the API registration.
 
-{% alert info, Note %}
-Multiple certificates may be added.
-{% endalert %}
+![](/images/access-token/select-product-profile.png)
 
-![](/images/access-token/IO-5.png)
+Once the API has been added to the project, the project page reappears on the Experience Platform Launch API page. From here, scroll down to the **Service Account (JWT)** section, which provides the following access credentials that are required in all calls to the Launch API:
 
-Next, we need to assign rights to this Integration.  These integrations share the same permissions that can be assigned to users through the Admin Console.  Any product profiles that exist for Launch will show up in the list at the bottom of the page.  Select the product profile that is appropriate for this integration.
+* **CLIENT ID**: The Client ID is the required `[KEY]` which must be provided in the `x-api-key` header.
+* **ORGANIZATION ID**: The Organization ID is the `[ORG_ID]` value that must be used in the `x-gw-ims-org-id` header.
 
-If you need help creating a new product profile, an Org Admin or a Product Admin for Launch can do this is in the Admin Console where users are managed.  You can read more about this in the user docs [here](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html#n3-create-your-product-profile).
+![](/images/access-token/access-creds.png)
 
-Click **"Create Integration"**.  You should now see the success screen.
+### Authentication for each session
 
-![](/images/access-token/IO-6.png)
-
-{% alert info, Note %}
-If an error is encountered, it's generally related to certificate generation issues.
-{% endalert %}
-
-## Testing the Integration
-
-Click **Continue to integration details**.
-
-Click on the tab labeled “JWT”
-
-![](/images/access-token/IO-7.png)
-
-Use a text editor to open the private key file generated in the steps above.
-
-Paste the contents of the private key file into the browser window in the text box labeled **"Paste private key"**.
-
-Next, click **"Generate JWT"**.
-
-Two boxes should now be visible.
-  - The **LEFT** box contains a new access token valid for the integration.
-  - The **RIGHT** box contains a sample cURL request that can be run in a terminal to test the integration.
-
-Copy the sample cURL request into your terminal and execute it to verify the API call succeeds.
-
-![](/images/access-token/IO-8.png)
-
-## Using Access Tokens in Launch
-
-The sample cURL request from the previous step demonstrates exchanging the JWT for an access token, returned as
-`access_token` in the response, for use in Launch.
-
-The Launch API requires an `Authorization` header, with the access token supplied as the `Bearer` in requests.
-
-For example, `Authorization: Bearer [TOKEN]`
+Now that you have your `[KEY]` and `[ORG_ID]` values, the final step is generating a `[TOKEN]` value.
 
 {% alert info, Note %}
 Note that these tokens expire after 24 hours.  If you are using this integration for an application, it is a good idea to obtain your bearer token programmatically from within your application.
 {% endalert %}
 
+You have two options to generate your access tokens, depending on your use case:
+
+* [Generate tokens manually](#generate-access-tokens-manually)
+* [Generate tokens programmatically](#generate-access-tokens-programmatically)
+
+#### Generate access tokens manually
+
+Open the private key you downloaded earlier in a text editor or browser and copy its contents. Then, navigate back to the Developer Console and paste the private key in the **Generate access token** section on the Launch API page for your project before selecting **Generate Token**.
+
+![](/images/access-token/paste-private-key.png)
+
+A new access token is generated, and a button to copy the token to your clipboard is provided. This value is used for the required `Authorization` header, and must be provided in the format `Bearer [TOKEN]`.
+
+![](/images/access-token/token-generated.png)
+
+#### Generate access tokens programmatically
+
+If you are using your Launch integration for an application, you can programmatically generate access tokens through API requests. In order to accomplish this, you must obtain the following values:
+
+* Client ID (`[KEY]`)
+* Client secret (`[CLIENT_SECRET]`)
+* A JSON Web Token (`[JWT]`)
+
+Your client ID and secret can be obtained from the main page for your project, as seen in the [previous step](#one-time-setup).
+
+![](/images/access-token/auto-access-creds.png)
+
+To obtain your JWT credential, navigate to **Service Account (JWT)** in the left navigation, then select the **Generate JWT** tab. On this page, under **Generate custom JWT**, paste the contents of your private key into the provided textbox, then select **Generate Token**.
+
+![](/images/access-token/generate-jwt.png)
+
+The generated JWT appears below once it has finished processing, along with a sample cURL command that you can use to test the token if you wish. Use the **Copy** button to copy the token to your clipboard.
+
+![](/images/access-token/jwt-generated.png)
+
+Once you've gathered your credentials, you can integrate the API call below into your application in order to programmatically generate access tokens.
+
+**Request**
+
+The request must send a `multipart/form-data` payload, providing your authentication credentials as shown below:
+
+```shell
+curl -X POST \
+  https://ims-na1.adobelogin.com/ims/exchange/jwt/ \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'client_id=[KEY]' \
+  -F 'client_secret=[CLIENT_SECRET]' \
+  -F 'jwt_token=[JWT]'
+```
+
+**Response**
+
+A successful response returns a new access token, as well as the number of seconds left until it expires.
+
+```json
+{
+  "token_type": "bearer",
+  "access_token": "[TOKEN]",
+  "expires_in": 86399999
+}
+```
+
+| Property | Description |
+| :-- | :-- |
+| `access_token`   | The newly generated access token value. This value is used for the required `Authorization` header, and must be provided in the format `Bearer [TOKEN]`. |
+| `expires_in`   | The remaining time until the token expires, in seconds. Once a token expires, a new one must be generated. |
+
+## Next steps
+
+By following the steps in this tutorial, you should have a valid values for `[ORG_ID]`, `[KEY]`, and `[TOKEN]`. You can now test these values by using them in a simple cURL request to the Launch API.
+
+Start by attempting to make an API call to [list all companies](../../reference/1.0/companies/list). 
+
+{% alert info, Note %}
+You may not have any companies in your organization, in which case the response will be HTTP status 404 (Not Found). As long as you do not get a 403 (Forbidden) error, your access credentials are valid and working.
+{% endalert %}
+
+Once you confirm that your access credentials are working, continue to explore the other API reference documentation to learn the API's many capabilities.
+
 ## Additional Resources
 
 JWT Libraries and SDKs: [https://jwt.io/](https://jwt.io/)
 
-Postman API development: [https://www.getpostman.com/](https://www.getpostman.com/)
+Postman API development: [https://www.postman.com/](https://www.postman.com/)
