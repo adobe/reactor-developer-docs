@@ -24,7 +24,7 @@ Using Adobe Developer Console, you must generate the following three access cred
 * `[KEY]`
 * `[TOKEN]`
 
-Your IMS Organization's ID (`[ORG_ID]`) and API key (`[KEY]`) only need to be generated once and can be reused in future API calls. However, your access token (`[TOKEN]`) is temporary and must be regenerated ever 24 hours.
+Your IMS Organization's ID (`[ORG_ID]`) and API key (`[KEY]`) only need to be generated once and can be reused in future API calls. However, your access token (`[TOKEN]`) is temporary and must be regenerated every 24 hours.
 
 The steps for generating these values are covered in detail below.
 
@@ -40,7 +40,7 @@ The **Add an API** screen appears. Select **Experience Platform Launch API** fro
 
 ![](/images/access-token/add-launch-api.png)
 
-On the next screen, you are prompted to create a JWT credential be either generating a new keypair or uploading your own public key. For this tutorial, select the **Generate a key pair** option, then select **Generate keypair** in the bottom-right corner.
+On the next screen, you are prompted to create a JSON Web Token (JWT) credential be either generating a new keypair or uploading your own public key. For this tutorial, select the **Generate a key pair** option, then select **Generate keypair** in the bottom-right corner.
 
 ![](/images/access-token/create-jwt.png)
 
@@ -53,7 +53,7 @@ Select **Next** to continue.
 The next screen prompts you to select the product profile(s) to associate with the API integration.
 
 {% alert info, Note %}
-Product profiles are managed by your organization through the Adobe Admin Console, and contain specific sets of permissions for granular features in Adobe Experience Platform. Product profiles and their permissions can only be managed by users with administrator privileges within your organization. If you are unsure which product profile(s) to select for the API, contact your administrator.
+Product profiles are managed by your organization through the Adobe Admin Console, and contain specific sets of permissions for granular features in Adobe Experience Platform Launch. Product profiles and their permissions can only be managed by users with administrator privileges within your organization. If you are unsure which product profile(s) to select for the API, contact your administrator.
 {% endalert %}
 
 Select the desired product profile(s) from the list, then select **Save configured API** to complete the API registration.
@@ -75,6 +75,13 @@ Now that you have your `[KEY]` and `[ORG_ID]` values, the final step is generati
 Note that these tokens expire after 24 hours.  If you are using this integration for an application, it is a good idea to obtain your bearer token programmatically from within your application.
 {% endalert %}
 
+You have two options to generate your access tokens, depending on your use case:
+
+* [Generate tokens manually](#generate-access-tokens-manually)
+* [Generate tokens programmatically](#generate-access-tokens-programmatically)
+
+#### Generate access tokens manually
+
 Open the private key you downloaded earlier in a text editor or browser and copy its contents. Then, navigate back to the Developer Console and paste the private key in the **Generate access token** section on the Launch API page for your project before selecting **Generate Token**.
 
 ![](/images/access-token/paste-private-key.png)
@@ -82,6 +89,58 @@ Open the private key you downloaded earlier in a text editor or browser and copy
 A new access token is generated, and a button to copy the token to your clipboard is provided. This value is used for the required `Authorization` header, and must be provided in the format `Bearer [TOKEN]`.
 
 ![](/images/access-token/token-generated.png)
+
+#### Generate access tokens programmatically
+
+If you are using your Launch integration for an application, you can programmatically generate access tokens through API requests. In order to accomplish this, you must obtain the following values:
+
+* Client ID (`[KEY]`)
+* Client secret (`[CLIENT_SECRET]`)
+* A JSON Web Token (`[JWT]`)
+
+Your client ID and secret can be obtained from the main page for your project, as seen in the [previous step](#one-time-setup).
+
+![](/images/access-token/auto-access-creds.png)
+
+To obtain your JWT credential, navigate to **Service Account (JWT)** in the left navigation, then select the **Generate JWT** tab. On this page, under **Generate custom JWT**, paste the contents of your private key into the provided textbox, then select **Generate Token**.
+
+![](/images/access-token/generate-jwt.png)
+
+The generated JWT appears below once it has finished processing, along with a sample cURL command that you can use to test the token if you wish. Use the **Copy** button to copy the token to your clipboard.
+
+![](/images/access-token/jwt-generated.png)
+
+Once you've gathered your credentials, you can integrate the API call below into your application in order to programmatically generate access tokens.
+
+**Request**
+
+The request must send a `multipart/form-data` payload, providing your authentication credentials as shown below:
+
+```shell
+curl -X POST \
+  https://ims-na1.adobelogin.com/ims/exchange/jwt/ \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'client_id=[KEY]' \
+  -F 'client_secret=[CLIENT_SECRET]' \
+  -F 'jwt_token=[JWT]'
+```
+
+**Response**
+
+A successful response returns a new access token, as well as the number of seconds left until it expires.
+
+```json
+{
+  "token_type": "bearer",
+  "access_token": "[TOKEN]",
+  "expires_in": 86399999
+}
+```
+
+| Property | Description |
+| :-- | :-- |
+| `access_token`   | The newly generated access token value. This value is used for the required `Authorization` header, and must be provided in the format `Bearer [TOKEN]`. |
+| `expires_in`   | The remaining time until the token expires, in seconds. Once a token expires, a new one must be generated. |
 
 ## Next steps
 
@@ -99,4 +158,4 @@ Once you confirm that your access credentials are working, continue to explore t
 
 JWT Libraries and SDKs: [https://jwt.io/](https://jwt.io/)
 
-Postman API development: [https://www.getpostman.com/](https://www.getpostman.com/)
+Postman API development: [https://www.postman.com/](https://www.postman.com/)
