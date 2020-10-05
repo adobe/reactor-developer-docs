@@ -12,6 +12,7 @@ permalink: pretty
 sections:
   - api
   - extensions
+  - extensions-edge
   - resources
 
 exclude:
@@ -41,6 +42,11 @@ defaults:
       layout: "documentation"
   - scope:
       path: "extensions"
+      type: "pages"
+    values:
+      layout: "documentation"
+  - scope:
+      path: "extensions-edge"
       type: "pages"
     values:
       layout: "documentation"
