@@ -16,6 +16,8 @@ To filter the response for a given listing endpoint, you must supply a `filter` 
 
 {% alert info, Note %}
 The syntax template below uses square bracket (`[]`) and space characters for readability. In practice, these characters must be URI-encoded, as outlined in [RFC 3986](https://tools.ietf.org/html/rfc3986). An example of a properly encoded request path is shown later in this guide.
+
+Note that if the structure of your filters are incorrect, no filters will be applied and the full result set is returned.
 {% endalert %}
 
 ```http
@@ -58,6 +60,10 @@ To apply filters for multiple attributes, supply a `filter` parameter for each a
 GET {ENDPOINT}?filter[{ATTRIBUTE_NAME_1}]={OPERATOR} {VALUE}&filter[{ATTRIBUTE_NAME_2}]={OPERATOR} {VALUE}
 ```
 
+{% alert info, Note %}
+If you specify the same attribute in multiple filters on the same request, then only the last provided filter for that attribute will be applied.
+{% endalert %}
+
 ## Appendix
 
 The following section contains additional information for working with filters in the Launch API.
@@ -72,5 +78,5 @@ The following table lists the supported operator values for filter parameters. K
 | `NOT` | The attribute must not equal the provided value.  |
 | `LT` | The attribute must be less than the provided value. |
 | `GT` | The attribute must be greater than the provided value. |
-| `BETWEEN` | The attribute must must fall within a specified range of values. |
-| `CONTAINS` | The attribute must contain the provided value, such as a set of characters in a string attribute. |
+| `BETWEEN` | The attribute must must fall within a specified range of values. When using this operator, [two values](#filtering-on-multiple-values) must be provided to indicate the minimum and maximum values for the desired range. |
+| `CONTAINS` | The attribute must contain the provided value, such as a set of characters within a string attribute. |
