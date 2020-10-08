@@ -7,11 +7,6 @@ labels: ''
 assignees: ''
 
 ---
-
----
-name: Docs Bug
-about: There's a problem with the docs
----
  
 # Documentation Bug
  
