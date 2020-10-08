@@ -134,3 +134,13 @@ An object containing the following settings which are defined by the user for th
 * `propertySettings.undefinedVarsReturnEmpty: boolean`
 
   Extension developers should not be concerned with this setting.
+
+### `turbine.replaceTokens(thing: *) => *`
+
+```javascript
+console.log(turbine.replaceTokens(thingWithTokens));
+```
+
+Replacing any variable tokens (`%myDataElement%`, `%this.foo%`, etc.) with their associated values. Support strings, arrays and objects.
+
+See also [Data element token replacement methodology](../views/#data-element-token-replacement-methodology).
