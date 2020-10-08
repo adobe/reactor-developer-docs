@@ -7,11 +7,6 @@ labels: ''
 assignees: ''
 
 ---
-
----
-name: Update Existing Topic
-about: Request topic update
----
  
 # Topic update request
  

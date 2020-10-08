@@ -7,11 +7,6 @@ labels: ''
 assignees: ''
 
 ---
-
----
-name: New Topic Request
-about: Request missing documentation
----
  
 # New topic request
  
