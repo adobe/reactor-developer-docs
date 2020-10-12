@@ -4,11 +4,7 @@ title: Overview
 
 # Extensions Overview
 
-## What Is An Extension
-
-One of the primary goals of Reactor is to create an open ecosystem where engineers outside of the core Launch engineering team can expose additional functionality through Adobe Experience Platform Launch Server Side (Launch Server Side). This is done through Reactor extensions. Once an extension has been installed on a Launch Server Side property by a user, that extension's functionality then becomes available for use by all users of the property.
-
-The primary components of an extension include the following:
+The primary components of an edge extension include the following:
 
 ### Condition Types
 
