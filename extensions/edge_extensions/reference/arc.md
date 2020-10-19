@@ -5,7 +5,7 @@ order: 15
 
 # Adobe Request Context (arc)
 
-The `arc` object is a "variable" accessible inside your extension's library modules. It provides information and utilities specific to the Launch runtime and is always available as the 2nd parameter when your module is executed.
+The `arc` object is a "variable" accessible inside your extension's library modules. It provides information about the event triggering the rule and is always available as the 2nd parameter when your module is executed.
 
 ### `arc.buildInfo: Object<string, string>`
 
@@ -98,47 +98,52 @@ logger.log(arc.ruleStash);
 
 `ruleStash` is an object that will collect every result from action modules.
 
-Each extension has its own namespace. For example if you extension has the name `send-beacon`, all the results from the `send-beacon` actions will be stored on `ruleStash['send-beacon']` namespace.
+Each extension has its own namespace. For example, if your extension has the name `send-beacon`, all the results from the `send-beacon` actions will be stored on the `ruleStash['send-beacon']` namespace.
 
 The namespace is unique for each extension and it has the value `undefined` at the beginning.
 
-The namespace will be overrided with the returned result from each action. There is no namespace magic happening. Lets say we have a `transform` extension containing two actions: `generate-fullname` and `generate-fulladdress`. Let's say we add the two actions to a rule.
+The namespace will be overridden with the returned result from each action. There is no namespace magic happening. Let's say we have a `transform` extension containing two actions: `generate-fullname` and `generate-fulladdress`. Let's say we add the two actions to a rule.
 
-If the result of `generate-fullname` action is `Firstname Lastname`, when the action execution is completed the rule stash will look like:
-
-```json
-{
-  transfrom: 'Firstname Lastname`
-}
-```
-
-If the result of `generate-address` action is `3900 Adobe Way`, when the action execution is completed the rule stash for the `transform` extension will no longer be 'Firstname Lastname`, but:
+If the result of `generate-fullname` action is `Firstname Lastname`, then the rule stash will appear as follows after the action is completed:
 
 ```json
 {
-  transfrom: '3900 Adobe Way`
+  transform: 'Firstname Lastname`
 }
 ```
 
-If you want to store the results from both actions inside the `transform` namespace from the `ruleStash` you can write in your action module something like the following:
+If the result of the `generate-address` action is `3900 Adobe Way`, then the rule stash will appears as follows after the action is completed:
+
+```json
+{
+  transform: '3900 Adobe Way`
+}
+```
+
+Notice that "Firstname Lastname" no longer exists within the rule stash, because the generate-address action overrode it with the address.
+
+If you want to store the results from both actions inside the `transform` namespace in the `ruleStash` you can write your action module similar to the following example:
 
 ```javascript
 module.exports = (settings, arc, utils) => {
-  let { ruleStash: { transform: transformRuleStash } } = arc;
+  let transformRuleStash = arc.ruleStash.transform;
+
   if (!transformRuleStash) {
     transformRuleStash = {};
   }
 
-  transformRuleStash['generate-fullname'] = 'Firstname Lastname';
+  transformRuleStash.fullName = 'Firstname Lastname';
 
   return transformRuleStash;
 }
 ```
 
-You need to be careful to return always the full extension rule stash in this case. If you would return only a value (eg: 5), then the rulestash will look like:
+The first time this action is executed, the `ruleStash` will be `undefined` and we initialize it with an empty object. The next time when the action is executed, we will get the `ruleStash` returned by our action when it was previously called. Using an object as `ruleStash`, allows us to add new data without losing data previously set by other actions from our extension.
+
+You need to be careful to always return the full extension rule stash in this case. If you were to return only a value (eg: 5), then the rule stash would look like:
 
 ```json
 {
-  transfrom: 5
+  transform: 5
 }
 ```

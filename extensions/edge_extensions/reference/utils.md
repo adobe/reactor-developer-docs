@@ -5,7 +5,7 @@ order: 16
 
 # Utilities
 
-The `utils` object is a "variable" accessible inside your extension's library modules. It provides utilities specific to the Launch runtime and is always available as the 3rd parameter when your module is executed.
+The `utils` object is provided to your extension's library modules. It provides utilities specific to the Launch runtime and is always available as the 3rd parameter when your module is executed.
 
 ### `utils.logger: Object<string, Function>`
 

@@ -11,15 +11,7 @@ Let's assume we wish to evaluate whether the user is on the host `adobelaunch.co
 
 ```javascript
 module.exports = (settings, arc) => {
-  const {
-    event: {
-      xdm: {
-        web: {
-          webpageDetails: { URL },
-        },
-      },
-    },
-  } = arc;
+  const URL = arc.event.xdm.web.webpageDetails.URL;
   return URL.endsWith("adobelaunch.com");
 };
 ```

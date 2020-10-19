@@ -17,7 +17,7 @@ Let's assume that we would like to allow users to retrieve a piece of data from 
 
 ```javascript
 module.exports = (settings, arc, utils) => {
-   const {
+  const {
     event: {
       data: {
         productName
@@ -41,7 +41,7 @@ In order to operate on the user-defined local storage item name, our module woul
 
 ```javascript
 module.exports = (settings, arc, utils) => {
-     const {
+  const {
     event: {
       data
     }

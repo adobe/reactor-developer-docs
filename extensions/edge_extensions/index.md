@@ -24,7 +24,7 @@ Action types typically consist of (1) a view shown within the Launch application
 
 ### Data Element Types
 
-Data elements are essentially aliases to pieces of data on a page regardless of where that data is found inside the event recived by the server. A data element can be referenced by rules and acts as an abstraction for accessing these pieces of data. When the location of the data changes in the future (for example the event key that contains the value is changed), a single data element can be reconfigured while all the rules referencing that data element can remain unchanged.
+Data elements are essentially aliases to pieces of data regardless of where that data is found inside the event recieved by the server. A data element can be referenced by rules and acts as an abstraction for accessing these pieces of data. When the location of the data changes in the future (for example the event key that contains the value is changed), a single data element can be reconfigured while all the rules referencing that data element can remain unchanged.
 
 Data element types typically consist of (1) a view shown within the Launch application that allows users to modify settings for the data element and (2) a library module emitted within the Launch runtime library to interpret the settings and retrieve pieces of data.
 

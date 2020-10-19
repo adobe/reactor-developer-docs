@@ -1,7 +1,3 @@
----
-title: Quickstart
----
-
 # Quickstart
 
 To get you up and running and building extensions, we will be using the open-source scaffolding tool, generously provided by Adobe's Launch engineers to create the necessary files and file structure for your extension package, so all you have left to do is the valuable part: actually write the code.

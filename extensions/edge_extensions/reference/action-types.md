@@ -5,9 +5,9 @@ order: 10
 
 # Action Types
 
-An action type library module is intended to take an action--any action. What this action does is entirely up to you. Do you want to send a beacon, transform some data from the event?
+An action type library module is intended to take an action--any action. What this action does is entirely up to you. Would you like to send a beacon or perhaps transform some data from the event?
 
-Let's assume we want to forward some data to a 3rd party endpoint. Our module may look like this:
+Let's assume we want to forward some data to a third-party party endpoint. Our module may look like this:
 
 ```javascript
 module.exports = (settings, arc, utils) {
@@ -23,7 +23,7 @@ module.exports = (settings, arc, utils) {
 };
 ```
 
-Now what if we wanted to make the endpoint configurable by the Launch user? In our view we would allow the user to input an endpoint and then save the message to the settings object. The object might look something like this:
+Now what if we wanted to make the endpoint configurable by the Launch user? In our view we would allow the user to input an endpoint and then save the endpoint to the settings object. The object might look something like this:
 
 ```javascript
 {
@@ -51,7 +51,7 @@ module.exports = (settings, arc, utils) {
 
 ## Action Result
 
-The result returned by a action module can be anything. If the action needs to execute an async task, you can return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that returns whatever result you want once the promise is resolved.
+The result returned by a action module can be anything. If the action needs to execute an asynchronous task, you can return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that returns whatever result you want once the promise is resolved.
 
 The action result is stored inside `ruleStash` key that is made available to all the modules through the Adobe Request Context (arc). You can learn more about `ruleStash` [here](../arc#arcrulestash-objectstring-).
 

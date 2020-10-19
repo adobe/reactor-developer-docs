@@ -50,7 +50,7 @@ An `extension.json` must consist of the following:
 
 * `exchangeUrl` (required for public extensions)
 
-  The URL to your extension's listing on Adobe Exchange. It must match the pattern `https://www.adobeexchange.com/experiencecloud.details.######.html`.
+  The URL to your extension's listing on Adobe Exchange. It must be a valid URL.
 
 * `viewBasePath` (required)
 
@@ -62,7 +62,7 @@ An `extension.json` must consist of the following:
 
   Many of our users prefer hosting all Launch-related files on their own server. This provides users an increased level of certainty regarding file availability at runtime and they can easily scan the code for security vulnerabilities. If the library portion of your extension needs to load JavaScript files at runtime, it is recommended you use this property to list those files. The listed files will be hosted alongside the Launch runtime library. Your extension can then load the files via a URL retrieved using the [getHostedLibFileUrl](../turbine-free-variable/#turbinegethostedlibfileurlfile-string--string) method.
 
-  This option contains an array with relative paths of 3rd party library files that need to be hosted.
+  This option contains an array with relative paths of third-party party library files that need to be hosted.
 
 * `main` (optional)
 
