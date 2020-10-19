@@ -36,6 +36,12 @@ def directory_hash(site, path, name=nil)
       documents << page if page
     end
   end
+
+  order_directive = site.config.dig('section_orders', path) || []
+  data['children'].sort_by! do |child|
+    [order_directive&.index(child['name']) || 50, child['name']]
+  end
+
   data['documents'].sort_by! do |doc|
     is_overview = doc.data['title'] == 'Overview' ? -1 : 0
     order_attr = doc.data['order'] || -1
