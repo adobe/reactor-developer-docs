@@ -39,7 +39,7 @@ module.exports = (settings, arc, utils) {
   const { event: { xdm } } = arc;
   const  { endpoint } = settings;
 
-  return fetch('endpoint', {
+  return fetch(endpoint, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
