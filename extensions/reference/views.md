@@ -93,7 +93,7 @@ Your view should use this information to render and manage its form. It is likel
 
 The `validate` method will be called after the user hits the "Save" button in Launch.
 
-It should return one of the following:
+It **must** return one of the following:
 * a boolean indicating whether the user's input is valid
 * a promise to later be resolved with a boolean indicating whether the user's input is valid
 
@@ -105,7 +105,7 @@ If the user's input is invalid, please show some indication of this within your 
 
 The `getSettings` method will be called after the user hits the "Save" button in Launch and the view has been validated.
 
-The function should return one of the following:
+The function **must** return one of the following:
 * an object containing settings based on user input
 * a promise to later be resolved with an object containing settings based on user input
 
