@@ -10,7 +10,8 @@ An action type library module is intended to take an action--any action. What th
 Let's assume we want to forward some data to a third-party party endpoint. Our module may look like this:
 
 ```javascript
-module.exports = (settings, arc, utils) {
+module.exports = (context) {
+  const { arc, utils } = context;
   const { fetch } = utils;
   const { event: { xdm } } = arc;
   return fetch('http://someendpoint.com', {
@@ -34,7 +35,8 @@ Now what if we wanted to make the endpoint configurable by the Launch user? In o
 In order to operate on the user-defined endpoint, our module would need to change to this:
 
 ```javascript
-module.exports = (settings, arc, utils) {
+module.exports = (context) {
+  const { arc, utils } = context;
   const { fetch } = utils;
   const { event: { xdm } } = arc;
   const  { endpoint } = settings;
@@ -53,12 +55,8 @@ module.exports = (settings, arc, utils) {
 
 The result returned by a action module can be anything. If the action needs to execute an asynchronous task, you can return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that returns whatever result you want once the promise is resolved.
 
-The action result is stored inside `ruleStash` key that is made available to all the modules through the Adobe Request Context (arc). You can learn more about `ruleStash` [here](../arc#arcrulestash-objectstring-).
+The action result is stored inside `ruleStash` key that is made available to all the modules through the library module context parameter(context.arc.ruleStash). You can learn more about `ruleStash` [here](../library-module-context-parameter#contextarcrulestash-objectstring-).
 
-## Adobe Request Context
+## Library Module Context
 
-Adobe Request Context (arc) contains multiple properties. You can learn more [here](../arc).
-
-## Utils
-
-Multiple utilities function are made available to all the modules. You can learn more [here](../utils).
+All action modules have access to a `context` variable that is provided when the module is called. You can learn more [here](../library-module-context-parameter).

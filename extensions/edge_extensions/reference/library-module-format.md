@@ -44,8 +44,8 @@ This is an alternative to `module.exports` but is more limited in its usage. Ple
 
 ### Launch Server Side modules signature
 
-All the modules types ([data elements](../data-element-types), [conditions](../condition-types) or [actions](../action-types)) provided by the extensions will be called with the same parameters: settings, [arc](../arc), [utils](../utils).
+All the modules types ([data elements](../data-element-types), [conditions](../condition-types) or [actions](../action-types)) provided by the extensions will be called with the same parameters: [context](../library-module-context-parameter).
 
 ```javascript
-exports.sayHello = (settings, arc, utils) => { … }
+exports.sayHello = (context) => { … }
 ```

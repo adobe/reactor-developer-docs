@@ -10,21 +10,14 @@ A data element type library module has one goal: retrieve a piece of data. How t
 The module exports should look like this:
 
 ```javascript
-module.exports = (settings, arc, utils) => { ... };
+module.exports = (context) => { ... };
 ```
 
 Let's assume that we would like to allow users to retrieve a piece of data from the custom data layer. Our module may look like this:
 
 ```javascript
-module.exports = (settings, arc, utils) => {
-  const {
-    event: {
-      data: {
-        productName
-      }
-    }
-  } = arc;
-
+module.exports = (context) => {
+  const productName = context.arc.event.data.productName;
   return productName;
 }
 ```
@@ -40,13 +33,8 @@ Now what if we wanted to make the data returned from the data layer configurable
 In order to operate on the user-defined local storage item name, our module would need to change to this:
 
 ```javascript
-module.exports = (settings, arc, utils) => {
-  const {
-    event: {
-      data
-    }
-  } = arc;
-
+module.exports = (context) => {
+  const data = context.arc.event.data;
   return data[keyName];
 }
 ```
@@ -55,10 +43,6 @@ module.exports = (settings, arc, utils) => {
 
 Be aware that users have the option to configure a default value for any data element. If your data element library module returns a value of `undefined` or `null`, it will be automatically replaced by the default value the user has configured for the data element.
 
-## Adobe Request Context
+## Library Module Context
 
-Adobe Request Context (arc) contains multiple properties. You can learn more [here](../arc).
-
-## Utils
-
-Multiple utilities function are made available to all the modules. You can learn more [here](../utils).
+All data element modules have access to a `context` variable that is provided when the module is called. You can learn more [here](../library-module-context-parameter).
