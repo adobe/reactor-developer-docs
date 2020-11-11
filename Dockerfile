@@ -21,6 +21,8 @@ ADD docker/docs.conf /etc/nginx/conf.d/docs.conf
 
 COPY --from=builder /tmp/docs.tar.gz /tmp/docs.tar.gz
 
+EXPOSE 80
+
 RUN tar xzf /tmp/docs.tar.gz -C /srv/docs && \
     chown -R nginx:www-data /srv/docs && \
     rm /etc/nginx/conf.d/default.conf
