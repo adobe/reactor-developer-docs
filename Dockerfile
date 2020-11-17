@@ -13,7 +13,7 @@ RUN bundle install --jobs 4 && \
       --exclude=LICENSE --exclude=README .
 
 
-FROM nginx:1.13.9
+FROM nginx:1.19.4
 
 WORKDIR /srv/docs
 
