@@ -1,6 +1,7 @@
 /.bundle
 /_site
 /vendor
+.jekyll-cache
 
 *.un~
 *.swp
