@@ -1,3 +1,5 @@
+require 'rouge'
+
 class Jekyll::ScenarioTag < Liquid::Tag
 
   def initialize(tag_name, markup, tokens)
