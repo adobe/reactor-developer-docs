@@ -28,7 +28,7 @@ Once the library finishes loading, the global function is replaced with a new on
 
 ### Base code example
 
-The following JavaScript is an example of an unminified base code for the [Pinterest conversion tag](https://developers.pinterest.com/docs/ad-tools/conversion-tag/?), which will be referenced later in this document to demonstrate how it can be adapted for different implementation strategies in Platform Launch:
+The following JavaScript is an example of an unminified base code for the [Pinterest conversion tag](https://developers.pinterest.com/docs/ad-tools/conversion-tag/?), which will be referenced later in this document to demonstrate how the base code be adapted for different implementation strategies in Platform Launch:
 
 ```js
 !function(scriptUrl) {
@@ -75,6 +75,10 @@ The base code creates a script element, sets it to load asynchronously, and sets
 
 The sections below demonstrate the different ways you can load vendor libraries in your extensions, using the Pinterest base code shown previously as an example. Each of these examples involve creating an [action type](/extensions/reference/action-types/) that loads the library on your website.
 
+{% alert info, Note %}
+While the examples below use action types for demonstration purposes, you can apply the same principles to any function that loads the Platform Launch library on your site.
+{% endalert %}
+
 The following methods are covered:
 
 * [Load at runtime from the vendor host](#load-at-runtime-from-the-vendor-host)
@@ -87,7 +91,7 @@ The most common method for vendor library hosting is to use the vendor's CDN.  A
 
 This approach is usually the easiest to maintain, since any updates that are made to the file on the CDN will automatically be loaded by the extension.
 
-When using this method, you can simply paste the entire base code directly into action type like so:
+When using this method, you can simply paste the entire base code directly into an action type like so:
 
 ```js
 module.exports = function() {
