@@ -210,6 +210,6 @@ module.exports = function() {
 
 ## Next steps
 
-This document provided an overview of the different methods for hosting vendor libraries in your Platform Launch extensions. While the examples provided were focused on libraries, these techniques apply to any piece of code that your extension can utilize.
+This document provided an overview of the different methods for hosting third-party libraries in your Platform Launch extensions. While the examples provided were focused on libraries, these techniques apply to any piece of code that your extension can utilize.
 
 Refer to the documentation linked to throughout this guide to learn more about the tools for configuring your extensions, including action types, the extension manifest, core modules, and the turbine object.
