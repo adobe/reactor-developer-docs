@@ -117,7 +117,7 @@ Logging utility used to log messages to the console. Messages will only show in 
 
 By passing a callback function into `turbine.onDebugChanged`, Launch will call your callback whenever debugging is toggled. Launch will pass a boolean to the callback function which will be true if debugging was enabled or false if debugging was disabled.
 
-If you are simply attempting to log messages, it's unlikely you will need to use this. Instead, always log messages using `turbine.logger` and Launch will ensure your messages are only printed to the console when Launch debugging is enabled. 
+If you are simply attempting to log messages, it's unlikely you will need to use this. Instead, always log messages using `turbine.logger` and Launch will ensure your messages are only printed to the console when Launch debugging is enabled.
 
 ### `turbine.propertySettings: Object`
 
@@ -132,5 +132,9 @@ An object containing the following settings which are defined by the user for th
   An array of domains that the Launch property covers.
 
 * `propertySettings.undefinedVarsReturnEmpty: boolean`
+
+  Extension developers should not be concerned with this setting.
+
+* `propertySettings.ruleComponentSequencingEnabled: boolean`
 
   Extension developers should not be concerned with this setting.

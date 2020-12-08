@@ -1,8 +1,3 @@
----
-title: Extension Manifest
-order: 14
----
-
 # Extension Manifest
 
 In your extension's base directory you must create a file called `extension.json`. This contains critical details about your extension that allows Launch to properly consume it. Some of the contents are formed after the manner of [npm's `package.json`](https://docs.npmjs.com/files/package.json).
@@ -17,7 +12,7 @@ An `extension.json` must consist of the following:
 
 * `platform` (required)
 
-  The platform for your extension. The only value accepted at this moment is `web`.
+  The platform for your extension.
 
 * `version` (required)
 
@@ -55,17 +50,19 @@ An `extension.json` must consist of the following:
 
 * `exchangeUrl` (required for public extensions)
 
-  The URL to your extension's listing on Adobe Exchange. It must match the pattern `https://www.adobeexchange.com/experiencecloud.details.######.html`.
+  The URL to your extension's listing on Adobe Exchange. It must be a valid URL.
 
 * `viewBasePath` (required)
 
   The relative path to the subdirectory containing all your views and view-related resources (HTML, JavaScript, CSS, images). Launch will host this directory on a web server and load iframe content from it. This is a required field and should not start with a slash. For example, if all your views are contained within `src/view/`, the value of `viewBasePath` would be `src/view/`.
 
+{% if page.platform == 'web' %}
+
 * `hostedLibFiles` (optional)
 
   Many of our users prefer hosting all Launch-related files on their own server. This provides users an increased level of certainty regarding file availability at runtime and they can easily scan the code for security vulnerabilities. If the library portion of your extension needs to load JavaScript files at runtime, it is recommended you use this property to list those files. The listed files will be hosted alongside the Launch runtime library. Your extension can then load the files via a URL retrieved using the [getHostedLibFileUrl](../turbine-free-variable/#turbinegethostedlibfileurlfile-string--string) method.
 
-  This option contains an array with relative paths of 3rd party library files that need to be hosted.
+  This option contains an array with relative paths of third-party party library files that need to be hosted.
 
 * `main` (optional)
 
@@ -74,6 +71,8 @@ An `extension.json` must consist of the following:
   This module will always be included in the runtime library and executed. Because the module is always included in the runtime library, we recommend only using a "main" module when absolutely necessary and keeping its code size minimal.
 
   This module is not guaranteed to be executed first; other modules may be executed before it.
+
+{% endif %}
 
 * `configuration` (optional)
 
@@ -112,9 +111,13 @@ An `extension.json` must consist of the following:
 
     An array of objects where each object represents a transformation that should be performed on every corresponding settings object when it is emitted into the runtime library. See the [Transforming Settings Objects](#transforming-settings-objects) section for more information on why this may be needed and how it is used.
 
+{% if page.platform == 'web' %}
+
 * `events` (optional)
 
   An array of [event](../event-types) type definitions. See the [type definition](#type-definition) section for the structure of each object in the array.
+
+{% endif %}
 
 * `conditions` (optional)
 
@@ -128,6 +131,8 @@ An `extension.json` must consist of the following:
 
   An array of [data element](../data-element-types) type definitions. See the [type definition](#type-definition) section for the structure of each object in the array.
 
+{% if page.platform == 'web' %}
+
 * `sharedModules` (optional)
 
   An array of shared module definition objects. Each shared module object in the array should be structured as follows:
@@ -139,6 +144,8 @@ An `extension.json` must consist of the following:
   * `libPath` (required)
 
     The relative path to the shared module. It should not not begin with a slash. It must reference a JavaScript file with a `.js` extension.
+
+{% endif %}
 
 ## Type Definition
 
@@ -195,11 +202,11 @@ A type definition is an object used to describe an event, condition, action, or 
 
 ## Transforming Settings Objects
 
-For certain specific use cases, extensions need the settings objects saved from a view to be transformed by Launch before they are emitted into the Launch runtime library. You may request that one or more of these transformations take place by setting the `transforms` property when defining a type definition within your `extension.json`. The `transforms` property is an array of objects where each object represents a transformation that should take place. 
+For certain specific use cases, extensions need the settings objects saved from a view to be transformed by Launch before they are emitted into the Launch runtime library. You may request that one or more of these transformations take place by setting the `transforms` property when defining a type definition within your `extension.json`. The `transforms` property is an array of objects where each object represents a transformation that should take place.
 
 All transforms require a `type` and a `propertyPath`. The `type` must be one of `function`, `remove`, and `file` and describes which transform Launch should apply to the settings object. The `propertyPath` is a period-delimited string that tells Launch where to find the property that needs to be modified within the settings object. Here is an example settings object and some `propertyPath`s:
 
-```
+```javascript
 {
   foo:
     bar: "A string"
@@ -249,7 +256,7 @@ At the point that the settings object is saved from the action type's view, the 
 
 As a workaround for this situation, using the function transform tells Launch to wrap the user's code in a executable function when it is emitted in the Launch runtime library. To solve our example problem, we would define the transform on the type definition in `extension.json` as follows:
 
-```
+```json
 {
   ...
   "transforms": [
@@ -283,6 +290,8 @@ When the settings object is emitted in the Launch runtime library, it will be tr
 
 Your library module can then call the function containing the user's code and pass in the `username` argument.
 
+{% if page.platform == 'web' %}
+
 ### File Transform
 
 The file transform allows code written by Launch users to be emitted into a file separate from the Launch runtime library. The file will be hosted alongside the Launch runtime library and can then be loaded as needed by your extension at runtime.
@@ -303,7 +312,7 @@ When the user saves the rule, the settings object saved by the view may look lik
 
 We would like the user's code to be placed into a separate file instead of included inside in the Launch runtime library. When a rule using our action fires within the Launch runtime library, we would like to load the user's code by appending a script element to the document body. To solve our example problem, we would define the transform on the action type definition in `extension.json` as follows:
 
-```
+```json
 {
   ...
   "transforms": [
@@ -332,6 +341,8 @@ When the settings object is emitted in the Launch runtime library, it will be tr
 
 In this case, the value of `foo.bar` has been transformed to a URL. The exact URL will be determined at the time the library is built. The file will always be given a `.js` extension and delivered using a JavaScript-oriented MIME type. We may add support for other MIME types in the future.
 
+{% endif %}
+
 ### Remove Transform
 
 By default, all the properties of the settings object are emitted in the Launch runtime library. If certain properties are only used for the extension view, especially if they contain sensitive information (eg. secret token), you should use the remove transform to prevent the information from being emitted into the Launch runtime library.
@@ -352,7 +363,7 @@ When the user saves the rule, the settings object saved by the view may look lik
 
 We would like to not include the property `bar` inside in the Launch runtime library. To solve our example problem, we would define the transform on the action type definition in `extension.json` as follows:
 
-```
+```json
 {
   ...
   "transforms": [
