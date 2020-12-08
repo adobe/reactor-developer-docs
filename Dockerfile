@@ -1,4 +1,4 @@
-FROM ruby:2.6.1 as builder
+FROM ruby:2.7.2 as builder
 
 WORKDIR /srv/docs
 
@@ -13,7 +13,7 @@ RUN bundle install --jobs 4 && \
       --exclude=LICENSE --exclude=README .
 
 
-FROM nginx:1.13.9
+FROM nginx:1.19.4
 
 WORKDIR /srv/docs
 
