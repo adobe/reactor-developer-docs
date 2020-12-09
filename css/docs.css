@@ -448,7 +448,7 @@ pre.html {
 }
 
 .spectrum-TreeView {
-  width: 280px;
+  width: auto;
 }
 
 .spectrum-TreeView-itemLink {

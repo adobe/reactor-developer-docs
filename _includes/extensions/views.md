@@ -1,8 +1,3 @@
----
-title: Views
-order: 13
----
-
 # Views
 
 Each event, condition, action, or data element type may provide a view allowing a user to supply settings. The extension may also have a top-level [extension configuration view](../extension-configuration) which allows users to supply global settings for the entire extension. The process of building a view is identical across all types of views.
@@ -11,7 +6,7 @@ Each event, condition, action, or data element type may provide a view allowing 
 
 Be sure to include a `doctype` tag in your HTML file. Typically this means beginning your HTML file with the following:
 
-```
+```html
 <!DOCTYPE html>
 ```
 
@@ -118,7 +113,7 @@ The `window.extensionBridge` object has several methods that allow you to take a
 #### `window.extensionBridge.openCodeEditor([options: Object]) => Promise`
 
 ```javascript
-window.extensionBridge.openCodeEditor().then(function(code) { 
+window.extensionBridge.openCodeEditor().then(function(code) {
   console.log(code);
 });
 ```
@@ -136,7 +131,7 @@ Calling this method will show a modal allowing a user to edit a snippet of code.
 #### `window.extensionBridge.openRegexTester([options: Object]) => Promise`
 
 ```javascript
-window.extensionBridge.openRegexTester().then(function(pattern) { 
+window.extensionBridge.openRegexTester().then(function(pattern) {
   console.log(pattern);
 });
 ```
@@ -156,7 +151,7 @@ Calling this method will show a modal allowing a user to test and modify a regul
 #### `window.extensionBridge.openDataElementSelector([options: Object]) => Promise`
 
 ```javascript
-window.extensionBridge.openDataElementSelector().then(function(dataElement) { 
+window.extensionBridge.openDataElementSelector().then(function(dataElement) {
   console.log(dataElement);
 });
 ```
@@ -173,11 +168,11 @@ It's probable that your views have form fields where users would like to leverag
 
 As an example, assume we are building an extension that sends a beacon to track a conversion. Let's also assume that one of the pieces of data our beacon sends is a product name. Our extension view that allows the Launch user to configure the beacon would likely have a text field for product name. It typically wouldn't make much sense for the Launch user to type in a static product name like "Calzone Oven XL" because the product name is likely dependent upon the page from which the beacon will be sent. This is a great case for a data element.
 
-If a user wanted to use the data element named `productname` for the product name value, they may type the name of the data element with percent signs on both sides (`%productname%`). We refer to the percentage-sign-wrapped data element name as a "data element token" and Launch users are often familiar with this construct. Your extension, in turn, would save the data element token inside the `settings` object it exports. Your settings object may then look like this:
+If a user wanted to use the data element named `productname` for the product name value, they may type the name of the data element with percent signs on both sides (`{{ page.start_token }}productname{{ page.end_token }}`). We refer to the percentage-sign-wrapped data element name as a "data element token" and Launch users are often familiar with this construct. Your extension, in turn, would save the data element token inside the `settings` object it exports. Your settings object may then look like this:
 
 ```javascript
 {
-  productName: '%productname%'
+  productName: '{{ page.start_token }}productname{{ page.end_token }}'
 }
 ```
 
@@ -201,7 +196,7 @@ As described previously, if a persisted settings object consisted of the followi
 
 ```javascript
 {
-  productName: '%productname%'
+  productName: '{{ page.start_token }}productname{{ page.end_token }}'
 }
 ```
 
@@ -235,7 +230,7 @@ On the other hand, let's assume the persisted settings object were as follows:
 
 ```javascript
 {
-  productName: '%productname% - %modelnumber%'
+  productName: '{{ page.start_token }}productname{{ page.end_token }} - {{ page.start_token }}modelnumber{{ page.end_token }}'
 }
 ```
 

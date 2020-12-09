@@ -14,6 +14,11 @@ sections:
   - extensions
   - resources
 
+section_orders:
+  extensions:
+    - web_extensions
+    - edge_extensions
+
 exclude:
   - Dockerfile
   - Gemfile*
