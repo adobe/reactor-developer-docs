@@ -13,7 +13,7 @@ title: Overview
 `RuleComponents` have 3 basic types:
 
 1. Event - an event is the trigger for a rule.  The rule starts when the event occurs at runtime on the client device.  Library Load, Page Top, and Click are examples of Events.
-1. Condition - a condition is a an evaluation if certain criteria are met before the `Rule` actions are executed.  Once an Event occurs, conditions are evaluated.  The `Rule` actions will only execute if all conditions are met.  
+1. Condition - a condition is an evaluation if certain criteria are met before the `Rule` actions are executed.  Once an Event occurs, conditions are evaluated.  The `Rule` actions will only execute if all conditions are met.  
 1. Actions - these are the actions you want the rule to actually perform such as sending an Adobe Analytics beacon, retrieving a custom visitor ID, or firing a particular mbox.
 
 Note: The Launch UI currently shows conditions and exceptions separately, but underneath they are identical.  An exception is just a `NOT` condition.

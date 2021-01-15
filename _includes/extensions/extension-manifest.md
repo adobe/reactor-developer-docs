@@ -254,7 +254,7 @@ When a rule using our action fires within the Launch runtime library, we would l
 
 At the point that the settings object is saved from the action type's view, the user's code is simply a string. This is good because it can be properly serialized to and from JSON; however, it's also bad because it would typically be emitted in the Launch runtime library as a string as well instead of an executable function. Although you could attempt to execute the code within your action type's library module using [`eval`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) or a [Function constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function), it is highly discouraged due to [content security policies](https://developer.mozilla.org/en-US/docs/Web/Security/CSP) potentially blocking execution.
 
-As a workaround for this situation, using the function transform tells Launch to wrap the user's code in a executable function when it is emitted in the Launch runtime library. To solve our example problem, we would define the transform on the type definition in `extension.json` as follows:
+As a workaround for this situation, using the function transform tells Launch to wrap the user's code in an executable function when it is emitted in the Launch runtime library. To solve our example problem, we would define the transform on the type definition in `extension.json` as follows:
 
 ```json
 {
