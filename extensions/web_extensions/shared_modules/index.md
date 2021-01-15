@@ -4,6 +4,6 @@ title: Overview
 
 # Shared Modules
 
-Extensions have the capability to provide shared modules. These modules are capabilities exposed outside of the extension itself for other extensions to interact with. For example, the Adobe Analytics extension provides the ability to interact with the tracker object so that other extensions may read and set variables before a beacon is sent.
-
-If your extension provides a shared module, please document the module's API and capabilities in this section of the docs. To do so, simply fork [https://github.com/adobe/reactor-developer-docs](https://github.com/adobe/reactor-developer-docs), make a new .md file in this directory (`/extensions/shared-modules`), add your documentation, and open a pull request through Github.
+{% alert info, Note %}
+The Platform Launch extension development docs have moved. You can now find this document on Experience League: [Shared modules](https://experienceleague.adobe.com/docs/launch/using/extension-dev/modules/web/shared.html)
+{% endalert %}
