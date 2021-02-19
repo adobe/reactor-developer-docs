@@ -6,7 +6,9 @@ title: Delegate Descriptor IDs
 
 When a data element, condition, event, or action is associated with an extension package, that resource is considered a "delegate" of that package. Each delegate within an extension package is given a unique delegate descriptor ID. The delegate descriptor ID for a particular resource allows Adobe Experience Platform Launch to determine what kind of resource it is and which extension package it belongs to.
 
-A delegate descriptor ID consists of three strings joined by double-colon characters (`::`), representing the extension package name, the delegate type, and the delegate name, respectively. For example, if an extension package named `example-package` had an action named `custom-code`, that action would have the following delegate descriptor ID: `example-package::actions::custom-code`.
+A delegate descriptor ID consists of three strings joined by double-colon characters (`::`), representing the extension package name, the delegate type, and the delegate name, respectively.
+
+For example, if an extension package named `example-package` had an action named `custom-code`, that action would have the following delegate descriptor ID: `example-package::actions::custom-code`.
 
 Delegate descriptor IDs are important to understand when it comes to defining rule components, data elements, and extensions in the API. The sections below outline how these IDs come into play for each resource.
 
@@ -20,8 +22,16 @@ See the guide on [creating a rule component in the API](/api/reference/1.0/rule_
 
 ## Data elements
 
+A [data element](/api/reference/1.0/data_elements/index/) must be associated with an extension package when it is first created, as each extension package defines the compatible types for its delegate data elements.
+
+For example, to create a data element that uses the `cookie` type as defined by a the extension package `example-package`, the data element would use the following `delegate_descriptor_id` value: `example-package::dataElements::cookie`.
+
 See the guide on [creating a data element in the API](/api/reference/1.0/data_elements/create/) for more information.
 
 ## Extensions
 
-See the guide on [creating a extension in the API](/api/reference/1.0/extensions/create/) for more information.
+An [extension](/api/reference/1.0/extensions/index/) can optionally be associated with an extension package when it is first created. While you can define an extension separately from an extension package in the API, the extension must be associated with an extension package in order to utilize rule components and data elements.
+
+For example, to assign the extension `example-extension` to the extension package `example-package`, the extension would use the following `delegate_descriptor_id` value: `example-package::extensions::example-extension`.
+
+See the guide on [creating an extension in the API](/api/reference/1.0/extensions/create/) for more information.
