@@ -18,7 +18,7 @@ A [rule component](/api/reference/1.0/rule_components/index/) must be associated
 
 For example, to create an event rule component that is based on a `click` event in an extension package `example-package`, the rule component would use the following `delegate_descriptor_id` value: `example-package::events::click`.
 
-See the guide on [creating a rule component in the API](/api/reference/1.0/rule_components/create/) for more information on the payload attributes required to define a rule component.
+See the guide on [creating a rule component in the API](/api/reference/1.0/rule_components/create/) for more information.
 
 ## Data elements
 
