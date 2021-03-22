@@ -15,7 +15,7 @@ via an `action` supplied in the `meta` of a request.
 
 The Library is editable.
 
-Available actions: `submit`
+Available actions: `submit`, `approve`
 
 #### `submitted`
 
