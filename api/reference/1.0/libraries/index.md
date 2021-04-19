@@ -20,7 +20,7 @@ Depending on the `state`, `Environments` of different types can then be assigned
 
 | Library State | Description | Can Add Resources | Available Actions | Assignable Environments |
 | ------------- | ----------- |:-----------------:| ----------------- | ----------------------- |
-| development | The `Library` is editable | Yes | `submit` | Development
+| development | The `Library` is editable | Yes | `submit`, `approve` | Development
 | submitted | The `Library` has been submitted for review | No | `approve`, `reject` | Staging |
 | approved | The `Library` has been reviewed and approved for publishing | No | `reject` | n/a |
 | rejected | The `Library` has been rejected | No | `develop` | Development |
