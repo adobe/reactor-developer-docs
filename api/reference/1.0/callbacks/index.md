@@ -37,4 +37,4 @@ at 1 minute fails, the next attempt will be scheduled for 5 minutes after the
 
 Once all delivery attempts have been exceeded, the message is discarded.
 
-A `Callback` belongs to exactly one `Property`.  A `Property` can have many `Callbacks`.
+A `Callback` belongs to exactly one `Property`.  A `Property` can have many `Callbacks`.  When you delete a `Property`, its `Callbacks` are also deleted.  `Callbacks` can be created for all resources within a `Property`, but not for the `Property` itself.
