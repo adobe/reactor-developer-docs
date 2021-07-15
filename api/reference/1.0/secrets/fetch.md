@@ -4,6 +4,6 @@ title: Fetch
 
 # Fetch a Secret
 
-Retrieve the data for an existing Secret, based on its ID.
+Retrieve an existing secret by ID.
 
 {% scenario secrets.show %}

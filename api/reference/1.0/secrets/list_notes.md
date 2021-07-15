@@ -4,7 +4,7 @@ title: List Notes
 
 # List Notes for a Secret
 
-Retrieve the Notes attached to the specified Secret.
+Retrieve all notes related to the specified Secret.
 
 {% filters note %}
 

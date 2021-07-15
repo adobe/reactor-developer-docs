@@ -4,26 +4,19 @@ title: Create
 
 # Create a Secret
 
-Add a Secret to a Property. After performing a request to add a Secret to a
-Property, when the secret exchange task has
-completed, the Secret response will be returned based on the success or
-failure of the task.
+Add a Secret to a Property. 
 
-Secrets are processed asynchronously and return an `status`
-attribute representing the final status of the Secret exchange.
-There are two possible `status` values:
+When you create a new secret, you will get an immediate response that contains information for that resource.  
+
+At the same time, a secret exchange task is triggered to test that the credential exchange is functional.  This task is processed asynchronously and updates the secret's `status` attribute with one of two possible values:
 
 #### `succeeded`
 
-When processing of the exchange request for the Secret has completed,
-if the exchange was successful, the `status` will be `succeeded`.
+This is the status when the exchange request for the secret completes successfully.
 
 #### `failed`
 
-When processing of the exchange request for the Secret has completed,
-if the exchange was not successful, the `status` will
-be `failed`.
-
+This is the status when the exchange request for the secret is not successful.
 
 {% form secret.post %}
 

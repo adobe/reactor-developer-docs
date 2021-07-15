@@ -4,7 +4,7 @@ title: List
 
 # List Secrets for a Property
 
-Retrieve the Secrets used by the specified Property.
+Retrieve all secrets within a given property.
 
 {% filters secret %}
 
