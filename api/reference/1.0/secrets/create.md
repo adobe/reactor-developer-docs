@@ -20,4 +20,16 @@ This is the status when the exchange request for the secret is not successful.
 
 {% form secret.post %}
 
+## Secret types
+
+### "oauth2" `type_of`
+
+{% include_relative secret_types/oauth2.html %}
+
+### "simple-http" `type_of`
+
+{% include_relative secret_types/simple-http.html %}
+
+### "token" `type_of`
+
 {% scenario secrets.create %}
