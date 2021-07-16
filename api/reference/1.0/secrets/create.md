@@ -24,11 +24,11 @@ This is the status when the exchange request for the secret is not successful.
 
 ### "oauth2" `type_of`
 
-{% include_relative _includes/oauth2.html %}
+{% include_relative _oauth2.html %}
 
 ### "simple-http" `type_of`
 
-{% include_relative _includes/simple-http.html %}
+{% include_relative _simple-http.html %}
 
 ### "token" `type_of`
 
