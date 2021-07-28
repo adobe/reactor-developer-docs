@@ -12,7 +12,7 @@ There are currently three supported secret types denoted in the `type_of` attrib
 * Username and Password - this is exactly what it sounds like
 * OAuth - these secrets support the OAuth authentication spec.  Event forwarding will ask you for the required information, then will handle the renewal of these tokens for you on a specified interval
 
-Different attributes are needed for different secret types, see the [Create page](create) for more details.
+For a detailed explanation of the different secret types and how to use them, please refer to the (Secrets Guide)[/api/guides/secrets/].
 
 ## Usage
 
