@@ -4,9 +4,9 @@ title: Create
 
 # Create a Secret
 
-Add a Secret to a Property. 
+Add a Secret to a Property.
 
-When you create a new secret, you will get an immediate response that contains information for that resource.  
+When you create a new secret, you will get an immediate response that contains information for that resource.
 
 At the same time, a secret exchange task is triggered to test that the credential exchange is functional.  This task is processed asynchronously and updates the secret's `status` attribute with one of two possible values:
 
