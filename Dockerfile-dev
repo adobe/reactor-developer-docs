@@ -1,4 +1,4 @@
-FROM ruby:2.7.2
+FROM ruby:3.0.2
 
 ENV GEM_HOME=/bundle
 ENV BUNDLE_PATH=/bundle
