@@ -1,8 +1,12 @@
 ---
 title: Create
+labels:
+  - unstable
 ---
 
 # Create a Secret
+
+{% labels %}
 
 Add a Secret to a Property.
 
