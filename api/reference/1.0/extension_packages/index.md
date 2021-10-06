@@ -53,3 +53,7 @@ A `private` `ExtensionPackage` is only visible to, and available for installatio
 A `public` `ExtensionPackage` is visible and available to all `Companies` and `Properties`.
 
 When an `ExtensionPackage` is created, `availability` is set to `development`. After testing has been completed, you can transition the `ExtensionPackage` to either `private` or `public`.
+
+## Archive Url
+
+After an `ExtensionPackage` is transitioned to `public`, the archived source files are available at the `archive_url` location, inside the `meta` block.
