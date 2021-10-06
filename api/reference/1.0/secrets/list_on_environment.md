@@ -1,8 +1,12 @@
 ---
 title: List Environment Secrets
+labels:
+  - unstable
 ---
 
 # List Secrets for an Environment
+
+{% labels %}
 
 Retrieve all secrets within a given environment.
 

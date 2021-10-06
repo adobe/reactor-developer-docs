@@ -1,8 +1,12 @@
 ---
 title: Delete
+labels:
+  - unstable
 ---
 
 # Delete a Secret
+
+{% labels %}
 
 This is a hard delete with an immediate affect.  It does not require a library publish.
 

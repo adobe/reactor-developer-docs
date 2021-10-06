@@ -1,8 +1,12 @@
 ---
 title: Overview
+labels:
+  - unstable
 ---
 
 # Secrets
+
+{% labels %}
 
 A secret is a resource that exists only within event forwarding properties (properties with an attribute of `"platform": "edge"`).  They allow event forwarding to authenticate to another system for secure data exchange.
 
