@@ -8,6 +8,10 @@ labels:
 
 {% labels %}
 
+{% alert info, Note %}
+This endpoint expects multipart requests. Icons must be 4 MB or less.
+{% endalert %}
+
 <div class="spectrum-Accordion" role="region">
   <div class="spectrum-Accordion-item is-open" role="presentation">
 
@@ -68,7 +72,7 @@ labels:
 
     <div class="spectrum-Accordion-itemContent" role="region">
       <div class="highlight">
-        <pre><code>PATCH icons/icon_id </code></pre>
+        <pre><code>PATCH icons/:id </code></pre>
       </div>
     </div>
   </div>
@@ -84,7 +88,7 @@ labels:
 
     <div class="spectrum-Accordion-itemContent" role="region">
       <div class="highlight">
-        <pre><code>curl https://reactor.adobe.io/icons/:icon_id <span class="se">\</span>
+        <pre><code>curl https://reactor.adobe.io/icons/:id <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.api+json;revision=1"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: multipart/form-data"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer [TOKEN]"</span> <span class="se">\</span>
@@ -107,7 +111,7 @@ labels:
 
     <div class="spectrum-Accordion-itemContent" role="region">
       <div class="highlight">
-        <em>202 Accepted</em>
+        <em>200 OK </em>
         <pre><code><span class="p">{</span><span class="w"></span>
   <span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
     <span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ICf76b9de5b229435bb76802427a88464b"</span><span class="p">,</span><span class="w"></span>

@@ -11,7 +11,7 @@ labels:
 Icons are processed asynchronously and have a `status` attribute representing the current status of the Icon.
 
 {% alert info, Note %}
-This endpoint expects multipart requests. Icons must be 4 Mb or less.
+This endpoint expects multipart requests. Icons must be 4 MB or less.
 {% endalert %}
 
 <div class="spectrum-Accordion" role="region">
@@ -74,7 +74,7 @@ This endpoint expects multipart requests. Icons must be 4 Mb or less.
 
     <div class="spectrum-Accordion-itemContent" role="region">
       <div class="highlight">
-        <pre><code>POST  app_configurations/:app_configuration_id/icon</code></pre>
+        <pre><code>POST  app_configurations/:id/icon</code></pre>
       </div>
     </div>
   </div>
@@ -90,7 +90,7 @@ This endpoint expects multipart requests. Icons must be 4 Mb or less.
 
     <div class="spectrum-Accordion-itemContent" role="region">
       <div class="highlight">
-        <pre><code>curl https://reactor.adobe.io/app_configurations/:app_configuration_id/icon <span class="se">\</span>
+        <pre><code>curl https://reactor.adobe.io/app_configurations/:id/icon <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.api+json;revision=1"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: multipart/form-data"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer [TOKEN]"</span> <span class="se">\</span>
