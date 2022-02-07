@@ -8,6 +8,6 @@ labels:
 
 {% labels %}
 
-Retrieve a specific Icon, based on its ID.
+Retrieve the data for an existing Icon, based on its ID.
 
 {% scenario icons.show %}

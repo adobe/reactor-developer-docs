@@ -8,7 +8,7 @@ labels:
 
 {% labels %}
 
-Retrieve the App Configurations owned by the specified Company.
+Retrieve the App Configurations owned by the specified Company. Icons can be included with a query parameter `?include=icon`
 
 {% filters app_configuration %}
 
