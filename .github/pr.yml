@@ -11,10 +11,10 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: "remear/reactor-developer-docs"
+  IMAGE_NAME: "adobe/reactor-developer-docs"
 
 jobs:
-  docker:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,3 +26,4 @@ jobs:
         with:
           context: .
           push: false
+          
