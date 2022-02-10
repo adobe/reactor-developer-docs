@@ -1,0 +1,29 @@
+name: pr
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: "adobe/reactor-developer-docs"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build 
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: false
+          
