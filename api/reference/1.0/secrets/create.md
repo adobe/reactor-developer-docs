@@ -26,9 +26,13 @@ This is the status when the exchange request for the secret is not successful.
 
 ## Secret types
 
-### "oauth2" `type_of`
+### "oauth2-client_credentials" `type_of`
 
-{% include_relative _oauth2.html %}
+{% include_relative _oauth2-client_credentials.html %}
+
+### "oauth2-google" `type_of`
+
+{% include_relative _oauth2-google.html %}
 
 ### "simple-http" `type_of`
 
