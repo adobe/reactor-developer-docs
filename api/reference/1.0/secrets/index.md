@@ -12,10 +12,10 @@ A secret is a resource that exists only within event forwarding properties (prop
 
 There are currently three supported secret types denoted in the `type_of` attribute.
 
-* Token - this is a simple string of characters known by both systems
-* Username and Password - this is exactly what it sounds like
-* OAuth2-Client_Credentials - these secrets support the OAuth2 Client Credentials authentication spec.  Event forwarding will ask you for the required information, then will handle the renewal of these tokens for you on a specified interval
-* OAuth2-Google - these secrets support the OAuth2 Google authentication with Adobe Real-Time CDP Event Forwarding app. Event forwarding will handle the renewal of these tokens for you every 30 minutes
+* `token` - this is a simple string of characters known by both systems
+* `simple-http` - username and password
+* `oauth2-client_credentials` - these secrets support the OAuth2 Client Credentials authentication spec.  Event forwarding will ask you for the required information, then will handle the renewal of these tokens for you on a specified interval
+* `oauth2-google` - these secrets support the OAuth2 Google authentication with Adobe Real-Time CDP Event Forwarding app. Event forwarding will handle the renewal of these tokens for you every 30 minutes
 
 For a detailed explanation of the different secret types and how to use them, please refer to the (Secrets Guide)[/api/guides/secrets/].
 
