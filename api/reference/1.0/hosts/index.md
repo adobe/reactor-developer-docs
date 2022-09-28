@@ -14,6 +14,8 @@ title: Overview
 1. `akamai`
 1. `sftp`
 
+`SFTP` Hosts with `skip_symlinks: true` deliver file copies where symlinks would normally be used as not all `SFTP` hosts support symlinks.
+
 When a `Build` is requested by the Launch user, Launch will check the `Library` to determine which `Environment` the `Library` should be built to.  The `Environment` has a relationship with the `Host` and that is how Launch knows which `Host` to use to deliver the `Build.
 
 A `Host` belongs to exactly one `Property`.  A `Property` may have many `Hosts`.
