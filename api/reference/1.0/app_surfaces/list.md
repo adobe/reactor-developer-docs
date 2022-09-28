@@ -8,6 +8,6 @@ labels:
 
 {% labels %}
 
-Retrieve the App Surfaces owned by the specified Company. Icons can be included with a query parameter `?include=icon`
+Retrieve the App Surfaces owned by the specified Company.
 
 {% scenario app_surfaces.index %}
