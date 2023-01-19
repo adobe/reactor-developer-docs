@@ -17,7 +17,7 @@ class Jekyll::ScenarioTag < Liquid::Tag
     <<EOF
 curl https://reactor.adobe.io#{@endpoint['path']} \\
   -H "Accept: application/vnd.api+json;revision=1" \\
-  -H "Content-Type: application/vnd.api+json" \\
+  -H "Content-Type: #{content_type}" \\
   -H "Authorization: Bearer [TOKEN]" \\
   -H "X-Api-Key: [KEY]" \\
   -H "X-Gw-Ims-Org-Id: [ORG_ID]" \\
@@ -26,8 +26,20 @@ curl https://reactor.adobe.io#{@endpoint['path']} \\
 EOF
   end
 
+  def content_type
+    if @scenario['multipart']
+      'multipart/form-data'
+    else
+      'application/vnd.api+json'
+    end
+  end
+
   def build_curl_request_options
-    if @scenario['request']
+    return unless @scenario['request']
+
+    if @scenario['multipart']
+      "-F #{@scenario['request'].map { |k,v| "\"#{k}=#{v}\""}.first }"
+    else
       "-d \\\n'\n#{JSON.pretty_generate(@scenario['request'])}'"
     end
   end
