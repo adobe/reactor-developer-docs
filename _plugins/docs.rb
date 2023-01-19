@@ -96,21 +96,21 @@ class ApiSpecification
     @spec['forms'][form_name]
   end
 
-  def scenario(scenario_name, endpoint)
+  def scenario(scenario_name, endpoint, scenario_number)
     method = endpoint&.fetch('methods')&.first
 
-    scenario_select_by_name_endpoint_method(scenario_name, endpoint, method) ||
+    scenario_select_by_name_endpoint_method(scenario_name, scenario_number, endpoint, method) ||
       scenario_select_by_endpoint_method(endpoint, method) ||
       scenario_select_by_name(scenario_name)
   end
 
-  def scenario_select_by_name_endpoint_method(name, endpoint, method)
+  def scenario_select_by_name_endpoint_method(name, number, endpoint, method)
     return unless name && endpoint && method
-    @spec['scenarios'].find do |r|
+    @spec['scenarios'].select do |r|
       r['name'] == name &&
         r['endpoint'] == endpoint['path'] &&
         r['method'] == method
-    end
+    end[number.to_i]
   end
 
   def scenario_select_by_endpoint_method(endpoint, method)
