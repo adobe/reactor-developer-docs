@@ -7,10 +7,9 @@ class Jekyll::ScenarioTag < Liquid::Tag
     args = markup.to_s.split
     endpoint = args.fetch(0, nil)
     scenario = args.fetch(1, nil)
-    scenario_number = args.fetch(2, nil)
     @spec = ApiSpecification.instance.spec
     @endpoint = ApiSpecification.instance.endpoint(endpoint) if endpoint
-    @scenario = ApiSpecification.instance.scenario(scenario, @endpoint, scenario_number)
+    @scenario = ApiSpecification.instance.scenario(scenario, @endpoint)
   end
 
   def build_curl_request
