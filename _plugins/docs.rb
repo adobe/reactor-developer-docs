@@ -11,6 +11,7 @@ Jekyll::Hooks.register :site, :pre_render do |site|
   site.pages = pages
 
   site.config['hierarchy'] = generate_hierarchy(site)
+
 end
 
 def directory_hash(site, path, name=nil)
@@ -96,33 +97,24 @@ class ApiSpecification
     @spec['forms'][form_name]
   end
 
-  def scenario(scenario_name, endpoint, scenario_number)
+  def scenario(scenario_name, endpoint)
     method = endpoint&.fetch('methods')&.first
 
-    scenario_select_by_name_endpoint_method(scenario_name, scenario_number, endpoint, method) ||
-      scenario_select_by_endpoint_method(endpoint, method) ||
-      scenario_select_by_name(scenario_name)
-  end
-
-  def scenario_select_by_name_endpoint_method(name, number, endpoint, method)
-    return unless name && endpoint && method
-    @spec['scenarios'].select do |r|
-      r['name'] == name &&
-        r['endpoint'] == endpoint['path'] &&
-        r['method'] == method
-    end[number.to_i]
+    scenario_select_by_name(scenario_name) ||
+      scenario_select_by_endpoint_method(endpoint, method)
   end
 
   def scenario_select_by_endpoint_method(endpoint, method)
     return unless endpoint && method
     @spec['scenarios'].find do |r|
       r['endpoint'] == endpoint['path'] &&
-        r['method'] == method
+        r['method'] == method &&
+        r['documentation'] == true
     end
   end
 
   def scenario_select_by_name(name)
-    @spec['scenarios'].find { |s| s['name'] == name }
+    @spec['scenarios'].find { |s| s['name'] == name && s['documentation'] == true }
   end
 
   def schema(resource)
