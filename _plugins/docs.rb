@@ -100,21 +100,20 @@ class ApiSpecification
   def scenario(scenario_name, endpoint)
     method = endpoint&.fetch('methods')&.first
 
-    scenario_select_by_name(scenario_name) ||
-      scenario_select_by_endpoint_method(endpoint, method)
+    scenario_select_by_endpoint_method(endpoint, method) ||
+      scenario_select_by_name(scenario_name)
   end
 
   def scenario_select_by_endpoint_method(endpoint, method)
     return unless endpoint && method
     @spec['scenarios'].find do |r|
       r['endpoint'] == endpoint['path'] &&
-        r['method'] == method &&
-        r['documentation'] == true
+        r['method'] == method
     end
   end
 
   def scenario_select_by_name(name)
-    @spec['scenarios'].find { |s| s['name'] == name && s['documentation'] == true }
+    @spec['scenarios'].find { |s| s['name'].match?(/^#{name}(?:.\w+)?$/) }
   end
 
   def schema(resource)
