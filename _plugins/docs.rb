@@ -11,7 +11,6 @@ Jekyll::Hooks.register :site, :pre_render do |site|
   site.pages = pages
 
   site.config['hierarchy'] = generate_hierarchy(site)
-
 end
 
 def directory_hash(site, path, name=nil)
