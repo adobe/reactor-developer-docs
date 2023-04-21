@@ -4,7 +4,7 @@ title: Secrets
 
 # Exchanging Secret credentials
 
-There are 4 types of secrets, `oauth2-client_credentials`, `oauth2-gogle`, `simple-http`, and `token`. The `credentials` object for each type has different required attributes.
+There are 4 types of secrets, `oauth2-client_credentials`, `oauth2-google`, `simple-http`, and `token`. The `credentials` object for each type has different required attributes.
 
 ## `oauth2-client_credentials` credentials
 
@@ -37,7 +37,7 @@ In case of failure, the information is available in the `status_details` attribu
 ### Credential attributes
 - `scopes` - Array - Required - The scopes for the google authorization. The allowed scope values are `https://www.googleapis.com/auth/adwords`, and `https://www.googleapis.com/auth/pubsub`. At least one scope has to be added.
 
-When an `oauth2-google` Secret is created or updated, it has a `manual_authorization` status and `authorization_url`, and `authorization_url_expires_at` fields in the `meta` object. In order to process the secret, the `authorization_url` value has to be loaded in a browser and the the Google authorization flow has to be completed. The `authorization_url` value is valid until `authorization_url_expires_at`.
+When an `oauth2-google` Secret is created or updated, it has a `manual_authorization` status, `authorization_url`, and `authorization_url_expires_at` fields in the `meta` object. In order to process the secret, the `authorization_url` value has to be loaded in a browser and the the Google authorization flow has to be completed. The `authorization_url` value is valid until `authorization_url_expires_at`.
 If the `authorization_url` expires, the secret has to be reauthorized. The `authorization_url`, and `authorization_url_expires_at` fields are displayed only once, after the `Secret` creation or update.
 
 If the Google authorization flow is successful, the `Secret` status attribute is set to `succeeeded` and `expires_at` and `refresh_at` are set.
