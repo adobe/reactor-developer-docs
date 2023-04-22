@@ -12,4 +12,4 @@ Discontinue an ExtensionPackage.
 
 {% form extension_package.patch %}
 
-{% scenario extension_packages.update extension_packages.discontinue_an_extension_package 1 %}
+{% scenario extension_packages.update extension_packages.discontinue_an_extension_package %}

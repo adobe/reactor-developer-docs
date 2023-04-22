@@ -28,16 +28,20 @@ This is the status when the exchange request for the secret is not successful.
 
 ### "oauth2-client_credentials" `type_of`
 
-{% include_relative _oauth2-client_credentials.html %}
+{% scenario secrets.create secrets.create_a_oauth2_client_credentials_secret %}
+
+### "oauth2-jwt" `type_of`
+
+{% scenario secrets.create secrets.create_a_oauth2_jwt_secret %}
 
 ### "oauth2-google" `type_of`
 
-{% include_relative _oauth2-google.html %}
+{% scenario secrets.create secrets.create_a_oauth2_google_secret %}
 
 ### "simple-http" `type_of`
 
-{% include_relative _simple-http.html %}
+{% scenario secrets.create secrets.create_a_simple_http_secret %}
 
 ### "token" `type_of`
 
-{% scenario secrets.create %}
+{% scenario secrets.create secrets.create_a_secret %}

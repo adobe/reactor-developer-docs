@@ -99,8 +99,9 @@ class ApiSpecification
   def scenario(scenario_name, endpoint)
     method = endpoint&.fetch('methods')&.first
 
-    scenario_select_by_endpoint_method(endpoint, method) ||
-      scenario_select_by_name(scenario_name)
+    scenario_select_by_name(scenario_name) ||
+      scenario_select_by_endpoint_method(endpoint, method)
+
   end
 
   def scenario_select_by_endpoint_method(endpoint, method)
