@@ -4,7 +4,7 @@ title: Secrets
 
 # Exchanging Secret credentials
 
-There are 4 types of secrets, `oauth2-client_credentials`, `oauth2-google`, `simple-http`, and `token`. The `credentials` object for each type has different required attributes.
+There are 5 types of secrets, `oauth2-client_credentials`, `oauth2-jwt`, `oauth2-google`, `simple-http`, and `token`. The `credentials` object for each type has different required attributes.
 
 ## `oauth2-client_credentials` credentials
 
@@ -25,6 +25,33 @@ It is expected that the authorization service response body is compatible with t
 A credentials exchange is considered successful if:
 - `expires_in` is greater `28800` (8 hours)
 - `refresh_offset` is less than `expires_in` - `14400`. (e.g. if the `expires_in` is `36000` (10h), and the `refresh_offset` is set to `28800` (8h), the exchange is considered failed because `28800` > `36000` - `14400`).
+
+If the exchange is successful, the `Secret` status attribute is set to `succeeeded` and `expires_at` and `refresh_at` are set.
+- `expires_at` is the current UTC time + `expires_in`.
+- `refresh_at` is the current UTC time + `expires_in` - `refresh_offset`
+
+In case of failure, the information is available in the `status_details` attribute from the `meta` object.
+
+## `oauth2-jwt` credentials
+
+### Credential attributes
+- `iss` - Text - Required - The JWT issuer.
+- `aud` - Text - Required - The JWT audience.
+- `sub` - Text - Optional - The JWT subject.
+- `ttl` - Integer - Required - The JWT ttl. The `exp` claim is computed using this value.
+- `alg` - Text - Required - The algorithm used to sign the JWT. Currently, only `RS256` is supported.
+- `custom_claims` - Object - Optional - Key/Value pairs of JWT custom claims.
+- `token_url` - Text - Optional - The token url of the oauth2 integration. If this value is not included, the JWT will ve used as `access_token`.
+- `private_key_id` - Text - Optional - The private key id. This value will be added to the `kid` JWT header.
+- `private_key` - Text - Required - The private key used to sign to JWT.
+- `refresh_offset` - Integer - Optional - The value, in seconds, used to offset the refresh operation. If not set, an implicit `1800` (30 minutes) will be used.
+- `options` - Object - Optional - Key/Value pairs of options for the oauth2 integration.
+
+When an `oauth2-jwt` Secret is created or updated, a JWT is created and signed using the private_key. If `token_url` is present, a `POST` is made to the `token_url` with the assertion parameter and JWT value (and possibly options), according to the `rfc7523` standard.
+If the authorization service responds with `200 OK` and a JSON response body, the body is parsed and `access_token` and `expires_in` are used.
+It is expected that the authorization service response body is compatible with the `oauth2` protocol.
+
+If `token_url` is not present, the generated JWT is used as `access_token` and the `ttl` as `expires_in`.
 
 If the exchange is successful, the `Secret` status attribute is set to `succeeeded` and `expires_at` and `refresh_at` are set.
 - `expires_at` is the current UTC time + `expires_in`.
