@@ -4,7 +4,7 @@ title: Secrets
 
 # Exchanging Secret credentials
 
-There are 5 types of secrets, `oauth2-client_credentials`, `oauth2-jwt`, `oauth2-google`, `simple-http`, and `token`. The `credentials` object for each type has different required attributes.
+The available secret types are: `oauth2-client_credentials`, `oauth2-jwt`, `oauth2-google`, `simple-http`, and `token`. The `credentials` object for each type has different required attributes.
 
 ## `oauth2-client_credentials` credentials
 
@@ -41,7 +41,7 @@ In case of failure, the information is available in the `status_details` attribu
 - `ttl` - Integer - Required - The JWT ttl. The `exp` claim is computed using this value.
 - `alg` - Text - Required - The algorithm used to sign the JWT. Currently, only `RS256` is supported.
 - `custom_claims` - Object - Optional - Key/Value pairs of JWT custom claims.
-- `token_url` - Text - Optional - The token url of the oauth2 integration. If this value is not included, the JWT will ve used as `access_token`.
+- `token_url` - Text - Optional - The token url of the oauth2 integration. If this value is not included, the JWT will be used as `access_token`.
 - `private_key_id` - Text - Optional - The private key id. This value will be added to the `kid` JWT header.
 - `private_key` - Text - Required - The private key used to sign to JWT.
 - `refresh_offset` - Integer - Optional - The value, in seconds, used to offset the refresh operation. If not set, an implicit `1800` (30 minutes) will be used.
