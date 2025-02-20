@@ -5,7 +5,7 @@ layout: documentation
 
 # API First
 
-Launch, by Adobe is an entirely API-first application.  All system functionality is accessible through the API.  The UI at [launch.adobe.com](https://launch.adobe.com) is simply a friendly way to interact with them.
+Launch, by Adobe is an entirely API-first application.  All system functionality is accessible through the API.  The UI at [https://experience.adobe.com/#/data-collection](https://experience.adobe.com/#/data-collection) is simply a friendly way to interact with them.
 
 This API - known as the Reactor API - uses the JSON API specification.  We expect inputs to be compliant with this specification and all outputs are also compliant.  You can read more at [jsonapi.org](http://jsonapi.org/).
 
